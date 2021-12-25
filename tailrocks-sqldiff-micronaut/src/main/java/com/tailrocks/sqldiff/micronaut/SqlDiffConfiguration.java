@@ -1,10 +1,10 @@
 package com.tailrocks.sqldiff.micronaut;
 
-import com.tailrocks.sqldiff.model.config.KrendelDiffConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffDiffConfig;
 import com.tailrocks.sqldiff.model.config.KrendelEmbeddedConfig;
 import com.tailrocks.sqldiff.model.config.KrendelFlywayConfig;
 import com.tailrocks.sqldiff.model.config.KrendelMigrationConfig;
-import com.tailrocks.sqldiff.model.config.KrendelMigrationMetadataConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffMigrationMetadataConfig;
 import com.tailrocks.sqldiff.model.config.KrendelTargetConfig;
 import io.micronaut.context.annotation.ConfigurationProperties;
 import io.micronaut.core.util.Toggleable;
@@ -67,18 +67,18 @@ public class KrendelConfiguration extends KrendelEmbeddedConfig implements Toggl
         }
 
         @Override
-        public KrendelMigrationMetadataConfig getMetadata() {
+        public SqlDiffMigrationMetadataConfig getMetadata() {
             return metadata;
         }
 
         @ConfigurationProperties("metadata")
-        public static class MetadataConfiguration extends KrendelMigrationMetadataConfig {
+        public static class MetadataConfiguration extends SqlDiffMigrationMetadataConfig {
         }
 
     }
 
     @ConfigurationProperties("diff")
-    public static class DiffConfiguration extends KrendelDiffConfig {
+    public static class DiffConfiguration extends SqlDiffDiffConfig {
 
         private final IgnoreConfiguration ignore;
         private final MigrationConfiguration migration;
@@ -100,11 +100,11 @@ public class KrendelConfiguration extends KrendelEmbeddedConfig implements Toggl
 
 
         @ConfigurationProperties("ignore")
-        public static class IgnoreConfiguration extends KrendelDiffConfig.Ignore {
+        public static class IgnoreConfiguration extends SqlDiffDiffConfig.Ignore {
         }
 
         @ConfigurationProperties("migration")
-        public static class MigrationConfiguration extends KrendelDiffConfig.Migration {
+        public static class MigrationConfiguration extends SqlDiffDiffConfig.Migration {
 
             private final TablesConfiguration tables;
             private final ColumnsConfiguration columns;
@@ -148,7 +148,7 @@ public class KrendelConfiguration extends KrendelEmbeddedConfig implements Toggl
             }
 
             @ConfigurationProperties("tables")
-            public static class TablesConfiguration extends KrendelDiffConfig.Migration.Tables {
+            public static class TablesConfiguration extends SqlDiffDiffConfig.Migration.Tables {
 
                 private final DropConfiguration drop;
 
@@ -162,13 +162,13 @@ public class KrendelConfiguration extends KrendelEmbeddedConfig implements Toggl
                 }
 
                 @ConfigurationProperties("drop")
-                public static class DropConfiguration extends KrendelDiffConfig.Migration.Tables.Drop {
+                public static class DropConfiguration extends SqlDiffDiffConfig.Migration.Tables.Drop {
                 }
 
             }
 
             @ConfigurationProperties("columns")
-            public static class ColumnsConfiguration extends KrendelDiffConfig.Migration.Columns {
+            public static class ColumnsConfiguration extends SqlDiffDiffConfig.Migration.Columns {
 
                 private final AddConfiguration add;
                 private final DropConfiguration drop;
@@ -189,17 +189,17 @@ public class KrendelConfiguration extends KrendelEmbeddedConfig implements Toggl
                 }
 
                 @ConfigurationProperties("add")
-                public static class AddConfiguration extends KrendelDiffConfig.Migration.Columns.Add {
+                public static class AddConfiguration extends SqlDiffDiffConfig.Migration.Columns.Add {
                 }
 
                 @ConfigurationProperties("drop")
-                public static class DropConfiguration extends KrendelDiffConfig.Migration.Columns.Drop {
+                public static class DropConfiguration extends SqlDiffDiffConfig.Migration.Columns.Drop {
                 }
 
             }
 
             @ConfigurationProperties("indexes")
-            public static class IndexesConfiguration extends KrendelDiffConfig.Migration.Indexes {
+            public static class IndexesConfiguration extends SqlDiffDiffConfig.Migration.Indexes {
 
                 private final CreateConfiguration create;
                 private final DropConfiguration drop;
@@ -220,16 +220,16 @@ public class KrendelConfiguration extends KrendelEmbeddedConfig implements Toggl
                 }
 
                 @ConfigurationProperties("create")
-                public static class CreateConfiguration extends KrendelDiffConfig.Migration.Indexes.Create {
+                public static class CreateConfiguration extends SqlDiffDiffConfig.Migration.Indexes.Create {
                 }
 
                 @ConfigurationProperties("drop")
-                public static class DropConfiguration extends KrendelDiffConfig.Migration.Indexes.Drop {
+                public static class DropConfiguration extends SqlDiffDiffConfig.Migration.Indexes.Drop {
                 }
             }
 
             @ConfigurationProperties("sequences")
-            public static class SequencesConfiguration extends KrendelDiffConfig.Migration.Sequences {
+            public static class SequencesConfiguration extends SqlDiffDiffConfig.Migration.Sequences {
 
                 private final DropConfiguration drop;
 
@@ -243,13 +243,13 @@ public class KrendelConfiguration extends KrendelEmbeddedConfig implements Toggl
                 }
 
                 @ConfigurationProperties("drop")
-                public static class DropConfiguration extends KrendelDiffConfig.Migration.Sequences.Drop {
+                public static class DropConfiguration extends SqlDiffDiffConfig.Migration.Sequences.Drop {
                 }
 
             }
 
             @ConfigurationProperties("safe")
-            public static class SafeConfiguration extends KrendelDiffConfig.Migration.Safe {
+            public static class SafeConfiguration extends SqlDiffDiffConfig.Migration.Safe {
 
                 private final AddConfiguration add;
 
@@ -263,7 +263,7 @@ public class KrendelConfiguration extends KrendelEmbeddedConfig implements Toggl
                 }
 
                 @ConfigurationProperties("add")
-                public static class AddConfiguration extends KrendelDiffConfig.Migration.Safe.Add {
+                public static class AddConfiguration extends SqlDiffDiffConfig.Migration.Safe.Add {
                 }
 
             }

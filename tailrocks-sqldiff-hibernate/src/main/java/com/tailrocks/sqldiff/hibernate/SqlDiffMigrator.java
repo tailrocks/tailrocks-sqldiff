@@ -5,10 +5,10 @@ import com.tailrocks.sqldiff.core.MigrationGenerator;
 import com.tailrocks.sqldiff.core.postgres.diff.DiffOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
-import com.tailrocks.sqldiff.model.config.KrendelDiffConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffDiffConfig;
 import com.tailrocks.sqldiff.model.config.KrendelEmbeddedConfig;
 import com.tailrocks.sqldiff.output.DbVersionControl;
-import com.tailrocks.sqldiff.output.KrendelOutput;
+import com.tailrocks.sqldiff.output.SqlDiffOutput;
 import org.hibernate.boot.Metadata;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.hibernate.tool.schema.TargetType;
@@ -32,7 +32,7 @@ import java.util.EnumSet;
 import java.util.Objects;
 import java.util.Properties;
 
-import static com.tailrocks.sqldiff.output.KrendelOutput.consolePrintln;
+import static com.tailrocks.sqldiff.output.SqlDiffOutput.consolePrintln;
 import static org.springframework.boot.ansi.AnsiOutput.encode;
 
 public class KrendelMigrator {
@@ -109,9 +109,9 @@ public class KrendelMigrator {
 
         applyHibernateDdl(hibernateDdlDumpFile);
 
-        KrendelOutput.printAppName();
+        SqlDiffOutput.printAppName();
 
-        KrendelOutput krendelOutput = new KrendelOutput(
+        SqlDiffOutput sqlDiffOutput = new SqlDiffOutput(
                 sourceJdbcUrl,
                 krendelConfiguration.getTarget().getUrl(),
                 sourceJdbcUsername,
@@ -128,12 +128,12 @@ public class KrendelMigrator {
         MigrationOptions migrationOptions = new MigrationOptions();
         fillMigrationOptions(migrationOptions, krendelConfiguration);
 
-        MigrationReport migrationReport = krendelOutput.generateMigrationReport(diffOptions, migrationOptions);
+        MigrationReport migrationReport = sqlDiffOutput.generateMigrationReport(diffOptions, migrationOptions);
 
         if (migrationGenerator != null
                 && krendelConfiguration.getMigration() != null
                 && krendelConfiguration.getMigration().getOutputPath() != null) {
-            krendelOutput.printStep("Generating migration files");
+            sqlDiffOutput.printStep("Generating migration files");
 
             migrationGenerator.generateMigrations(migrationReport);
 
@@ -211,7 +211,7 @@ public class KrendelMigrator {
 
 
     private void fillDiffOptions(DiffOptions diffOptions, KrendelEmbeddedConfig krendelProperties) {
-        KrendelDiffConfig.Ignore ignore = krendelProperties.getDiff().getIgnore();
+        SqlDiffDiffConfig.Ignore ignore = krendelProperties.getDiff().getIgnore();
 
         if (ignore.getExtensions() != null && !ignore.getExtensions().isEmpty()) {
             diffOptions.ignoreExtensions(ignore.getExtensions());
@@ -245,7 +245,7 @@ public class KrendelMigrator {
     }
 
     private void fillMigrationOptions(MigrationOptions migrationOptions, KrendelEmbeddedConfig krendelProperties) {
-        KrendelDiffConfig.Migration migration = krendelProperties.getDiff().getMigration();
+        SqlDiffDiffConfig.Migration migration = krendelProperties.getDiff().getMigration();
 
         migrationOptions.setDropTableIfExists(migration.getTables().getDrop().isIfExists());
 

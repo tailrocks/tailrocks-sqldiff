@@ -1,10 +1,10 @@
 package com.tailrocks.sqldiff.spring.boot.autoconfigure;
 
-import com.tailrocks.sqldiff.model.config.KrendelDiffConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffDiffConfig;
 import com.tailrocks.sqldiff.model.config.KrendelEmbeddedConfig;
 import com.tailrocks.sqldiff.model.config.KrendelFlywayConfig;
 import com.tailrocks.sqldiff.model.config.KrendelMigrationConfig;
-import com.tailrocks.sqldiff.model.config.KrendelMigrationMetadataConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffMigrationMetadataConfig;
 import com.tailrocks.sqldiff.model.config.KrendelTargetConfig;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
@@ -60,12 +60,12 @@ public class KrendelProperties extends KrendelEmbeddedConfig {
             return metadata;
         }
 
-        public static class Metadata extends KrendelMigrationMetadataConfig {
+        public static class Metadata extends SqlDiffMigrationMetadataConfig {
         }
 
     }
 
-    public static class Diff extends KrendelDiffConfig {
+    public static class Diff extends SqlDiffDiffConfig {
 
         @NestedConfigurationProperty
         private final Ignore ignore = new Ignore();
@@ -83,10 +83,10 @@ public class KrendelProperties extends KrendelEmbeddedConfig {
             return migration;
         }
 
-        public static class Ignore extends KrendelDiffConfig.Ignore {
+        public static class Ignore extends SqlDiffDiffConfig.Ignore {
         }
 
-        public static class Migration extends KrendelDiffConfig.Migration {
+        public static class Migration extends SqlDiffDiffConfig.Migration {
 
             @NestedConfigurationProperty
             private final Tables tables = new Tables();
@@ -128,7 +128,7 @@ public class KrendelProperties extends KrendelEmbeddedConfig {
                 return safe;
             }
 
-            public static class Tables extends KrendelDiffConfig.Migration.Tables {
+            public static class Tables extends SqlDiffDiffConfig.Migration.Tables {
 
                 @NestedConfigurationProperty
                 private final Drop drop = new Drop();
@@ -138,12 +138,12 @@ public class KrendelProperties extends KrendelEmbeddedConfig {
                     return drop;
                 }
 
-                public static class Drop extends KrendelDiffConfig.Migration.Tables.Drop {
+                public static class Drop extends SqlDiffDiffConfig.Migration.Tables.Drop {
                 }
 
             }
 
-            public static class Columns extends KrendelDiffConfig.Migration.Columns {
+            public static class Columns extends SqlDiffDiffConfig.Migration.Columns {
 
                 @NestedConfigurationProperty
                 private final Add add = new Add();
@@ -161,15 +161,15 @@ public class KrendelProperties extends KrendelEmbeddedConfig {
                     return drop;
                 }
 
-                public static class Add extends KrendelDiffConfig.Migration.Columns.Add {
+                public static class Add extends SqlDiffDiffConfig.Migration.Columns.Add {
                 }
 
-                public static class Drop extends KrendelDiffConfig.Migration.Columns.Drop {
+                public static class Drop extends SqlDiffDiffConfig.Migration.Columns.Drop {
                 }
 
             }
 
-            public static class Indexes extends KrendelDiffConfig.Migration.Indexes {
+            public static class Indexes extends SqlDiffDiffConfig.Migration.Indexes {
 
                 @NestedConfigurationProperty
                 private final Create create = new Create();
@@ -187,14 +187,14 @@ public class KrendelProperties extends KrendelEmbeddedConfig {
                     return drop;
                 }
 
-                public static class Create extends KrendelDiffConfig.Migration.Indexes.Create {
+                public static class Create extends SqlDiffDiffConfig.Migration.Indexes.Create {
                 }
 
-                public static class Drop extends KrendelDiffConfig.Migration.Indexes.Drop {
+                public static class Drop extends SqlDiffDiffConfig.Migration.Indexes.Drop {
                 }
             }
 
-            public static class Sequences extends KrendelDiffConfig.Migration.Sequences {
+            public static class Sequences extends SqlDiffDiffConfig.Migration.Sequences {
 
                 @NestedConfigurationProperty
                 private final Drop drop = new Drop();
@@ -204,12 +204,12 @@ public class KrendelProperties extends KrendelEmbeddedConfig {
                     return drop;
                 }
 
-                public static class Drop extends KrendelDiffConfig.Migration.Sequences.Drop {
+                public static class Drop extends SqlDiffDiffConfig.Migration.Sequences.Drop {
                 }
 
             }
 
-            public static class Safe extends KrendelDiffConfig.Migration.Safe {
+            public static class Safe extends SqlDiffDiffConfig.Migration.Safe {
 
                 @NestedConfigurationProperty
                 private final Add add = new Add();
@@ -219,7 +219,7 @@ public class KrendelProperties extends KrendelEmbeddedConfig {
                     return add;
                 }
 
-                public static class Add extends KrendelDiffConfig.Migration.Safe.Add {
+                public static class Add extends SqlDiffDiffConfig.Migration.Safe.Add {
                 }
 
             }

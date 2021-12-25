@@ -28,6 +28,6 @@ public abstract class KrendelMigrationConfig {
         this.cleanOutputPath = cleanOutputPath;
     }
 
-    public abstract KrendelMigrationMetadataConfig getMetadata();
+    public abstract SqlDiffMigrationMetadataConfig getMetadata();
 
 }

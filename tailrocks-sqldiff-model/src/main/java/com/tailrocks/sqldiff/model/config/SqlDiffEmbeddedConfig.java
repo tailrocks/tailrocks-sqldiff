@@ -48,6 +48,6 @@ public abstract class KrendelEmbeddedConfig {
 
     public abstract KrendelMigrationConfig getMigration();
 
-    public abstract KrendelDiffConfig getDiff();
+    public abstract SqlDiffDiffConfig getDiff();
 
 }
