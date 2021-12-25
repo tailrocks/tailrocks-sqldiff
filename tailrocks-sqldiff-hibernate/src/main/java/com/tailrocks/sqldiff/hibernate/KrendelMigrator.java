@@ -1,4 +1,4 @@
-package com.scentbird.krendel.hibernate;
+package com.tailrocks.sqldiff.hibernate;
 
 import com.tailrocks.sqldiff.core.KrendelCleaner;
 import com.tailrocks.sqldiff.core.MigrationGenerator;

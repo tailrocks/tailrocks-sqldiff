@@ -1,4 +1,4 @@
-package com.scentbird.krendel.hibernate;
+package com.tailrocks.sqldiff.hibernate;
 
 public class DataSourceConfig {
 
