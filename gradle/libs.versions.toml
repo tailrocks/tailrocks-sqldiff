@@ -1,0 +1,7 @@
+[versions]
+grpc = "1.2.3"
+
+
+[libraries]
+# BOMs
+boms-grpc = { module = "io.grpc:grpc-bom", version.ref = "grpc" }

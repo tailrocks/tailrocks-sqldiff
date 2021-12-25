@@ -1,5 +1,5 @@
 plugins {
-    `java-library`
+    id("maven-publish-conventions")
 }
 
 description = "tailrocks-sqldiff Embedded"

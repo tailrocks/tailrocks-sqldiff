@@ -1,32 +1,15 @@
 object Versions {
 
-    // Languages
-
-    const val kotlin = "1.3.72"
-
     // Gradle plugins
-
-    // https://plugins.gradle.org/plugin/com.github.ben-manes.versions
-    const val gradleVersionsPlugin = "0.28.0"
 
     // https://plugins.gradle.org/plugin/com.adarshr.test-logger
     const val gradleTestLoggerPlugin = "2.1.0"
-
-    // https://plugins.gradle.org/plugin/net.rdrei.android.buildtimetracker
-    const val gradleBuildTimeTrackerPlugin = "0.11.0"
-
-    // https://plugins.gradle.org/plugin/com.jfrog.artifactory
-    const val gradleArtifactoryPlugin = "4.16.1"
-
-    // https://plugins.gradle.org/plugin/io.spring.dependency-management
-    const val gradleSpringDependencyManagement = "1.0.10.RELEASE"
 
     // https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow
     const val gradleShadowPlugin = "6.1.0"
 
     // Libraries
 
-    const val springBoot = "2.4.2"
     const val micronaut = "2.2.3"
 
     const val jetBrainsAnnotations = "19.0.0"

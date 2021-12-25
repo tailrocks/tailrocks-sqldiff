@@ -1,5 +1,5 @@
 plugins {
-    `java-library`
+    id("maven-publish-conventions")
 }
 
 description = "tailrocks-sqldiff Micronaut"
@@ -27,12 +27,14 @@ dependencies {
 
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
-    options.compilerArgs.addAll(listOf(
+    options.compilerArgs.addAll(
+        listOf(
             "-parameters",
             // enables incremental compilation
             "-Amicronaut.processing.incremental=true",
             "-Amicronaut.processing.annotations=com.scentbird.krendel.*",
             "-Amicronaut.processing.group=${project.group}",
             "-Amicronaut.processing.module=${project.name}"
-    ))
+        )
+    )
 }

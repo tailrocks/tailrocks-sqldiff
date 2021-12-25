@@ -1,14 +1,6 @@
-import io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension
-
 plugins {
-    `java-library`
-    id("io.spring.dependency-management")
-}
-
-the<DependencyManagementExtension>().apply {
-    imports {
-        mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
-    }
+    id("maven-publish-conventions")
+    id("spring-conventions")
 }
 
 description = "Starter for using tailrocks-sqldiff"

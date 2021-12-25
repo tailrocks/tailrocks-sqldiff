@@ -1,7 +1,7 @@
 plugins {
-    `java-library`
-    kotlin("jvm")
     id("com.adarshr.test-logger")
+    id("maven-publish-conventions")
+    kotlin("jvm")
 }
 
 dependencies {

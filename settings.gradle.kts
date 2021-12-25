@@ -1,3 +1,15 @@
+apply(from = File(settingsDir, "gradle/repositoriesSettings.gradle.kts"))
+
+enableFeaturePreview("VERSION_CATALOGS")
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        create("sqldiffLibs") {
+            from(files("gradle/libs.versions.toml"))
+        }
+    }
+}
+
 rootProject.name = "tailrocks-sqldiff"
 
 include(

@@ -1,18 +1,14 @@
 plugins {
     `kotlin-dsl`
-    idea
 }
 
-repositories {
-    mavenLocal()
-    gradlePluginPortal()
-    jcenter()
-    mavenCentral()
-}
-
-idea {
-    module {
-        isDownloadJavadoc = false
-        isDownloadSources = false
-    }
+dependencies {
+    // https://plugins.gradle.org/plugin/com.github.ben-manes.versions
+    implementation("com.github.ben-manes:gradle-versions-plugin:0.39.0")
+    // https://plugins.gradle.org/plugin/io.spring.dependency-management
+    implementation("io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE")
+    // https://plugins.gradle.org/plugin/org.springframework.boot
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.6.2")
+    // https://plugins.gradle.org/plugin/org.jetbrains.kotlin.jvm
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.32")
 }
