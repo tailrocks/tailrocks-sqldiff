@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":krendel-spring-boot-starter"))
+    implementation(project(":tailrocks-sqldiff-spring-boot-starter"))
 
     // Import the data module with all JPA entities.
     implementation(project(":samples:spring-boot-krendel-best-practice-example:data"))

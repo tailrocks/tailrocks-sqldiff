@@ -6,7 +6,7 @@ description = "Krendel Micronaut"
 
 dependencies {
     // subprojects
-    api(project(":krendel-hibernate"))
+    api(project(":tailrocks-sqldiff-hibernate"))
 
     // Micronaut
     annotationProcessor(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))

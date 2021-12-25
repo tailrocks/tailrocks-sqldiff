@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":krendel-micronaut"))
+    implementation(project(":tailrocks-sqldiff-micronaut"))
 
     // Import the data module with all JPA entities.
     implementation(project(":samples:micronaut-krendel-best-practice-example:data"))

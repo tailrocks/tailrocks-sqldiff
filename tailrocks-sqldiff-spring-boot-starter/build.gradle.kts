@@ -14,6 +14,6 @@ the<DependencyManagementExtension>().apply {
 description = "Starter for using Krendel"
 
 dependencies {
-    api(project(":krendel-core"))
-    api(project(":krendel-spring-boot-autoconfigure"))
+    api(project(":tailrocks-sqldiff-core"))
+    api(project(":tailrocks-sqldiff-spring-boot-autoconfigure"))
 }

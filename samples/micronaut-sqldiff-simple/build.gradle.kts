@@ -7,7 +7,7 @@ plugins {
 
 dependencies {
     // subprojects
-    implementation(project(":krendel-micronaut"))
+    implementation(project(":tailrocks-sqldiff-micronaut"))
 
     // Micronaut
     annotationProcessor(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))

@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    api(project(":krendel-core"))
-    api(project(":krendel-model"))
+    api(project(":tailrocks-sqldiff-core"))
+    api(project(":tailrocks-sqldiff-model"))
     api("io.projectreactor:reactor-core:3.3.4.RELEASE")
     api("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.11.0")
 

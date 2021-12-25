@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    api(project(":krendel-core"))
-    api(project(":krendel-output"))
+    api(project(":tailrocks-sqldiff-core"))
+    api(project(":tailrocks-sqldiff-output"))
 
     // Flyway
     compileOnly("org.flywaydb:flyway-core:${Versions.flyway}")

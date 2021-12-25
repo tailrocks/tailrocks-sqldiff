@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    api(project(":krendel-model"))
+    api(project(":tailrocks-sqldiff-model"))
 
     // Kotlin
     testImplementation(kotlin("stdlib-jdk8"))

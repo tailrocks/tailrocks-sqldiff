@@ -13,8 +13,8 @@ repositories {
 
 dependencies {
     // subprojects
-    implementation(project(":krendel-output"))
-    implementation(project(":krendel-flyway"))
+    implementation(project(":tailrocks-sqldiff-output"))
+    implementation(project(":tailrocks-sqldiff-flyway"))
 
     annotationProcessor(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))
     annotationProcessor("io.micronaut:micronaut-graal")

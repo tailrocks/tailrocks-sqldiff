@@ -14,7 +14,7 @@ the<DependencyManagementExtension>().apply {
 description = "Krendel AutoConfigure"
 
 dependencies {
-    api(project(":krendel-hibernate"))
+    api(project(":tailrocks-sqldiff-hibernate"))
 
     api("org.springframework.boot:spring-boot-autoconfigure")
     annotationProcessor("org.springframework.boot:spring-boot-autoconfigure-processor")

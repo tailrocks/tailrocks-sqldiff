@@ -5,8 +5,8 @@ plugins {
 description = "Krendel Embedded"
 
 dependencies {
-    api(project(":krendel-output"))
-    api(project(":krendel-flyway"))
+    api(project(":tailrocks-sqldiff-output"))
+    api(project(":tailrocks-sqldiff-flyway"))
 
     implementation("org.hibernate:hibernate-core:${Versions.hibernate}")
 }
