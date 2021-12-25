@@ -1,4 +1,4 @@
-package com.scentbird.krendel.output;
+package com.tailrocks.sqldiff.output;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;

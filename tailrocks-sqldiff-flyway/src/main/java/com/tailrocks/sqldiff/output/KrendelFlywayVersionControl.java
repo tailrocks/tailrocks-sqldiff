@@ -1,4 +1,4 @@
-package com.scentbird.krendel.output;
+package com.tailrocks.sqldiff.output;
 
 import com.scentbird.krendel.model.config.KrendelEmbeddedConfig;
 import org.apache.commons.lang3.StringUtils;

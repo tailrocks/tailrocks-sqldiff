@@ -1,4 +1,4 @@
-package com.scentbird.krendel.output;
+package com.tailrocks.sqldiff.output;
 
 public interface DbVersionControl {
 

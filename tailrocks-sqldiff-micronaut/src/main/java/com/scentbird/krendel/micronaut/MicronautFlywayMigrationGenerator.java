@@ -2,7 +2,7 @@ package com.scentbird.krendel.micronaut;
 
 import com.tailrocks.sqldiff.core.MigrationGenerator;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
-import com.scentbird.krendel.output.FlywayMigrationGenerator;
+import com.tailrocks.sqldiff.output.FlywayMigrationGenerator;
 import io.micronaut.configuration.jdbc.hikari.DatasourceConfiguration;
 import io.micronaut.context.annotation.Requires;
 import org.flywaydb.core.Flyway;

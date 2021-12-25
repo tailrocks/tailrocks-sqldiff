@@ -1,6 +1,6 @@
 package com.scentbird.krendel.micronaut;
 
-import com.scentbird.krendel.output.KrendelFlywayVersionControl;
+import com.tailrocks.sqldiff.output.KrendelFlywayVersionControl;
 import io.micronaut.configuration.jdbc.hikari.DatasourceConfiguration;
 import io.micronaut.context.annotation.Requires;
 import org.flywaydb.core.Flyway;

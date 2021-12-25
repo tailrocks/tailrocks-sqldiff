@@ -7,7 +7,7 @@ import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
 import com.scentbird.krendel.model.config.KrendelDiffConfig;
 import com.scentbird.krendel.model.config.KrendelEmbeddedConfig;
-import com.scentbird.krendel.output.DbVersionControl;
+import com.tailrocks.sqldiff.output.DbVersionControl;
 import com.scentbird.krendel.output.KrendelOutput;
 import org.hibernate.boot.Metadata;
 import org.hibernate.tool.hbm2ddl.SchemaExport;

@@ -8,7 +8,7 @@ import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
 import com.scentbird.krendel.model.config.KrendelDiffConfig;
 import com.scentbird.krendel.output.KrendelStandardConfig;
 import com.scentbird.krendel.model.config.KrendelMigrationMetadataConfig;
-import com.scentbird.krendel.output.FlywayMigrationGenerator;
+import com.tailrocks.sqldiff.output.FlywayMigrationGenerator;
 import com.scentbird.krendel.output.KrendelOutput;
 import org.springframework.boot.ansi.AnsiColor;
 import org.springframework.boot.ansi.AnsiStyle;

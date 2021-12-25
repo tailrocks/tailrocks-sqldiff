@@ -2,7 +2,7 @@ package com.scentbird.krendel.micronaut;
 
 import com.tailrocks.sqldiff.core.MigrationGenerator;
 import com.scentbird.krendel.hibernate.DataSourceConfig;
-import com.scentbird.krendel.output.DbVersionControl;
+import com.tailrocks.sqldiff.output.DbVersionControl;
 import com.scentbird.krendel.hibernate.KrendelMigrator;
 import io.micronaut.configuration.jdbc.hikari.DatasourceConfiguration;
 import io.micronaut.context.annotation.Requires;
