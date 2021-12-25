@@ -1,0 +1,3 @@
+CREATE TABLE posts (
+    content CHARACTER VARYING(255)
+);

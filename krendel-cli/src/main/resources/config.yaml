@@ -1,0 +1,8 @@
+diff:
+  ignore:
+    sequences: []
+    tables: []
+    indexes: []
+    constraints: []
+    columns: []
+    views: []

@@ -1,0 +1,18 @@
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/orm/hbm">
+    <database-object>
+        <definition class="krendel.spring.boot.advanced.sample.data.hibernate.EnumsQueries"/>
+        <dialect-scope name="com.scentbird.hurma.hibernate.PostgreSQL10HurmaDialect"/>
+    </database-object>
+    <database-object>
+        <definition class="krendel.spring.boot.advanced.sample.data.hibernate.ExtraBeforeQueries"/>
+        <dialect-scope name="com.scentbird.hurma.hibernate.PostgreSQL10HurmaDialect"/>
+    </database-object>
+    <database-object>
+        <definition class="krendel.spring.boot.advanced.sample.data.hibernate.ExtraAfterQueries"/>
+        <dialect-scope name="com.scentbird.hurma.hibernate.PostgreSQL10HurmaDialect"/>
+    </database-object>
+    <database-object>
+        <definition class="com.scentbird.hurma.hibernate.PostgreSQLCommentsDatabaseObject"/>
+        <dialect-scope name="com.scentbird.hurma.hibernate.PostgreSQL10HurmaDialect"/>
+    </database-object>
+</hibernate-mapping>

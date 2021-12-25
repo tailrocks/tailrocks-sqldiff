@@ -1,0 +1,22 @@
+package com.scentbird.krendel.core.postgres.migration.statement.alter.sequence;
+
+import com.scentbird.krendel.core.postgres.migration.statement.Statement;
+import com.scentbird.krendel.core.postgres.model.PgSequence;
+
+/**
+ * @author Efim Matytsin
+ */
+public class AlterSequence implements Statement {
+    private final PgSequence pgSequence;
+    private final AlterSequenceAction alterSequenceAction;
+
+    public AlterSequence(PgSequence pgSequence, AlterSequenceAction alterSequenceAction) {
+        this.pgSequence = pgSequence;
+        this.alterSequenceAction = alterSequenceAction;
+    }
+
+    @Override
+    public String getQuery() {
+        return "ALTER SEQUENCE \"" + pgSequence.getName() + "\" "+ alterSequenceAction.getQuery() + ";";
+    }
+}

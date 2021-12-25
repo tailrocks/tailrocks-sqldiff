@@ -1,0 +1,62 @@
+plugins {
+    id "com.github.johnrengelman.shadow"
+    id "application"
+}
+
+version "0.1"
+group "com.scentbird.krendel.cli"
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    // subprojects
+    implementation(project(":krendel-output"))
+    implementation(project(":krendel-flyway"))
+
+    annotationProcessor(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))
+    annotationProcessor("io.micronaut:micronaut-graal")
+    annotationProcessor("info.picocli:picocli-codegen:${Versions.picocli}")
+    compileOnly(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))
+    compileOnly("org.graalvm.nativeimage:svm")
+    implementation(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))
+    implementation("info.picocli:picocli")
+    implementation("io.micronaut.picocli:micronaut-picocli")
+    runtimeOnly("ch.qos.logback:logback-classic")
+    implementation("org.postgresql:postgresql") {
+        version {
+            strictly Versions.postgresql
+        }
+    }
+}
+
+mainClassName = "com.scentbird.krendel.cli.command.KrendelCommand"
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+    options.compilerArgs.addAll([
+            '-parameters',
+            // enables incremental compilation
+            '-Amicronaut.processing.incremental=true',
+            '-Amicronaut.processing.annotations=com.scentbird.krendel.cli.*',
+            "-Amicronaut.processing.group=$project.group",
+            "-Amicronaut.processing.module=$project.name",
+    ])
+}
+
+shadowJar {
+    mergeServiceFiles()
+}
+
+tasks.withType(JavaExec) {
+    jvmArgs('-XX:TieredStopAtLevel=1', '-Dcom.sun.management.jmxremote')
+    if (gradle.startParameter.continuous) {
+        systemProperties(
+                'micronaut.io.watch.restart': 'true',
+                'micronaut.io.watch.enabled': 'true',
+                "micronaut.io.watch.paths": "src/main"
+        )
+    }
+}

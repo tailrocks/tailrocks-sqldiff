@@ -1,0 +1,23 @@
+micronaut:
+  application:
+    name: micronaut-krendel-advanced-example
+datasources:
+  default:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/krendel_micronaut_advanced_demo
+    username: postgres
+    password: root
+jpa:
+  default:
+    packages-to-scan:
+      - 'krendel.example.micronaut.advanced.data.domain'
+    properties:
+      hibernate:
+        physical_naming_strategy: com.vladmihalcea.hibernate.type.util.CamelCaseToSnakeCaseNamingStrategy
+        hbm2ddl:
+          auto: none
+          halt_on_error: true
+flyway:
+  datasources:
+    default:
+      enabled: true

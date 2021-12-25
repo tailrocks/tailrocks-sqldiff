@@ -1,0 +1,39 @@
+debug: false
+
+spring:
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/krendel_demo_simple
+    username: postgres
+    password: root
+    platform: postgresql
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        hbm2ddl:
+          halt_on_error: true
+
+krendel:
+  enabled: true
+  exit-after-finish: false
+  target:
+    url: jdbc:postgresql://127.0.0.1:5432/krendel_demo_simple_target
+    username: postgres
+    password: root
+
+---
+spring:
+  profiles: testcontainers
+  datasource:
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    url: jdbc:tc:postgresql:10.13-alpine:///krendel_demo_simple?TC_DAEMON=true
+
+krendel:
+  target:
+    url: jdbc:tc:postgresql:10.13-alpine:///krendel_demo_simple_target?TC_DAEMON=true

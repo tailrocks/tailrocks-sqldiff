@@ -1,0 +1,93 @@
+debug: false
+
+spring:
+  main:
+    banner-mode: "off"
+  output:
+    ansi:
+      enabled: always
+  jpa:
+    mapping-resources: hibernate/custom.hbm.xml
+    database-platform: com.scentbird.hurma.hibernate.PostgreSQL10HurmaDialect
+    hibernate:
+      ddl-auto: none
+
+krendel:
+  enabled: true
+  hibernate-ddl-dump-file: ./krendel-output/hibernate-schema.sql
+  target:
+    url: jdbc:postgresql://127.0.0.1:5432/krendel_demo_best_practice_target
+    username: postgres
+    password: root
+  migration:
+    output-path: ./krendel-output/flyway-migrations
+    clean-output-path: true
+#    metadata:
+#      file-path: /tmp/table_sizes.csv
+#      rows-count-threshold: 100000
+  flyway:
+    url: jdbc:postgresql://127.0.0.1:5432/krendel_demo_best_practice_migrations
+    username: postgres
+    password: root
+  diff:
+    ignore:
+      # example of using ignore config
+      extensions:
+        - pg_stat_statements
+      enums:
+        - test_enum
+      tables:
+        - flyway_schema_history
+      sequences:
+        - test_sequence
+      indexes:
+        - test_index
+      constraints:
+        - test_constraint
+      views:
+        - test_view
+      columns:
+        - account:
+            - test_column
+      columnsDefaultValue:
+        - account:
+            - username
+    migration:
+      tables:
+        drop:
+          ifExists: true
+      columns:
+        add:
+          ifNotExists: true
+        drop:
+          ifExists: true
+      indexes:
+        create:
+          ifNotExists: true
+          concurrently: true
+        drop:
+          ifExists: true
+          concurrently: true
+      sequences:
+        drop:
+          ifExists: true
+      safe:
+        add:
+          defaultColumns: true
+          notNullColumns: true
+          foreignKeys: true
+      ignoreHint: true
+    foreignKeyCompareMethod: references
+
+---
+spring:
+  profiles: testcontainers
+  datasource:
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    url: jdbc:tc:postgresql:10.13-alpine:///krendel_demo_best_practice?TC_DAEMON=true
+
+krendel:
+  target:
+    url: jdbc:tc:postgresql:10.13-alpine:///krendel_demo_best_practice_target?TC_DAEMON=true
+  flyway:
+    url: jdbc:tc:postgresql:10.13-alpine:///krendel_demo_best_practice_migrations?TC_DAEMON=true

@@ -1,0 +1,89 @@
+micronaut:
+  application:
+    name: micronaut-krendel-advanced-example
+datasources:
+  default:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/krendel_micronaut_advanced_demo
+    username: postgres
+    password: root
+jpa:
+  default:
+    packages-to-scan:
+      - 'krendel.example.micronaut.advanced.data.domain'
+    mapping-resources: hibernate/custom.hbm.xml
+    properties:
+      hibernate:
+        dialect: com.scentbird.hurma.hibernate.PostgreSQL10HurmaDialect
+        physical_naming_strategy: com.vladmihalcea.hibernate.type.util.CamelCaseToSnakeCaseNamingStrategy
+        hbm2ddl:
+          auto: none
+          halt_on_error: true
+flyway:
+  datasources:
+    default:
+      enabled: true
+
+krendel:
+  enabled: true
+  hibernate-ddl-dump-file: ./krendel-output/hibernate-schema.sql
+  target:
+    url: jdbc:postgresql://127.0.0.1:5432/krendel_micronaut_advanced_demo_target
+    username: postgres
+    password: root
+  migration:
+    output-path: ./krendel-output/flyway-migrations
+    clean-output-path: true
+  flyway:
+    url: jdbc:postgresql://127.0.0.1:5432/krendel_micronaut_advanced_demo_migrations
+    username: postgres
+    password: root
+  diff:
+    ignore:
+      # example of using ignore config
+      extensions:
+        - pg_stat_statements
+      enums:
+        - test_enum
+      tables:
+        - flyway_schema_history
+      sequences:
+        - test_sequence
+      indexes:
+        - test_index
+      constraints:
+        - test_constraint
+      views:
+        - test_view
+      columns:
+        - account:
+            - test_column
+      columnsDefaultValue:
+        - account:
+            - username
+    migration:
+      tables:
+        drop:
+          ifExists: true
+      columns:
+        add:
+          ifNotExists: true
+        drop:
+          ifExists: true
+      indexes:
+        create:
+          ifNotExists: true
+          concurrently: true
+        drop:
+          ifExists: true
+          concurrently: true
+      sequences:
+        drop:
+          ifExists: true
+      safe:
+        add:
+          defaultColumns: true
+          notNullColumns: true
+          foreignKeys: true
+      ignoreHint: true
+    foreignKeyCompareMethod: references

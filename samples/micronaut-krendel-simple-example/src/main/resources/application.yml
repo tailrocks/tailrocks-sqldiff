@@ -1,0 +1,21 @@
+micronaut:
+  application:
+    name: micronaut-krendel-simple-example
+datasources:
+  default:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/krendel_demo_simple
+    username: postgres
+    password: root
+# TODO override
+#jpa.default.properties.hibernate.hbm2ddl.auto: validate
+jpa.default.properties.hibernate.hbm2ddl.auto: none
+jpa.default.properties.hibernate.hbm2ddl.halt_on_error: true
+
+krendel:
+  enabled: true
+  exit-after-finish: false
+  target:
+    url: jdbc:postgresql://127.0.0.1:5432/krendel_demo_simple_target
+    username: postgres
+    password: root

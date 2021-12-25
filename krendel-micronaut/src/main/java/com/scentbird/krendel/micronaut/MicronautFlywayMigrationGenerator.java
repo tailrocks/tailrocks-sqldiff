@@ -1,0 +1,42 @@
+package com.scentbird.krendel.micronaut;
+
+import com.scentbird.krendel.core.MigrationGenerator;
+import com.scentbird.krendel.core.postgres.migration.MigrationReport;
+import com.scentbird.krendel.output.FlywayMigrationGenerator;
+import io.micronaut.configuration.jdbc.hikari.DatasourceConfiguration;
+import io.micronaut.context.annotation.Requires;
+import org.flywaydb.core.Flyway;
+
+import javax.inject.Singleton;
+import java.util.Collections;
+
+@Singleton
+@Requires(beans = Flyway.class)
+public class MicronautFlywayMigrationGenerator implements MigrationGenerator {
+
+    private final KrendelConfiguration krendelConfiguration;
+    private final DatasourceConfiguration datasourceConfiguration;
+    private final Flyway flyway;
+
+    public MicronautFlywayMigrationGenerator(KrendelConfiguration krendelConfiguration,
+                                             DatasourceConfiguration datasourceConfiguration,
+                                             Flyway flyway) {
+        this.krendelConfiguration = krendelConfiguration;
+        this.datasourceConfiguration = datasourceConfiguration;
+        this.flyway = flyway;
+    }
+
+    @Override
+    public void generateMigrations(MigrationReport report) throws Exception {
+        new FlywayMigrationGenerator(
+                datasourceConfiguration.getUrl(),
+                datasourceConfiguration.getUsername(),
+                datasourceConfiguration.getPassword(),
+                Collections.singletonList(flyway),
+                krendelConfiguration.getMigration().getMetadata(),
+                krendelConfiguration.getMigration().getOutputPath(),
+                krendelConfiguration.getMigration().isCleanOutputPath()
+        ).generateMigrations(report);
+    }
+
+}

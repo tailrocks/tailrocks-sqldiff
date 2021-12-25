@@ -1,0 +1,4 @@
+CREATE TABLE test_table (
+    id            BIGINT                      NOT NULL,
+    modified_date TIMESTAMP WITHOUT TIME ZONE NOT NULL
+);

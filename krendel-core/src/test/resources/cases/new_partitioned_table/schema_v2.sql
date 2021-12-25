@@ -1,0 +1,13 @@
+CREATE TABLE "huge_table" (
+    id   BIGINT NOT NULL,
+    line TEXT   NOT NULL
+) PARTITION BY RANGE (id);
+
+CREATE TABLE huge_table_01 PARTITION OF huge_table
+    FOR VALUES FROM (1) TO (200000);
+
+CREATE TABLE huge_table_02 PARTITION OF huge_table
+    FOR VALUES FROM (200000) TO (400000);
+
+CREATE TABLE huge_table_03 PARTITION OF huge_table
+    FOR VALUES FROM (400000) TO (600000);

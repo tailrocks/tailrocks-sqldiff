@@ -1,0 +1,7 @@
+# override some configuration here
+debug: false
+
+spring:
+  output:
+    ansi:
+      enabled: always
