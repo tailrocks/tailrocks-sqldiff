@@ -6,7 +6,7 @@ dependencies {
     implementation(project(":tailrocks-sqldiff-micronaut"))
 
     // Import the data module with all JPA entities.
-    implementation(project(":samples:micronaut-krendel-best-practice-example:data"))
+    implementation(project(":samples:micronaut-best-practice:data"))
 
     // Testcontainers
     implementation(platform("org.testcontainers:testcontainers-bom:${Versions.testcontainers}"))

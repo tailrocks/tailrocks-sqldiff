@@ -6,7 +6,7 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":samples:micronaut-krendel-best-practice-example:data"))
+    implementation(project(":samples:micronaut-best-practice:data"))
 
     // Micronaut
     annotationProcessor(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))

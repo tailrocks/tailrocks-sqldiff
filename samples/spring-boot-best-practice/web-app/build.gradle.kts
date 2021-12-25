@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":samples:spring-boot-krendel-best-practice-example:data"))
+    implementation(project(":samples:spring-boot-best-practice:data"))
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
