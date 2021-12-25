@@ -4,7 +4,7 @@ micronaut:
 datasources:
   default:
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://127.0.0.1:5432/krendel_micronaut_advanced_demo
+    url: jdbc:postgresql://127.0.0.1:5432/sqldiff_micronaut_best_practice
     username: postgres
     password: root
 jpa:
@@ -28,14 +28,14 @@ krendel:
   enabled: true
   hibernate-ddl-dump-file: ./krendel-output/hibernate-schema.sql
   target:
-    url: jdbc:postgresql://127.0.0.1:5432/krendel_micronaut_advanced_demo_target
+    url: jdbc:postgresql://127.0.0.1:5432/sqldiff_micronaut_best_practice_target
     username: postgres
     password: root
   migration:
     output-path: ./krendel-output/flyway-migrations
     clean-output-path: true
   flyway:
-    url: jdbc:postgresql://127.0.0.1:5432/krendel_micronaut_advanced_demo_migrations
+    url: jdbc:postgresql://127.0.0.1:5432/sqldiff_micronaut_best_practice_migrations
     username: postgres
     password: root
   diff:

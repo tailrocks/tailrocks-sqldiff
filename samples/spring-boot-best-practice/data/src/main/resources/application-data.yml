@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://127.0.0.1:5432/krendel_demo_best_practice
+    url: jdbc:postgresql://127.0.0.1:5432/sqldiff_spring_boot_best_practice
     username: postgres
     password: root
     platform: postgresql
