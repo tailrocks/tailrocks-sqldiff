@@ -38,7 +38,7 @@ import java.util.stream.Collectors;
 import static com.tailrocks.sqldiff.core.util.KrendelUtils.getQuery;
 import static com.tailrocks.sqldiff.core.util.KrendelUtils.readResource;
 import static com.tailrocks.sqldiff.core.util.KrendelUtils.removeQuotes;
-import static com.scentbird.krendel.output.KrendelOutput.consolePrintln;
+import static com.tailrocks.sqldiff.output.KrendelOutput.consolePrintln;
 import static java.lang.System.out;
 
 public class FlywayMigrationGenerator implements MigrationGenerator {

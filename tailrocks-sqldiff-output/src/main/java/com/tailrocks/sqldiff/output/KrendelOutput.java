@@ -1,4 +1,4 @@
-package com.scentbird.krendel.output;
+package com.tailrocks.sqldiff.output;
 
 import com.tailrocks.sqldiff.core.postgres.SchemaReader;
 import com.tailrocks.sqldiff.core.postgres.diff.Diff;

@@ -8,7 +8,7 @@ import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
 import com.tailrocks.sqldiff.model.config.KrendelDiffConfig;
 import com.tailrocks.sqldiff.model.config.KrendelEmbeddedConfig;
 import com.tailrocks.sqldiff.output.DbVersionControl;
-import com.scentbird.krendel.output.KrendelOutput;
+import com.tailrocks.sqldiff.output.KrendelOutput;
 import org.hibernate.boot.Metadata;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.hibernate.tool.schema.TargetType;
@@ -32,7 +32,7 @@ import java.util.EnumSet;
 import java.util.Objects;
 import java.util.Properties;
 
-import static com.scentbird.krendel.output.KrendelOutput.consolePrintln;
+import static com.tailrocks.sqldiff.output.KrendelOutput.consolePrintln;
 import static org.springframework.boot.ansi.AnsiOutput.encode;
 
 public class KrendelMigrator {

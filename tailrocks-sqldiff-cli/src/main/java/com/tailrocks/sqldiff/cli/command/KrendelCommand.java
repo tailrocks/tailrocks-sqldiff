@@ -1,6 +1,6 @@
 package com.tailrocks.sqldiff.cli.command;
 
-import com.scentbird.krendel.output.KrendelOutput;
+import com.tailrocks.sqldiff.output.KrendelOutput;
 import io.micronaut.configuration.picocli.PicocliRunner;
 import picocli.CommandLine.Command;
 

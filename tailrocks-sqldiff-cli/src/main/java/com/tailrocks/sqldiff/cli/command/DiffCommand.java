@@ -6,10 +6,10 @@ import com.tailrocks.sqldiff.core.postgres.diff.DiffOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
 import com.tailrocks.sqldiff.model.config.KrendelDiffConfig;
-import com.scentbird.krendel.output.KrendelStandardConfig;
+import com.tailrocks.sqldiff.output.KrendelStandardConfig;
 import com.tailrocks.sqldiff.model.config.KrendelMigrationMetadataConfig;
 import com.tailrocks.sqldiff.output.FlywayMigrationGenerator;
-import com.scentbird.krendel.output.KrendelOutput;
+import com.tailrocks.sqldiff.output.KrendelOutput;
 import org.springframework.boot.ansi.AnsiColor;
 import org.springframework.boot.ansi.AnsiStyle;
 import picocli.CommandLine.Command;
@@ -21,7 +21,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.concurrent.Callable;
 
-import static com.scentbird.krendel.output.KrendelOutput.consolePrintln;
+import static com.tailrocks.sqldiff.output.KrendelOutput.consolePrintln;
 import static org.springframework.boot.ansi.AnsiOutput.encode;
 
 @Command(name = "diff", mixinStandardHelpOptions = true, sortOptions = false)
