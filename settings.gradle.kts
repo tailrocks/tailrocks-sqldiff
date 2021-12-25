@@ -24,11 +24,11 @@ include(
     ":tailrocks-sqldiff-spring-boot-starter",
 
     ":samples:micronaut-best-practice:data",
-    ":samples:micronaut-best-practice:data-krendel",
+    ":samples:micronaut-best-practice:data-sqldiff",
     ":samples:micronaut-best-practice:web-app",
     ":samples:micronaut-simple",
     ":samples:spring-boot-best-practice:data",
-    ":samples:spring-boot-best-practice:data-krendel",
+    ":samples:spring-boot-best-practice:data-sqldiff",
     ":samples:spring-boot-best-practice:web-app",
     ":samples:spring-boot-simple",
 )
