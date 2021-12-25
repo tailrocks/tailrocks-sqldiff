@@ -1,4 +1,4 @@
-package com.scentbird.krendel.spring.boot.autoconfigure;
+package com.tailrocks.sqldiff.spring.boot.autoconfigure;
 
 import com.tailrocks.sqldiff.output.KrendelFlywayVersionControl;
 import org.flywaydb.core.Flyway;

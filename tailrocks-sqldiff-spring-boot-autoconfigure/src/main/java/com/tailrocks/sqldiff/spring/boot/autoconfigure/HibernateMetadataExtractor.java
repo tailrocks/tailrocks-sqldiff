@@ -1,4 +1,4 @@
-package com.scentbird.krendel.spring.boot.autoconfigure;
+package com.tailrocks.sqldiff.spring.boot.autoconfigure;
 
 import org.hibernate.boot.Metadata;
 import org.hibernate.engine.spi.SessionFactoryImplementor;
