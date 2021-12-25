@@ -1,4 +1,4 @@
-package krendel.micronaut.simple.sample;
+package sqldiff.micronaut.simple.sample;
 
 import io.micronaut.runtime.Micronaut;
 

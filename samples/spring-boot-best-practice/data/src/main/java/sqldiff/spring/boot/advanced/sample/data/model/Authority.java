@@ -1,4 +1,4 @@
-package krendel.spring.boot.advanced.sample.data.model;
+package sqldiff.spring.boot.advanced.sample.data.model;
 
 import com.scentbird.hurma.hibernate.PostgreSQLEnum;
 

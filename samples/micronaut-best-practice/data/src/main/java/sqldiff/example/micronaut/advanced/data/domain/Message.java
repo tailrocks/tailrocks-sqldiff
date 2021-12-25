@@ -1,4 +1,4 @@
-package krendel.example.micronaut.advanced.data.domain;
+package sqldiff.example.micronaut.advanced.data.domain;
 
 import org.hibernate.annotations.CreationTimestamp;
 

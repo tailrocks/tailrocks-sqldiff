@@ -1,4 +1,4 @@
-package krendel.example.micronaut.advanced.web;
+package sqldiff.example.micronaut.advanced.web;
 
 import io.micronaut.runtime.Micronaut;
 

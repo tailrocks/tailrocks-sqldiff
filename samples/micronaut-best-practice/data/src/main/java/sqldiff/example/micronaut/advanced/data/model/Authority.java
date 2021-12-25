@@ -1,4 +1,4 @@
-package krendel.example.micronaut.advanced.data.model;
+package sqldiff.example.micronaut.advanced.data.model;
 
 import com.scentbird.hurma.hibernate.PostgreSQLEnum;
 

@@ -1,4 +1,4 @@
-package krendel.micronaut.simple.sample.domain;
+package sqldiff.micronaut.simple.sample.domain;
 
 import io.micronaut.data.annotation.DateCreated;
 import io.micronaut.data.annotation.DateUpdated;

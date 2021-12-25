@@ -1,4 +1,4 @@
-package krendel.spring.boot.advanced.sample.data.domain;
+package sqldiff.spring.boot.advanced.sample.data.domain;
 
 import com.scentbird.hurma.spring.data.jpa.MutableEntity;
 

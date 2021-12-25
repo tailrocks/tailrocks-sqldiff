@@ -1,4 +1,4 @@
-package krendel.spring.boot.simple.sample;
+package sqldiff.spring.boot.simple.sample;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,9 +1,9 @@
-package krendel.example.micronaut.advanced.data.domain;
+package sqldiff.example.micronaut.advanced.data.domain;
 
 import com.scentbird.hurma.hibernate.annotation.Comment;
 import com.vladmihalcea.hibernate.type.array.EnumArrayType;
 import com.vladmihalcea.hibernate.type.array.internal.AbstractArrayType;
-import krendel.example.micronaut.advanced.data.model.Authority;
+import sqldiff.example.micronaut.advanced.data.model.Authority;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Parameter;
 import org.hibernate.annotations.Type;
@@ -23,7 +23,7 @@ import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
-import static krendel.example.micronaut.advanced.data.model.Authority.ROLE_USER;
+import static sqldiff.example.micronaut.advanced.data.model.Authority.ROLE_USER;
 
 @Entity
 @Table(

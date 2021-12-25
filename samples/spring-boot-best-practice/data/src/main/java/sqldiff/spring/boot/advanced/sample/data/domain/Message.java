@@ -1,4 +1,4 @@
-package krendel.spring.boot.advanced.sample.data.domain;
+package sqldiff.spring.boot.advanced.sample.data.domain;
 
 import org.springframework.data.annotation.CreatedDate;
 
