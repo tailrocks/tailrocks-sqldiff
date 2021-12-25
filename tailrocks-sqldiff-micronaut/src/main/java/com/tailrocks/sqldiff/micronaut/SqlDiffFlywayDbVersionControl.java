@@ -1,6 +1,6 @@
 package com.tailrocks.sqldiff.micronaut;
 
-import com.tailrocks.sqldiff.output.KrendelFlywayVersionControl;
+import com.tailrocks.sqldiff.output.SqlDiffFlywayVersionControl;
 import io.micronaut.configuration.jdbc.hikari.DatasourceConfiguration;
 import io.micronaut.context.annotation.Requires;
 import org.flywaydb.core.Flyway;
@@ -11,11 +11,11 @@ import java.util.Optional;
 
 @Singleton
 @Requires(beans = Flyway.class)
-public class KrendelFlywayDbVersionControl extends KrendelFlywayVersionControl {
+public class SqlDiffFlywayDbVersionControl extends SqlDiffFlywayVersionControl {
 
     private final Flyway flyway;
 
-    public KrendelFlywayDbVersionControl(KrendelConfiguration krendelConfiguration,
+    public SqlDiffFlywayDbVersionControl(SqlDiffConfiguration krendelConfiguration,
                                          DatasourceConfiguration datasourceConfiguration,
                                          Optional<Flyway> flyway) {
         super(krendelConfiguration, datasourceConfiguration.getUrl());

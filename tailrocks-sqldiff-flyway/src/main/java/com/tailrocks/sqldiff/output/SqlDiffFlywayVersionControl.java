@@ -1,6 +1,6 @@
 package com.tailrocks.sqldiff.output;
 
-import com.tailrocks.sqldiff.model.config.KrendelEmbeddedConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffEmbeddedConfig;
 import org.apache.commons.lang3.StringUtils;
 import org.flywaydb.core.Flyway;
 import org.flywaydb.core.api.configuration.Configuration;
@@ -15,15 +15,15 @@ import java.util.Properties;
 
 import static java.util.Objects.requireNonNull;
 
-public class KrendelFlywayVersionControl implements DbVersionControl {
+public class SqlDiffFlywayVersionControl implements DbVersionControl {
 
-    private static final Logger log = LoggerFactory.getLogger(KrendelFlywayVersionControl.class);
+    private static final Logger log = LoggerFactory.getLogger(SqlDiffFlywayVersionControl.class);
 
-    private final KrendelEmbeddedConfig krendelEmbeddedConfig;
+    private final SqlDiffEmbeddedConfig sqlDiffEmbeddedConfig;
     private final String datasourceUrl;
 
-    public KrendelFlywayVersionControl(KrendelEmbeddedConfig krendelEmbeddedConfig, String datasourceUrl) {
-        this.krendelEmbeddedConfig = requireNonNull(krendelEmbeddedConfig);
+    public SqlDiffFlywayVersionControl(SqlDiffEmbeddedConfig sqlDiffEmbeddedConfig, String datasourceUrl) {
+        this.sqlDiffEmbeddedConfig = requireNonNull(sqlDiffEmbeddedConfig);
         this.datasourceUrl = requireNonNull(datasourceUrl);
     }
 
@@ -64,23 +64,23 @@ public class KrendelFlywayVersionControl implements DbVersionControl {
 
     @Override
     public String getUrl() {
-        if (StringUtils.isEmpty(krendelEmbeddedConfig.getFlyway().getUrl())) {
+        if (StringUtils.isEmpty(sqlDiffEmbeddedConfig.getFlyway().getUrl())) {
             throw new RuntimeException("krendel.flyway.url can not be empty");
         }
-        return krendelEmbeddedConfig.getFlyway().getUrl();
+        return sqlDiffEmbeddedConfig.getFlyway().getUrl();
     }
 
     @Override
     public String getUsername() {
-        if (StringUtils.isEmpty(krendelEmbeddedConfig.getFlyway().getUsername())) {
+        if (StringUtils.isEmpty(sqlDiffEmbeddedConfig.getFlyway().getUsername())) {
             throw new RuntimeException("krendel.flyway.username can not be empty");
         }
-        return krendelEmbeddedConfig.getFlyway().getUsername();
+        return sqlDiffEmbeddedConfig.getFlyway().getUsername();
     }
 
     @Override
     public String getPassword() {
-        return krendelEmbeddedConfig.getFlyway().getPassword();
+        return sqlDiffEmbeddedConfig.getFlyway().getPassword();
     }
 
     private FluentConfiguration cloneConfiguration(Configuration originalConfiguration) {

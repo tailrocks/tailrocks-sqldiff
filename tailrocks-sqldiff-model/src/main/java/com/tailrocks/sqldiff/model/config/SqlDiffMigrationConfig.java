@@ -1,6 +1,6 @@
 package com.tailrocks.sqldiff.model.config;
 
-public abstract class KrendelMigrationConfig {
+public abstract class SqlDiffMigrationConfig {
 
     /**
      * Path where to put generated migrations.

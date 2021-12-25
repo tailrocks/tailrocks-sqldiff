@@ -5,11 +5,11 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.tailrocks.sqldiff.core.postgres.diff.DiffOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
-import com.tailrocks.sqldiff.model.config.KrendelDiffConfig;
-import com.tailrocks.sqldiff.output.KrendelStandardConfig;
-import com.tailrocks.sqldiff.model.config.KrendelMigrationMetadataConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffDiffConfig;
+import com.tailrocks.sqldiff.output.SqlDiffStandardConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffMigrationMetadataConfig;
 import com.tailrocks.sqldiff.output.FlywayMigrationGenerator;
-import com.tailrocks.sqldiff.output.KrendelOutput;
+import com.tailrocks.sqldiff.output.SqlDiffOutput;
 import org.springframework.boot.ansi.AnsiColor;
 import org.springframework.boot.ansi.AnsiStyle;
 import picocli.CommandLine.Command;
@@ -21,7 +21,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.concurrent.Callable;
 
-import static com.tailrocks.sqldiff.output.KrendelOutput.consolePrintln;
+import static com.tailrocks.sqldiff.output.SqlDiffOutput.consolePrintln;
 import static org.springframework.boot.ansi.AnsiOutput.encode;
 
 @Command(name = "diff", mixinStandardHelpOptions = true, sortOptions = false)
@@ -95,7 +95,7 @@ public class DiffCommand implements Callable<Void> {
 
     @Override
     public Void call() {
-        KrendelOutput krendelOutput = new KrendelOutput(
+        SqlDiffOutput sqlDiffOutput = new SqlDiffOutput(
                 sourceJdbc,
                 targetJdbc,
                 sourceUsername,
@@ -107,11 +107,11 @@ public class DiffCommand implements Callable<Void> {
         );
 
         try {
-            KrendelStandardConfig krendelCliConfig = fetchConfig();
+            SqlDiffStandardConfig krendelCliConfig = fetchConfig();
             DiffOptions diffOptions = constructDiffOptions(krendelCliConfig);
             MigrationOptions migrationOptions = constructMigrationOptions(krendelCliConfig);
 
-            MigrationReport migrationReport = krendelOutput.generateMigrationReport(diffOptions, migrationOptions);
+            MigrationReport migrationReport = sqlDiffOutput.generateMigrationReport(diffOptions, migrationOptions);
 
             if (migrationOutputPath != null) {
                 consolePrintln(encode(AnsiStyle.BOLD) + "Step 5" + encode(AnsiStyle.NORMAL) + " > " + encode(AnsiStyle.BOLD) + "Generating flyway migrations");
@@ -120,7 +120,7 @@ public class DiffCommand implements Callable<Void> {
                         sourceJdbc,
                         sourceUsername,
                         sourcePassword,
-                        metadataFilePath != null ? new KrendelMigrationMetadataConfig(metadataFilePath, rowsCountThreshold) : new KrendelMigrationMetadataConfig(metadataJdbcUrl, metadataUsername, metadataPassword, rowsCountThreshold),
+                        metadataFilePath != null ? new SqlDiffMigrationMetadataConfig(metadataFilePath, rowsCountThreshold) : new SqlDiffMigrationMetadataConfig(metadataJdbcUrl, metadataUsername, metadataPassword, rowsCountThreshold),
                         migrationOutputPath,
                         cleanOutputPath
                 );
@@ -137,18 +137,18 @@ public class DiffCommand implements Callable<Void> {
         return null;
     }
 
-    private KrendelStandardConfig fetchConfig() throws IOException {
+    private SqlDiffStandardConfig fetchConfig() throws IOException {
         if (configFile == null) {
             return null;
         }
 
         try (FileInputStream config = new FileInputStream(new File(configFile))) {
             ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-            return mapper.readValue(config, KrendelStandardConfig.class);
+            return mapper.readValue(config, SqlDiffStandardConfig.class);
         }
     }
 
-    private DiffOptions constructDiffOptions(KrendelStandardConfig krendelCliConfig) {
+    private DiffOptions constructDiffOptions(SqlDiffStandardConfig krendelCliConfig) {
         DiffOptions diffOptions = new DiffOptions();
 
         if (krendelCliConfig == null || krendelCliConfig.getDiff() == null) {
@@ -163,7 +163,7 @@ public class DiffCommand implements Callable<Void> {
             return diffOptions;
         }
 
-        KrendelDiffConfig.Ignore ignoreConfig = krendelCliConfig.getDiff().getIgnore();
+        SqlDiffDiffConfig.Ignore ignoreConfig = krendelCliConfig.getDiff().getIgnore();
 
         diffOptions.ignoreExtensions(ignoreConfig.getExtensions());
         diffOptions.ignoreEnums(ignoreConfig.getEnums());
@@ -178,7 +178,7 @@ public class DiffCommand implements Callable<Void> {
         return diffOptions;
     }
 
-    private MigrationOptions constructMigrationOptions(KrendelStandardConfig krendelCliConfig) {
+    private MigrationOptions constructMigrationOptions(SqlDiffStandardConfig krendelCliConfig) {
         MigrationOptions migrationOptions = new MigrationOptions();
 
         if (krendelCliConfig == null || krendelCliConfig.getDiff() == null || krendelCliConfig.getDiff().getMigration() == null) {
@@ -198,78 +198,78 @@ public class DiffCommand implements Callable<Void> {
         return migrationOptions;
     }
 
-    private void fillTablesConfig(KrendelStandardConfig krendelCliConfig, MigrationOptions migrationOptions) {
-        KrendelDiffConfig.Migration.Tables tablesConfig = krendelCliConfig.getDiff().getMigration().getTables();
+    private void fillTablesConfig(SqlDiffStandardConfig krendelCliConfig, MigrationOptions migrationOptions) {
+        SqlDiffDiffConfig.Migration.Tables tablesConfig = krendelCliConfig.getDiff().getMigration().getTables();
 
         if (tablesConfig == null) {
             return;
         }
 
-        KrendelDiffConfig.Migration.Tables.Drop tablesDropConfig = tablesConfig.getDrop();
+        SqlDiffDiffConfig.Migration.Tables.Drop tablesDropConfig = tablesConfig.getDrop();
         if (tablesDropConfig != null) {
             migrationOptions.setDropTableIfExists(tablesDropConfig.isIfExists());
         }
     }
 
-    private void fillColumnsConfig(KrendelStandardConfig krendelCliConfig, MigrationOptions migrationOptions) {
-        KrendelDiffConfig.Migration.Columns columnsConfig = krendelCliConfig.getDiff().getMigration().getColumns();
+    private void fillColumnsConfig(SqlDiffStandardConfig krendelCliConfig, MigrationOptions migrationOptions) {
+        SqlDiffDiffConfig.Migration.Columns columnsConfig = krendelCliConfig.getDiff().getMigration().getColumns();
 
         if (columnsConfig == null) {
             return;
         }
 
-        KrendelDiffConfig.Migration.Columns.Add columnsAddConfig = columnsConfig.getAdd();
+        SqlDiffDiffConfig.Migration.Columns.Add columnsAddConfig = columnsConfig.getAdd();
         if (columnsAddConfig != null) {
             migrationOptions.setAddColumnIfNotExists(columnsAddConfig.isIfNotExists());
         }
 
-        KrendelDiffConfig.Migration.Columns.Drop columnsDropConfig = columnsConfig.getDrop();
+        SqlDiffDiffConfig.Migration.Columns.Drop columnsDropConfig = columnsConfig.getDrop();
         if (columnsDropConfig != null) {
             migrationOptions.setDropColumnIfExists(columnsDropConfig.isIfExists());
         }
     }
 
-    private void fillIndexesConfig(KrendelStandardConfig krendelCliConfig, MigrationOptions migrationOptions) {
-        KrendelDiffConfig.Migration.Indexes indexesConfig = krendelCliConfig.getDiff().getMigration().getIndexes();
+    private void fillIndexesConfig(SqlDiffStandardConfig krendelCliConfig, MigrationOptions migrationOptions) {
+        SqlDiffDiffConfig.Migration.Indexes indexesConfig = krendelCliConfig.getDiff().getMigration().getIndexes();
 
         if (indexesConfig == null) {
             return;
         }
 
-        KrendelDiffConfig.Migration.Indexes.Create indexesCreateConfig = indexesConfig.getCreate();
+        SqlDiffDiffConfig.Migration.Indexes.Create indexesCreateConfig = indexesConfig.getCreate();
         if (indexesCreateConfig != null) {
             migrationOptions.setCreateIndexIfNotExists(indexesCreateConfig.isIfNotExists());
             migrationOptions.setCreateIndexConcurrently(indexesCreateConfig.isConcurrently());
         }
 
-        KrendelDiffConfig.Migration.Indexes.Drop indexesDropConfig = indexesConfig.getDrop();
+        SqlDiffDiffConfig.Migration.Indexes.Drop indexesDropConfig = indexesConfig.getDrop();
         if (indexesDropConfig != null) {
             migrationOptions.setDropIndexIfExists(indexesDropConfig.isIfExists());
             migrationOptions.setDropIndexConcurrently(indexesDropConfig.isConcurrently());
         }
     }
 
-    private void fillSequencesConfig(KrendelStandardConfig krendelCliConfig, MigrationOptions migrationOptions) {
-        KrendelDiffConfig.Migration.Sequences sequencesConfig = krendelCliConfig.getDiff().getMigration().getSequences();
+    private void fillSequencesConfig(SqlDiffStandardConfig krendelCliConfig, MigrationOptions migrationOptions) {
+        SqlDiffDiffConfig.Migration.Sequences sequencesConfig = krendelCliConfig.getDiff().getMigration().getSequences();
 
         if (sequencesConfig == null) {
             return;
         }
 
-        KrendelDiffConfig.Migration.Sequences.Drop sequencesDropConfig = sequencesConfig.getDrop();
+        SqlDiffDiffConfig.Migration.Sequences.Drop sequencesDropConfig = sequencesConfig.getDrop();
         if (sequencesDropConfig != null) {
             migrationOptions.setDropSequenceIfExists(sequencesDropConfig.isIfExists());
         }
     }
 
-    private void fillSafeConfig(KrendelStandardConfig krendelCliConfig, MigrationOptions migrationOptions) {
-        KrendelDiffConfig.Migration.Safe safeConfig = krendelCliConfig.getDiff().getMigration().getSafe();
+    private void fillSafeConfig(SqlDiffStandardConfig krendelCliConfig, MigrationOptions migrationOptions) {
+        SqlDiffDiffConfig.Migration.Safe safeConfig = krendelCliConfig.getDiff().getMigration().getSafe();
 
         if (safeConfig == null) {
             return;
         }
 
-        KrendelDiffConfig.Migration.Safe.Add safeAddConfig = safeConfig.getAdd();
+        SqlDiffDiffConfig.Migration.Safe.Add safeAddConfig = safeConfig.getAdd();
         if (safeAddConfig != null) {
             migrationOptions.setSafeAddDefaultColumn(safeAddConfig.isDefaultColumns());
             migrationOptions.setSafeAddNotNullColumn(safeAddConfig.isNotNullColumns());

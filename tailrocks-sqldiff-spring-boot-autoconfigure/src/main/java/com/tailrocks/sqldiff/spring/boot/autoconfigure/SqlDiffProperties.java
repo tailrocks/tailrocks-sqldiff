@@ -1,16 +1,16 @@
 package com.tailrocks.sqldiff.spring.boot.autoconfigure;
 
 import com.tailrocks.sqldiff.model.config.SqlDiffDiffConfig;
-import com.tailrocks.sqldiff.model.config.KrendelEmbeddedConfig;
-import com.tailrocks.sqldiff.model.config.KrendelFlywayConfig;
-import com.tailrocks.sqldiff.model.config.KrendelMigrationConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffEmbeddedConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffFlywayConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffMigrationConfig;
 import com.tailrocks.sqldiff.model.config.SqlDiffMigrationMetadataConfig;
-import com.tailrocks.sqldiff.model.config.KrendelTargetConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffTargetConfig;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
 @ConfigurationProperties(prefix = "krendel")
-public class KrendelProperties extends KrendelEmbeddedConfig {
+public class SqlDiffProperties extends SqlDiffEmbeddedConfig {
 
     @NestedConfigurationProperty
     private final Target target = new Target();
@@ -44,13 +44,13 @@ public class KrendelProperties extends KrendelEmbeddedConfig {
         return diff;
     }
 
-    public static class Target extends KrendelTargetConfig {
+    public static class Target extends SqlDiffTargetConfig {
     }
 
-    public static class Flyway extends KrendelFlywayConfig {
+    public static class Flyway extends SqlDiffFlywayConfig {
     }
 
-    public static class Migration extends KrendelMigrationConfig {
+    public static class Migration extends SqlDiffMigrationConfig {
 
         @NestedConfigurationProperty
         private final Metadata metadata = new Metadata();

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class KrendelDiffConfig {
+public abstract class SqlDiffDiffConfig {
 
     private ForeignKeyCompareMethod foreignKeyCompareMethod = ForeignKeyCompareMethod.NAME;
 

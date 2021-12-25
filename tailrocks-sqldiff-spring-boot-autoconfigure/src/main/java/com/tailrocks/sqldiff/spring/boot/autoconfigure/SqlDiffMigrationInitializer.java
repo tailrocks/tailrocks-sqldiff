@@ -3,20 +3,20 @@ package com.tailrocks.sqldiff.spring.boot.autoconfigure;
 import com.tailrocks.sqldiff.core.MigrationGenerator;
 import com.tailrocks.sqldiff.hibernate.DataSourceConfig;
 import com.tailrocks.sqldiff.output.DbVersionControl;
-import com.tailrocks.sqldiff.hibernate.KrendelMigrator;
+import com.tailrocks.sqldiff.hibernate.SqlDiffMigrator;
 import org.hibernate.boot.Metadata;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 
-public class KrendelMigrationInitializer implements InitializingBean {
+public class SqlDiffMigrationInitializer implements InitializingBean {
 
-    private final KrendelProperties krendelProperties;
+    private final SqlDiffProperties krendelProperties;
     private final DataSourceProperties dataSourceProperties;
     private final ObjectProvider<DbVersionControl> dbVersionControlProvider;
     private final ObjectProvider<MigrationGenerator> migrationGeneratorProvider;
 
-    public KrendelMigrationInitializer(KrendelProperties krendelProperties,
+    public SqlDiffMigrationInitializer(SqlDiffProperties krendelProperties,
                                        DataSourceProperties dataSourceProperties,
                                        ObjectProvider<DbVersionControl> dbVersionControlProvider,
                                        ObjectProvider<MigrationGenerator> migrationGeneratorProvider) {
@@ -28,7 +28,7 @@ public class KrendelMigrationInitializer implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        KrendelMigrator krendelMigrator = new KrendelMigrator(
+        SqlDiffMigrator sqlDiffMigrator = new SqlDiffMigrator(
                 new DataSourceConfig(
                         dataSourceProperties.getUrl(),
                         dataSourceProperties.getUsername(),
@@ -40,7 +40,7 @@ public class KrendelMigrationInitializer implements InitializingBean {
 
         Metadata hibernateMetadata = HibernateMetadataExtractor.INSTANCE.getMetadata();
 
-        krendelMigrator.start(hibernateMetadata, migrationGeneratorProvider.getIfAvailable());
+        sqlDiffMigrator.start(hibernateMetadata, migrationGeneratorProvider.getIfAvailable());
     }
 
 }

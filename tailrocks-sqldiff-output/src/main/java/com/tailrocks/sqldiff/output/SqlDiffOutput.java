@@ -8,7 +8,7 @@ import com.tailrocks.sqldiff.core.postgres.migration.MigrationItem;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
 import com.tailrocks.sqldiff.core.postgres.model.PgSchema;
-import com.tailrocks.sqldiff.model.config.KrendelDiffConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffDiffConfig;
 import com.tailrocks.sqldiff.core.postgres.migration.Migration;
 import org.apache.commons.lang3.StringUtils;
 import org.fusesource.jansi.AnsiConsole;
@@ -45,7 +45,7 @@ import static org.fusesource.jansi.Ansi.ansi;
 import static org.springframework.boot.ansi.AnsiOutput.encode;
 
 // TODO replace spring boot copy-pasted classes with jansi
-public final class KrendelOutput {
+public final class SqlDiffOutput {
 
     private final String sourceJdbc;
     private final String targetJdbc;
@@ -58,7 +58,7 @@ public final class KrendelOutput {
 
     private int step = 0;
 
-    public KrendelOutput(
+    public SqlDiffOutput(
             @NotNull String sourceJdbc,
             @NotNull String targetJdbc,
             @Nullable String sourceUsername,
@@ -228,7 +228,7 @@ public final class KrendelOutput {
             return;
         }
 
-        KrendelStandardConfig.Diff.Ignore ignoreConfig = new KrendelStandardConfig.Diff.Ignore();
+        SqlDiffStandardConfig.Diff.Ignore ignoreConfig = new SqlDiffStandardConfig.Diff.Ignore();
 
         Map<String, List<String>> ignoreColumns = new HashMap<>();
         for (String tableName : migrationReport.getIgnoreColumns().keySet()) {
@@ -269,25 +269,25 @@ public final class KrendelOutput {
                         return null;
                     } else if (propertyValue instanceof Map && ((Map) propertyValue).isEmpty()) {
                         return null;
-                    } else if (propertyValue instanceof KrendelDiffConfig.Migration) {
+                    } else if (propertyValue instanceof SqlDiffDiffConfig.Migration) {
                         return null;
-                    } else if (propertyValue instanceof KrendelDiffConfig.ForeignKeyCompareMethod) {
+                    } else if (propertyValue instanceof SqlDiffDiffConfig.ForeignKeyCompareMethod) {
                         return null;
                     } else {
                         return super.representJavaBeanProperty(javaBean, property, propertyValue, customTag);
                     }
                 }
             };
-            representer.addClassTag(KrendelStandardConfig.class, Tag.MAP);
-            representer.addClassTag(KrendelStandardConfig.Diff.class, Tag.MAP);
-            representer.addClassTag(KrendelStandardConfig.Diff.Ignore.class, Tag.MAP);
+            representer.addClassTag(SqlDiffStandardConfig.class, Tag.MAP);
+            representer.addClassTag(SqlDiffStandardConfig.Diff.class, Tag.MAP);
+            representer.addClassTag(SqlDiffStandardConfig.Diff.Ignore.class, Tag.MAP);
 
             Yaml yaml = new Yaml(representer, dumperOptions);
 
-            KrendelStandardConfig.Diff diffConfig = new KrendelStandardConfig.Diff();
+            SqlDiffStandardConfig.Diff diffConfig = new SqlDiffStandardConfig.Diff();
             diffConfig.setIgnore(ignoreConfig);
 
-            KrendelStandardConfig krendelConfig = new KrendelStandardConfig();
+            SqlDiffStandardConfig krendelConfig = new SqlDiffStandardConfig();
             krendelConfig.setDiff(diffConfig);
 
             String krendelConfigYaml = yaml.dump(krendelConfig);

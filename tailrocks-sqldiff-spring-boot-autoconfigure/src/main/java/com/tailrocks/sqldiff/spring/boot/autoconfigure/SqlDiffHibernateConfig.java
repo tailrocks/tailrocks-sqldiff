@@ -14,7 +14,7 @@ import java.util.Map;
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnClass(SchemaReader.class)
 @ConditionalOnProperty(prefix = "krendel", name = "enabled", matchIfMissing = true)
-public class KrendelHibernateConfig implements HibernatePropertiesCustomizer {
+public class SqlDiffHibernateConfig implements HibernatePropertiesCustomizer {
 
     @Override
     public void customize(Map<String, Object> hibernateProperties) {

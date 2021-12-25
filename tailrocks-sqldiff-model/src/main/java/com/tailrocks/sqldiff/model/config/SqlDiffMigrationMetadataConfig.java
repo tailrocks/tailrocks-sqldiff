@@ -1,6 +1,6 @@
 package com.tailrocks.sqldiff.model.config;
 
-public class KrendelMigrationMetadataConfig {
+public class SqlDiffMigrationMetadataConfig {
 
     /**
      * JDBC url of production database to get metadata (table sizes).
@@ -28,17 +28,17 @@ public class KrendelMigrationMetadataConfig {
      */
     private Long rowsCountThreshold;
 
-    public KrendelMigrationMetadataConfig() {
+    public SqlDiffMigrationMetadataConfig() {
     }
 
-    public KrendelMigrationMetadataConfig(String url, String username, String password, Long rowsCountThreshold) {
+    public SqlDiffMigrationMetadataConfig(String url, String username, String password, Long rowsCountThreshold) {
         this.url = url;
         this.username = username;
         this.password = password;
         this.rowsCountThreshold = rowsCountThreshold;
     }
 
-    public KrendelMigrationMetadataConfig(String filePath, Long rowsCountThreshold) {
+    public SqlDiffMigrationMetadataConfig(String filePath, Long rowsCountThreshold) {
         this.filePath = filePath;
         this.rowsCountThreshold = rowsCountThreshold;
     }

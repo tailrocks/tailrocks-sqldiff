@@ -14,11 +14,11 @@ import java.util.Collections;
 @Requires(beans = Flyway.class)
 public class MicronautFlywayMigrationGenerator implements MigrationGenerator {
 
-    private final KrendelConfiguration krendelConfiguration;
+    private final SqlDiffConfiguration krendelConfiguration;
     private final DatasourceConfiguration datasourceConfiguration;
     private final Flyway flyway;
 
-    public MicronautFlywayMigrationGenerator(KrendelConfiguration krendelConfiguration,
+    public MicronautFlywayMigrationGenerator(SqlDiffConfiguration krendelConfiguration,
                                              DatasourceConfiguration datasourceConfiguration,
                                              Flyway flyway) {
         this.krendelConfiguration = krendelConfiguration;

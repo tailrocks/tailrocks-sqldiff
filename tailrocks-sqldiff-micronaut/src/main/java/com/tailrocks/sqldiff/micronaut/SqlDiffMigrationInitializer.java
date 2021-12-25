@@ -2,8 +2,8 @@ package com.tailrocks.sqldiff.micronaut;
 
 import com.tailrocks.sqldiff.core.MigrationGenerator;
 import com.tailrocks.sqldiff.hibernate.DataSourceConfig;
+import com.tailrocks.sqldiff.hibernate.SqlDiffMigrator;
 import com.tailrocks.sqldiff.output.DbVersionControl;
-import com.tailrocks.sqldiff.hibernate.KrendelMigrator;
 import io.micronaut.configuration.jdbc.hikari.DatasourceConfiguration;
 import io.micronaut.context.annotation.Requires;
 import io.micronaut.context.event.StartupEvent;
@@ -16,16 +16,16 @@ import java.util.Optional;
 
 @Singleton
 @Requires(beans = MetadataSources.class)
-public class KrendelMigrationInitializer {
+public class SqlDiffMigrationInitializer {
 
     private final Metadata metadata;
-    private final KrendelConfiguration krendelConfiguration;
+    private final SqlDiffConfiguration krendelConfiguration;
     private final DatasourceConfiguration datasourceConfiguration;
     private final DbVersionControl dbVersionControl;
     private final MigrationGenerator migrationGenerator;
 
-    public KrendelMigrationInitializer(MetadataSources metadataSources,
-                                       KrendelConfiguration krendelConfiguration,
+    public SqlDiffMigrationInitializer(MetadataSources metadataSources,
+                                       SqlDiffConfiguration krendelConfiguration,
                                        DatasourceConfiguration datasourceConfiguration,
                                        Optional<DbVersionControl> dbVersionControl,
                                        Optional<MigrationGenerator> migrationGenerator) {
@@ -38,7 +38,7 @@ public class KrendelMigrationInitializer {
 
     @EventListener
     void onStartup(StartupEvent event) throws Exception {
-        KrendelMigrator krendelMigrator = new KrendelMigrator(
+        SqlDiffMigrator sqlDiffMigrator = new SqlDiffMigrator(
                 new DataSourceConfig(
                         datasourceConfiguration.getUrl(),
                         datasourceConfiguration.getUsername(),
@@ -48,7 +48,7 @@ public class KrendelMigrationInitializer {
                 dbVersionControl
         );
 
-        krendelMigrator.start(metadata, migrationGenerator);
+        sqlDiffMigrator.start(metadata, migrationGenerator);
     }
 
 }

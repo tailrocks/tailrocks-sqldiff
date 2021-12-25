@@ -1,8 +1,8 @@
 package com.tailrocks.sqldiff.output;
 
-import com.tailrocks.sqldiff.model.config.KrendelDiffConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffDiffConfig;
 
-public class KrendelStandardConfig {
+public class SqlDiffStandardConfig {
 
     private Diff diff;
 
@@ -14,7 +14,7 @@ public class KrendelStandardConfig {
         this.diff = diff;
     }
 
-    public static class Diff extends KrendelDiffConfig {
+    public static class Diff extends SqlDiffDiffConfig {
 
         private Ignore ignore;
         private Migration migration;
@@ -37,10 +37,10 @@ public class KrendelStandardConfig {
             this.migration = migration;
         }
 
-        public static class Ignore extends KrendelDiffConfig.Ignore {
+        public static class Ignore extends SqlDiffDiffConfig.Ignore {
         }
 
-        public static class Migration extends KrendelDiffConfig.Migration {
+        public static class Migration extends SqlDiffDiffConfig.Migration {
 
             private Tables tables;
             private Columns columns;
@@ -93,7 +93,7 @@ public class KrendelStandardConfig {
                 this.safe = safe;
             }
 
-            public static class Tables extends KrendelDiffConfig.Migration.Tables {
+            public static class Tables extends SqlDiffDiffConfig.Migration.Tables {
 
                 private Drop drop;
 
@@ -106,12 +106,12 @@ public class KrendelStandardConfig {
                     this.drop = drop;
                 }
 
-                public static class Drop extends KrendelDiffConfig.Migration.Tables.Drop {
+                public static class Drop extends SqlDiffDiffConfig.Migration.Tables.Drop {
                 }
 
             }
 
-            public static class Columns extends KrendelDiffConfig.Migration.Columns {
+            public static class Columns extends SqlDiffDiffConfig.Migration.Columns {
 
                 private Add add;
                 private Drop drop;
@@ -134,15 +134,15 @@ public class KrendelStandardConfig {
                     this.drop = drop;
                 }
 
-                public static class Add extends KrendelDiffConfig.Migration.Columns.Add {
+                public static class Add extends SqlDiffDiffConfig.Migration.Columns.Add {
                 }
 
-                public static class Drop extends KrendelDiffConfig.Migration.Columns.Drop {
+                public static class Drop extends SqlDiffDiffConfig.Migration.Columns.Drop {
                 }
 
             }
 
-            public static class Indexes extends KrendelDiffConfig.Migration.Indexes {
+            public static class Indexes extends SqlDiffDiffConfig.Migration.Indexes {
 
                 private Create create;
                 private Drop drop;
@@ -165,14 +165,14 @@ public class KrendelStandardConfig {
                     this.drop = drop;
                 }
 
-                public static class Create extends KrendelDiffConfig.Migration.Indexes.Create {
+                public static class Create extends SqlDiffDiffConfig.Migration.Indexes.Create {
                 }
 
-                public static class Drop extends KrendelDiffConfig.Migration.Indexes.Drop {
+                public static class Drop extends SqlDiffDiffConfig.Migration.Indexes.Drop {
                 }
             }
 
-            public static class Sequences extends KrendelDiffConfig.Migration.Sequences {
+            public static class Sequences extends SqlDiffDiffConfig.Migration.Sequences {
 
                 private Drop drop;
 
@@ -185,12 +185,12 @@ public class KrendelStandardConfig {
                     this.drop = drop;
                 }
 
-                public static class Drop extends KrendelDiffConfig.Migration.Sequences.Drop {
+                public static class Drop extends SqlDiffDiffConfig.Migration.Sequences.Drop {
                 }
 
             }
 
-            public static class Safe extends KrendelDiffConfig.Migration.Safe {
+            public static class Safe extends SqlDiffDiffConfig.Migration.Safe {
 
                 private Add add;
 
@@ -203,7 +203,7 @@ public class KrendelStandardConfig {
                     this.add = add;
                 }
 
-                public static class Add extends KrendelDiffConfig.Migration.Safe.Add {
+                public static class Add extends SqlDiffDiffConfig.Migration.Safe.Add {
                 }
 
             }

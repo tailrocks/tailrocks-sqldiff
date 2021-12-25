@@ -1,16 +1,16 @@
 package com.tailrocks.sqldiff.micronaut;
 
 import com.tailrocks.sqldiff.model.config.SqlDiffDiffConfig;
-import com.tailrocks.sqldiff.model.config.KrendelEmbeddedConfig;
-import com.tailrocks.sqldiff.model.config.KrendelFlywayConfig;
-import com.tailrocks.sqldiff.model.config.KrendelMigrationConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffEmbeddedConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffFlywayConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffMigrationConfig;
 import com.tailrocks.sqldiff.model.config.SqlDiffMigrationMetadataConfig;
-import com.tailrocks.sqldiff.model.config.KrendelTargetConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffTargetConfig;
 import io.micronaut.context.annotation.ConfigurationProperties;
 import io.micronaut.core.util.Toggleable;
 
-@ConfigurationProperties(KrendelConfiguration.PREFIX)
-public class KrendelConfiguration extends KrendelEmbeddedConfig implements Toggleable {
+@ConfigurationProperties(SqlDiffConfiguration.PREFIX)
+public class SqlDiffConfiguration extends SqlDiffEmbeddedConfig implements Toggleable {
 
     public static final String PREFIX = "krendel";
 
@@ -19,7 +19,7 @@ public class KrendelConfiguration extends KrendelEmbeddedConfig implements Toggl
     private final MigrationConfiguration migration;
     private final DiffConfiguration diff;
 
-    public KrendelConfiguration(TargetConfiguration target,
+    public SqlDiffConfiguration(TargetConfiguration target,
                                 FlywayConfiguration flyway,
                                 MigrationConfiguration migration,
                                 DiffConfiguration diff) {
@@ -50,15 +50,15 @@ public class KrendelConfiguration extends KrendelEmbeddedConfig implements Toggl
     }
 
     @ConfigurationProperties("target")
-    public static class TargetConfiguration extends KrendelTargetConfig {
+    public static class TargetConfiguration extends SqlDiffTargetConfig {
     }
 
     @ConfigurationProperties("flyway")
-    public static class FlywayConfiguration extends KrendelFlywayConfig {
+    public static class FlywayConfiguration extends SqlDiffFlywayConfig {
     }
 
     @ConfigurationProperties("migration")
-    public static class MigrationConfiguration extends KrendelMigrationConfig {
+    public static class MigrationConfiguration extends SqlDiffMigrationConfig {
 
         private final MetadataConfiguration metadata;
 

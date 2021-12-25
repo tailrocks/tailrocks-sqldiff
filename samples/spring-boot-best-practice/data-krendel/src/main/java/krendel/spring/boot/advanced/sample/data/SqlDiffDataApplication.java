@@ -8,12 +8,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @SpringBootApplication(scanBasePackages = {"krendel.spring.boot.advanced.sample.data"})
 @EntityScan("krendel.spring.boot.advanced.sample.data.domain")
 @EnableJpaAuditing
-public class KrendelDataApplication {
+public class SqlDiffDataApplication {
 
     public static void main(String[] args) {
         System.setProperty("spring.config.location", "classpath:/application-data.yml,classpath:/application.yml");
 
-        SpringApplication.run(KrendelDataApplication.class, args);
+        SpringApplication.run(SqlDiffDataApplication.class, args);
     }
 
 }

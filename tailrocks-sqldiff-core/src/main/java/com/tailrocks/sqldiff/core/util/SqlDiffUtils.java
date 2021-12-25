@@ -7,11 +7,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.stream.Collectors;
 
-public class KrendelUtils {
+public class SqlDiffUtils {
 
     public static String readResource(String filename) {
-        String resourceName = filename;
-        try (InputStream inputStream = KrendelUtils.class.getClassLoader().getResourceAsStream(resourceName)) {
+        try (InputStream inputStream = SqlDiffUtils.class.getClassLoader().getResourceAsStream(filename)) {
             if (inputStream == null) {
                 throw new FileNotFoundException(filename + " not found");
             }

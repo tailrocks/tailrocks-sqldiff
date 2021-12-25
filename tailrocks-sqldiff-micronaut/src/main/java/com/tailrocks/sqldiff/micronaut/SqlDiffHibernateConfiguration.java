@@ -8,7 +8,7 @@ import org.hibernate.cfg.AvailableSettings;
 import javax.inject.Singleton;
 
 @Singleton
-public class KrendelHibernateConfiguration implements BeanCreatedEventListener<JpaConfiguration> {
+public class SqlDiffHibernateConfiguration implements BeanCreatedEventListener<JpaConfiguration> {
 
     @Override
     public JpaConfiguration onCreated(BeanCreatedEvent<JpaConfiguration> event) {

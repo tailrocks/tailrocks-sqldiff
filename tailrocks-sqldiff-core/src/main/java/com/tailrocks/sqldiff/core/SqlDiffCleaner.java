@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class KrendelCleaner {
+public class SqlDiffCleaner {
 
-    private static final Logger log = LoggerFactory.getLogger(KrendelCleaner.class.getSimpleName());
+    private static final Logger log = LoggerFactory.getLogger(SqlDiffCleaner.class.getSimpleName());
 
     private final SqlClient sqlClient;
     private final String schema;
 
-    public KrendelCleaner(String jdbcUrl, String username, String password) {
+    public SqlDiffCleaner(String jdbcUrl, String username, String password) {
         this.sqlClient = new SqlClient(jdbcUrl, username, password);
 
         if (jdbcUrl.startsWith("jdbc:postgresql:")) {

@@ -3,7 +3,7 @@ package com.tailrocks.sqldiff.model.config;
 /**
  * Target database properties.
  */
-public class KrendelTargetConfig {
+public class SqlDiffTargetConfig {
 
     /**
      * JDBC URL of the database where Krendel initialize target schema structure.

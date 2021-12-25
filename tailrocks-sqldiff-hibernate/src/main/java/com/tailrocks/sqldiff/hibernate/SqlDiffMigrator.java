@@ -1,12 +1,12 @@
 package com.tailrocks.sqldiff.hibernate;
 
-import com.tailrocks.sqldiff.core.KrendelCleaner;
+import com.tailrocks.sqldiff.core.SqlDiffCleaner;
 import com.tailrocks.sqldiff.core.MigrationGenerator;
 import com.tailrocks.sqldiff.core.postgres.diff.DiffOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
 import com.tailrocks.sqldiff.model.config.SqlDiffDiffConfig;
-import com.tailrocks.sqldiff.model.config.KrendelEmbeddedConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffEmbeddedConfig;
 import com.tailrocks.sqldiff.output.DbVersionControl;
 import com.tailrocks.sqldiff.output.SqlDiffOutput;
 import org.hibernate.boot.Metadata;
@@ -35,19 +35,19 @@ import java.util.Properties;
 import static com.tailrocks.sqldiff.output.SqlDiffOutput.consolePrintln;
 import static org.springframework.boot.ansi.AnsiOutput.encode;
 
-public class KrendelMigrator {
+public class SqlDiffMigrator {
 
-    private final static Logger log = LoggerFactory.getLogger(KrendelMigrator.class);
+    private final static Logger log = LoggerFactory.getLogger(SqlDiffMigrator.class);
 
     private final DataSourceConfig dataSourceConfig;
-    private final KrendelEmbeddedConfig krendelConfiguration;
+    private final SqlDiffEmbeddedConfig krendelConfiguration;
     private final DbVersionControl dbVersionControl;
 
-    public KrendelMigrator(DataSourceConfig dataSourceConfig,
-                           KrendelEmbeddedConfig krendelEmbeddedConfig,
+    public SqlDiffMigrator(DataSourceConfig dataSourceConfig,
+                           SqlDiffEmbeddedConfig sqlDiffEmbeddedConfig,
                            DbVersionControl dbVersionControl) {
         this.dataSourceConfig = dataSourceConfig;
-        this.krendelConfiguration = krendelEmbeddedConfig;
+        this.krendelConfiguration = sqlDiffEmbeddedConfig;
         this.dbVersionControl = dbVersionControl;
     }
 
@@ -153,12 +153,12 @@ public class KrendelMigrator {
         String hibernateSql = new String(Files.readAllBytes(hibernateDdlDumpFile.toPath()));
 
         // clean target database before apply hibernate migrations
-        KrendelCleaner krendelCleaner = new KrendelCleaner(
+        SqlDiffCleaner sqlDiffCleaner = new SqlDiffCleaner(
                 krendelConfiguration.getTarget().getUrl(),
                 krendelConfiguration.getTarget().getUsername(),
                 krendelConfiguration.getTarget().getPassword()
         );
-        krendelCleaner.deleteAll();
+        sqlDiffCleaner.deleteAll();
 
         executeSql(
                 krendelConfiguration.getTarget().getUrl(),
@@ -210,7 +210,7 @@ public class KrendelMigrator {
     }
 
 
-    private void fillDiffOptions(DiffOptions diffOptions, KrendelEmbeddedConfig krendelProperties) {
+    private void fillDiffOptions(DiffOptions diffOptions, SqlDiffEmbeddedConfig krendelProperties) {
         SqlDiffDiffConfig.Ignore ignore = krendelProperties.getDiff().getIgnore();
 
         if (ignore.getExtensions() != null && !ignore.getExtensions().isEmpty()) {
@@ -244,7 +244,7 @@ public class KrendelMigrator {
         diffOptions.setForeignKeyCompareMethod(krendelProperties.getDiff().getForeignKeyCompareMethod());
     }
 
-    private void fillMigrationOptions(MigrationOptions migrationOptions, KrendelEmbeddedConfig krendelProperties) {
+    private void fillMigrationOptions(MigrationOptions migrationOptions, SqlDiffEmbeddedConfig krendelProperties) {
         SqlDiffDiffConfig.Migration migration = krendelProperties.getDiff().getMigration();
 
         migrationOptions.setDropTableIfExists(migration.getTables().getDrop().isIfExists());

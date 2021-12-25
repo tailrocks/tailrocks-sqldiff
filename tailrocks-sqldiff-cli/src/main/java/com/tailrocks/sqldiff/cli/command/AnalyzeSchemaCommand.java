@@ -12,9 +12,9 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.util.concurrent.Callable;
 
-import static com.tailrocks.sqldiff.core.util.KrendelUtils.getQuery;
-import static com.tailrocks.sqldiff.output.KrendelOutput.consolePrintln;
-import static com.tailrocks.sqldiff.output.KrendelOutput.maskJdbcUrl;
+import static com.tailrocks.sqldiff.core.util.SqlDiffUtils.getQuery;
+import static com.tailrocks.sqldiff.output.SqlDiffOutput.consolePrintln;
+import static com.tailrocks.sqldiff.output.SqlDiffOutput.maskJdbcUrl;
 import static org.springframework.boot.ansi.AnsiOutput.encode;
 
 @Command(name = "analyze-schema", mixinStandardHelpOptions = true, sortOptions = false)

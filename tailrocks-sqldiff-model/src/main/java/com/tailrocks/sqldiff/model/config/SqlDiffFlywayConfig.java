@@ -1,6 +1,6 @@
 package com.tailrocks.sqldiff.model.config;
 
-public class KrendelFlywayConfig {
+public class SqlDiffFlywayConfig {
 
     /**
      * Whether to use Flyway migrations as a source database to compare.

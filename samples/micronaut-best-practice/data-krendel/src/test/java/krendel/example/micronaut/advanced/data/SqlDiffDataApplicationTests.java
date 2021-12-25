@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 @MicronautTest
 // TODO
 //@ActiveProfiles("testcontainers")
-public class KrendelDataApplicationTests {
+public class SqlDiffDataApplicationTests {
 
     @Test
     public void contextLoads() {

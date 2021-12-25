@@ -1,6 +1,6 @@
 package com.tailrocks.sqldiff.core.postgres.diff;
 
-import com.tailrocks.sqldiff.model.config.KrendelDiffConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffDiffConfig;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -23,7 +23,7 @@ public class DiffOptions {
     private final Map<String, Set<String>> ignoreColumnsDefaultValue = new HashMap<>();
     private final Set<String> ignoreViews = new HashSet<>();
     private final Set<String> ignoreConstraints = new HashSet<>();
-    private KrendelDiffConfig.ForeignKeyCompareMethod foreignKeyCompareMethod = KrendelDiffConfig.ForeignKeyCompareMethod.NAME;
+    private SqlDiffDiffConfig.ForeignKeyCompareMethod foreignKeyCompareMethod = SqlDiffDiffConfig.ForeignKeyCompareMethod.NAME;
 
     public DiffOptions ignoreExtension(String name) {
         name = requireNotEmpty(name, "name");
@@ -279,11 +279,11 @@ public class DiffOptions {
         return name;
     }
 
-    public KrendelDiffConfig.ForeignKeyCompareMethod getForeignKeyCompareMethod() {
+    public SqlDiffDiffConfig.ForeignKeyCompareMethod getForeignKeyCompareMethod() {
         return foreignKeyCompareMethod;
     }
 
-    public void setForeignKeyCompareMethod(KrendelDiffConfig.ForeignKeyCompareMethod foreignKeyCompareMethod) {
+    public void setForeignKeyCompareMethod(SqlDiffDiffConfig.ForeignKeyCompareMethod foreignKeyCompareMethod) {
         Objects.requireNonNull(foreignKeyCompareMethod, "`foreignKeyCompareMethod` can not be null");
 
         this.foreignKeyCompareMethod = foreignKeyCompareMethod;

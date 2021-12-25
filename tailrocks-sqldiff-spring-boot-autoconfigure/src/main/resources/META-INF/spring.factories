@@ -1,4 +1,4 @@
 # Auto Configure
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.tailrocks.sqldiff.spring.boot.autoconfigure.KrendelAutoConfiguration,\
-com.tailrocks.sqldiff.spring.boot.autoconfigure.KrendelHibernateConfig
+com.tailrocks.sqldiff.spring.boot.autoconfigure.SqlDiffAutoConfiguration,\
+com.tailrocks.sqldiff.spring.boot.autoconfigure.SqlDiffHibernateConfig

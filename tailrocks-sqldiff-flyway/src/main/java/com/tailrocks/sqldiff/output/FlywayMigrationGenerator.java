@@ -7,7 +7,7 @@ import com.tailrocks.sqldiff.core.SqlClient;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationItem;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationItemGroup;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
-import com.tailrocks.sqldiff.model.config.KrendelMigrationMetadataConfig;
+import com.tailrocks.sqldiff.model.config.SqlDiffMigrationMetadataConfig;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.parser.CCJSqlParserManager;
 import net.sf.jsqlparser.schema.Column;
@@ -35,10 +35,10 @@ import java.util.Map;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-import static com.tailrocks.sqldiff.core.util.KrendelUtils.getQuery;
-import static com.tailrocks.sqldiff.core.util.KrendelUtils.readResource;
-import static com.tailrocks.sqldiff.core.util.KrendelUtils.removeQuotes;
-import static com.tailrocks.sqldiff.output.KrendelOutput.consolePrintln;
+import static com.tailrocks.sqldiff.core.util.SqlDiffUtils.getQuery;
+import static com.tailrocks.sqldiff.core.util.SqlDiffUtils.readResource;
+import static com.tailrocks.sqldiff.core.util.SqlDiffUtils.removeQuotes;
+import static com.tailrocks.sqldiff.output.SqlDiffOutput.consolePrintln;
 import static java.lang.System.out;
 
 public class FlywayMigrationGenerator implements MigrationGenerator {
@@ -59,7 +59,7 @@ public class FlywayMigrationGenerator implements MigrationGenerator {
     public FlywayMigrationGenerator(String url,
                                     String username,
                                     String password,
-                                    KrendelMigrationMetadataConfig metadata,
+                                    SqlDiffMigrationMetadataConfig metadata,
                                     String outputPath,
                                     boolean cleanOutputPath) throws IOException, CsvValidationException {
         this(
@@ -75,7 +75,7 @@ public class FlywayMigrationGenerator implements MigrationGenerator {
                                     String username,
                                     String password,
                                     Iterable<Flyway> flyways,
-                                    KrendelMigrationMetadataConfig metadata,
+                                    SqlDiffMigrationMetadataConfig metadata,
                                     String outputPath,
                                     boolean cleanOutputPath) throws IOException, CsvValidationException {
         this.flyways = flyways;

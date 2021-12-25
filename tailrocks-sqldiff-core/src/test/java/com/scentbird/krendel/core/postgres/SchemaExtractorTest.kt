@@ -12,7 +12,7 @@ import com.tailrocks.sqldiff.core.postgres.model.PgSequence
 import com.tailrocks.sqldiff.core.postgres.model.PgTable
 import com.tailrocks.sqldiff.core.postgres.model.PgUniqueConstraint
 import com.tailrocks.sqldiff.core.postgres.model.PgView
-import com.tailrocks.sqldiff.model.config.KrendelDiffConfig
+import com.tailrocks.sqldiff.model.config.SqlDiffDiffConfig
 import com.tailrocks.sqldiff.core.postgres.Postgres12TableLockLevel
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
@@ -1745,7 +1745,7 @@ class SchemaExtractorTest : AbstractContainerBaseTest() {
 
         // when
         val diffOptions = DiffOptions().apply {
-            foreignKeyCompareMethod = KrendelDiffConfig.ForeignKeyCompareMethod.REFERENCES
+            foreignKeyCompareMethod = SqlDiffDiffConfig.ForeignKeyCompareMethod.REFERENCES
         }
         val diff = testCase.generateDiff(diffOptions)
 

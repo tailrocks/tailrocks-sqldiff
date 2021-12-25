@@ -28,8 +28,8 @@ import java.util.Objects;
 @ConditionalOnClass(SchemaReader.class)
 @ConditionalOnProperty(prefix = "krendel", name = "enabled", matchIfMissing = true)
 @AutoConfigureAfter({HibernateJpaAutoConfiguration.class, FlywayAutoConfiguration.class})
-@EnableConfigurationProperties({DataSourceProperties.class, KrendelProperties.class})
-public class KrendelAutoConfiguration {
+@EnableConfigurationProperties({DataSourceProperties.class, SqlDiffProperties.class})
+public class SqlDiffAutoConfiguration {
 
     /**
      * @param krendelProperties    Krendel configuration
@@ -38,9 +38,9 @@ public class KrendelAutoConfiguration {
      */
     @Bean
     @ConditionalOnMissingBean
-    public KrendelMigrationInitializer krendelInitializer(
+    public SqlDiffMigrationInitializer krendelInitializer(
             ConfigurableApplicationContext applicationContext,
-            KrendelProperties krendelProperties,
+            SqlDiffProperties krendelProperties,
             DataSourceProperties dataSourceProperties,
             // can not delete this argument, we need entity manager initialized first to generate use Hibernate
             // SchemaExport
@@ -49,7 +49,7 @@ public class KrendelAutoConfiguration {
             ObjectProvider<MigrationGenerator> migrationGenerator
     ) {
         Objects.requireNonNull(entityManagerFactory);
-        return new KrendelMigrationInitializer(
+        return new SqlDiffMigrationInitializer(
                 krendelProperties,
                 dataSourceProperties,
                 dbVersionControl,
@@ -61,25 +61,25 @@ public class KrendelAutoConfiguration {
     @ConditionalOnClass(Flyway.class)
     @AutoConfigureAfter({FlywayAutoConfiguration.FlywayConfiguration.class})
     @ConditionalOnProperty(prefix = "krendel.flyway", name = "enabled", matchIfMissing = true)
-    @EnableConfigurationProperties({DataSourceProperties.class, KrendelProperties.class})
-    public static class KrendelFlywayMigrationsConfiguration {
+    @EnableConfigurationProperties({DataSourceProperties.class, SqlDiffProperties.class})
+    public static class SqlDiffFlywayMigrationsConfiguration {
 
         @Bean
         @ConditionalOnProperty(prefix = "spring.flyway", name = "enabled", matchIfMissing = true)
         @ConditionalOnMissingBean
-        public KrendelFlywayDbVersionControl krendelFlywayDbVersionControl(
-                KrendelProperties krendelProperties,
+        public SqlDiffFlywayDbVersionControl krendelFlywayDbVersionControl(
+                SqlDiffProperties krendelProperties,
                 DataSourceProperties dataSourceProperties,
                 ObjectProvider<Flyway> flyways
         ) {
-            return new KrendelFlywayDbVersionControl(krendelProperties, dataSourceProperties, flyways);
+            return new SqlDiffFlywayDbVersionControl(krendelProperties, dataSourceProperties, flyways);
         }
 
         @Bean
         @ConditionalOnProperty(prefix = "spring.flyway", name = "enabled", matchIfMissing = true)
         @ConditionalOnMissingBean
         public FlywayMigrationGenerator krendelFlywayMigrationGenerator(
-                KrendelProperties krendelProperties,
+                SqlDiffProperties krendelProperties,
                 DataSourceProperties dataSourceProperties,
                 ObjectProvider<Flyway> flyways
         ) throws IOException, CsvValidationException {

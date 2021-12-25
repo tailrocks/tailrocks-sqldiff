@@ -1,6 +1,6 @@
 package com.tailrocks.sqldiff.model.config;
 
-public abstract class KrendelEmbeddedConfig {
+public abstract class SqlDiffEmbeddedConfig {
 
     /**
      * Whether to enable Krendel migrations. Enabled by default.
@@ -42,11 +42,11 @@ public abstract class KrendelEmbeddedConfig {
         this.hibernateDdlDumpFile = hibernateDdlDumpFile;
     }
 
-    public abstract KrendelTargetConfig getTarget();
+    public abstract SqlDiffTargetConfig getTarget();
 
-    public abstract KrendelFlywayConfig getFlyway();
+    public abstract SqlDiffFlywayConfig getFlyway();
 
-    public abstract KrendelMigrationConfig getMigration();
+    public abstract SqlDiffMigrationConfig getMigration();
 
     public abstract SqlDiffDiffConfig getDiff();
 

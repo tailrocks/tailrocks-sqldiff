@@ -20,7 +20,7 @@ import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.tailrocks.sqldiff.core.util.KrendelUtils.getQuery;
+import static com.tailrocks.sqldiff.core.util.SqlDiffUtils.getQuery;
 
 public class SchemaReader {
 
