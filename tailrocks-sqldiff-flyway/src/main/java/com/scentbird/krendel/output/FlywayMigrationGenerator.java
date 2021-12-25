@@ -2,11 +2,11 @@ package com.scentbird.krendel.output;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
-import com.scentbird.krendel.core.MigrationGenerator;
-import com.scentbird.krendel.core.SqlClient;
-import com.scentbird.krendel.core.postgres.migration.MigrationItem;
-import com.scentbird.krendel.core.postgres.migration.MigrationItemGroup;
-import com.scentbird.krendel.core.postgres.migration.MigrationReport;
+import com.tailrocks.sqldiff.core.MigrationGenerator;
+import com.tailrocks.sqldiff.core.SqlClient;
+import com.tailrocks.sqldiff.core.postgres.migration.MigrationItem;
+import com.tailrocks.sqldiff.core.postgres.migration.MigrationItemGroup;
+import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
 import com.scentbird.krendel.model.config.KrendelMigrationMetadataConfig;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.parser.CCJSqlParserManager;
@@ -35,9 +35,9 @@ import java.util.Map;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-import static com.scentbird.krendel.core.util.KrendelUtils.getQuery;
-import static com.scentbird.krendel.core.util.KrendelUtils.readResource;
-import static com.scentbird.krendel.core.util.KrendelUtils.removeQuotes;
+import static com.tailrocks.sqldiff.core.util.KrendelUtils.getQuery;
+import static com.tailrocks.sqldiff.core.util.KrendelUtils.readResource;
+import static com.tailrocks.sqldiff.core.util.KrendelUtils.removeQuotes;
 import static com.scentbird.krendel.output.KrendelOutput.consolePrintln;
 import static java.lang.System.out;
 

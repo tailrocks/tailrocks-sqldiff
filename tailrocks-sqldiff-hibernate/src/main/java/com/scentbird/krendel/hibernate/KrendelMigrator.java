@@ -1,10 +1,10 @@
 package com.scentbird.krendel.hibernate;
 
-import com.scentbird.krendel.core.KrendelCleaner;
-import com.scentbird.krendel.core.MigrationGenerator;
-import com.scentbird.krendel.core.postgres.diff.DiffOptions;
-import com.scentbird.krendel.core.postgres.migration.MigrationOptions;
-import com.scentbird.krendel.core.postgres.migration.MigrationReport;
+import com.tailrocks.sqldiff.core.KrendelCleaner;
+import com.tailrocks.sqldiff.core.MigrationGenerator;
+import com.tailrocks.sqldiff.core.postgres.diff.DiffOptions;
+import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
+import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
 import com.scentbird.krendel.model.config.KrendelDiffConfig;
 import com.scentbird.krendel.model.config.KrendelEmbeddedConfig;
 import com.scentbird.krendel.output.DbVersionControl;

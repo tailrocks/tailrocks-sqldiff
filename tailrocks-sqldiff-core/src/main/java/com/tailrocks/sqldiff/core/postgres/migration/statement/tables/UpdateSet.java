@@ -1,8 +1,8 @@
-package com.scentbird.krendel.core.postgres.migration.statement.update;
+package com.tailrocks.sqldiff.core.postgres.migration.statement.tables;
 
 import com.tailrocks.sqldiff.core.postgres.migration.statement.Statement;
-import com.scentbird.krendel.core.postgres.model.PgColumn;
-import com.scentbird.krendel.core.postgres.model.PgTable;
+import com.tailrocks.sqldiff.core.postgres.model.PgColumn;
+import com.tailrocks.sqldiff.core.postgres.model.PgTable;
 
 import java.util.Map;
 import java.util.stream.Collectors;

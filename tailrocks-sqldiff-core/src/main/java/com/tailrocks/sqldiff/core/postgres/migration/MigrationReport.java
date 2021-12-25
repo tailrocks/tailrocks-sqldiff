@@ -1,4 +1,4 @@
-package com.scentbird.krendel.core.postgres.migration;
+package com.tailrocks.sqldiff.core.postgres.migration;
 
 import java.util.ArrayList;
 import java.util.Collection;

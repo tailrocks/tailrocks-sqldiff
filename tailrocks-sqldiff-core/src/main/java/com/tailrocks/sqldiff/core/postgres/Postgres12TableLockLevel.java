@@ -1,4 +1,4 @@
-package com.scentbird.krendel.core.postgres;
+package com.tailrocks.sqldiff.core.postgres;
 
 import java.util.Arrays;
 import java.util.HashSet;

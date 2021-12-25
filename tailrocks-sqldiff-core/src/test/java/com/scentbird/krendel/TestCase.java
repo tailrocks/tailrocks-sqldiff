@@ -1,14 +1,14 @@
 package com.scentbird.krendel;
 
-import com.scentbird.krendel.core.postgres.SchemaReader;
-import com.scentbird.krendel.core.postgres.diff.Diff;
-import com.scentbird.krendel.core.postgres.diff.DiffOptions;
-import com.scentbird.krendel.core.postgres.diff.SchemaDiff;
-import com.scentbird.krendel.core.postgres.migration.Migration;
-import com.scentbird.krendel.core.postgres.migration.MigrationItem;
-import com.scentbird.krendel.core.postgres.migration.MigrationOptions;
-import com.scentbird.krendel.core.postgres.migration.MigrationReport;
-import com.scentbird.krendel.core.postgres.model.PgSchema;
+import com.tailrocks.sqldiff.core.postgres.SchemaReader;
+import com.tailrocks.sqldiff.core.postgres.diff.Diff;
+import com.tailrocks.sqldiff.core.postgres.diff.DiffOptions;
+import com.tailrocks.sqldiff.core.postgres.diff.SchemaDiff;
+import com.tailrocks.sqldiff.core.postgres.migration.Migration;
+import com.tailrocks.sqldiff.core.postgres.migration.MigrationItem;
+import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
+import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
+import com.tailrocks.sqldiff.core.postgres.model.PgSchema;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

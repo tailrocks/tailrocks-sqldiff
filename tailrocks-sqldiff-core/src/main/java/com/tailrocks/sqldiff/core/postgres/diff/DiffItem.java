@@ -1,6 +1,6 @@
-package com.scentbird.krendel.core.postgres.diff;
+package com.tailrocks.sqldiff.core.postgres.diff;
 
-import com.scentbird.krendel.core.postgres.model.PgElement;
+import com.tailrocks.sqldiff.core.postgres.model.PgElement;
 import org.jetbrains.annotations.Nullable;
 
 public class DiffItem {

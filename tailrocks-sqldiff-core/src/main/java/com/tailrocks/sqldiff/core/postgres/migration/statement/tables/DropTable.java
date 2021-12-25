@@ -1,8 +1,8 @@
-package com.scentbird.krendel.core.postgres.migration.statement.table;
+package com.tailrocks.sqldiff.core.postgres.migration.statement.tables;
 
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.statement.Statement;
-import com.scentbird.krendel.core.postgres.model.PgTable;
+import com.tailrocks.sqldiff.core.postgres.model.PgTable;
 
 /**
  * @author Efim Matytsin

@@ -1,4 +1,4 @@
-package com.scentbird.krendel.core.postgres.model;
+package com.tailrocks.sqldiff.core.postgres.model;
 
 import java.util.Arrays;
 import java.util.List;

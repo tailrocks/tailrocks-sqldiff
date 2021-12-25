@@ -1,9 +1,9 @@
-package com.scentbird.krendel.core.postgres.migration.statement.table;
+package com.tailrocks.sqldiff.core.postgres.migration.statement.tables;
 
 import com.tailrocks.sqldiff.core.postgres.diff.DiffOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.statement.Statement;
-import com.scentbird.krendel.core.postgres.model.PgColumn;
-import com.scentbird.krendel.core.postgres.model.PgTable;
+import com.tailrocks.sqldiff.core.postgres.model.PgColumn;
+import com.tailrocks.sqldiff.core.postgres.model.PgTable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

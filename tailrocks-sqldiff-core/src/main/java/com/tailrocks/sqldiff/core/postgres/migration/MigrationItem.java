@@ -1,8 +1,8 @@
-package com.scentbird.krendel.core.postgres.migration;
+package com.tailrocks.sqldiff.core.postgres.migration;
 
 import com.tailrocks.sqldiff.core.postgres.Postgres12TableLockLevel;
 import com.tailrocks.sqldiff.core.postgres.diff.DiffOperation;
-import com.scentbird.krendel.core.postgres.model.PgTable;
+import com.tailrocks.sqldiff.core.postgres.model.PgTable;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;

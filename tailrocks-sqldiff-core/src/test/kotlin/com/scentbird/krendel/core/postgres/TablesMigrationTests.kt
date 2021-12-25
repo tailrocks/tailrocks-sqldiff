@@ -2,9 +2,9 @@ package com.scentbird.krendel.core.postgres
 
 import com.scentbird.krendel.AbstractContainerBaseTest
 import com.scentbird.krendel.TestCase
-import com.scentbird.krendel.core.postgres.diff.DiffOperation
-import com.scentbird.krendel.core.postgres.diff.DiffOptions
-import com.scentbird.krendel.core.postgres.model.PgTable
+import com.tailrocks.sqldiff.core.postgres.diff.DiffOperation
+import com.tailrocks.sqldiff.core.postgres.diff.DiffOptions
+import com.tailrocks.sqldiff.core.postgres.model.PgTable
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull

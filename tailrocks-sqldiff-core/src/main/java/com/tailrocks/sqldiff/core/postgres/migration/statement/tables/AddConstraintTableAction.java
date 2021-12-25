@@ -1,6 +1,6 @@
-package com.scentbird.krendel.core.postgres.migration.statement.alter.table;
+package com.tailrocks.sqldiff.core.postgres.migration.statement.tables;
 
-import com.scentbird.krendel.core.postgres.migration.statement.alter.table.constraint.AddConstraintTypeAction;
+import com.tailrocks.sqldiff.core.postgres.migration.statement.constraints.AddConstraintTypeAction;
 
 /**
  * @author Efim Matytsin

@@ -1,7 +1,7 @@
 package com.tailrocks.sqldiff.cli.command;
 
 import com.opencsv.CSVWriter;
-import com.scentbird.krendel.core.SqlClient;
+import com.tailrocks.sqldiff.core.SqlClient;
 import org.springframework.boot.ansi.AnsiStyle;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.util.concurrent.Callable;
 
-import static com.scentbird.krendel.core.util.KrendelUtils.getQuery;
+import static com.tailrocks.sqldiff.core.util.KrendelUtils.getQuery;
 import static com.scentbird.krendel.output.KrendelOutput.consolePrintln;
 import static com.scentbird.krendel.output.KrendelOutput.maskJdbcUrl;
 import static org.springframework.boot.ansi.AnsiOutput.encode;

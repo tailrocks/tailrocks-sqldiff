@@ -1,4 +1,4 @@
-package com.scentbird.krendel.core.postgres.diff;
+package com.tailrocks.sqldiff.core.postgres.diff;
 
 public enum DiffOperation {
 

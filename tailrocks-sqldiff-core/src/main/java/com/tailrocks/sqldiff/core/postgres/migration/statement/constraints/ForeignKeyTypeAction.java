@@ -1,7 +1,7 @@
-package com.scentbird.krendel.core.postgres.migration.statement.alter.table.constraint;
+package com.tailrocks.sqldiff.core.postgres.migration.statement.constraints;
 
-import com.scentbird.krendel.core.postgres.migration.MigrationOptions;
-import com.scentbird.krendel.core.postgres.model.PgForeignKey;
+import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
+import com.tailrocks.sqldiff.core.postgres.model.PgForeignKey;
 
 /**
  * @author Efim Matytsin

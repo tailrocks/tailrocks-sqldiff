@@ -2,9 +2,9 @@ package com.tailrocks.sqldiff.cli.command;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import com.scentbird.krendel.core.postgres.diff.DiffOptions;
-import com.scentbird.krendel.core.postgres.migration.MigrationOptions;
-import com.scentbird.krendel.core.postgres.migration.MigrationReport;
+import com.tailrocks.sqldiff.core.postgres.diff.DiffOptions;
+import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
+import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
 import com.scentbird.krendel.model.config.KrendelDiffConfig;
 import com.scentbird.krendel.output.KrendelStandardConfig;
 import com.scentbird.krendel.model.config.KrendelMigrationMetadataConfig;

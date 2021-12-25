@@ -1,6 +1,6 @@
 package com.scentbird.krendel.spring.boot.autoconfigure;
 
-import com.scentbird.krendel.core.MigrationGenerator;
+import com.tailrocks.sqldiff.core.MigrationGenerator;
 import com.scentbird.krendel.hibernate.DataSourceConfig;
 import com.scentbird.krendel.output.DbVersionControl;
 import com.scentbird.krendel.hibernate.KrendelMigrator;

@@ -1,4 +1,4 @@
-package com.scentbird.krendel.core;
+package com.tailrocks.sqldiff.core;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

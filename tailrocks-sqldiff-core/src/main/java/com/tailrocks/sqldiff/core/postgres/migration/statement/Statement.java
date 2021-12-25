@@ -1,4 +1,4 @@
-package com.scentbird.krendel.core.postgres.migration.statement;
+package com.tailrocks.sqldiff.core.postgres.migration.statement;
 
 /**
  * @author Efim Matytsin

@@ -1,7 +1,7 @@
-package com.scentbird.krendel.core.postgres.migration.statement.alter.table.constraint;
+package com.tailrocks.sqldiff.core.postgres.migration.statement.constraints;
 
-import com.scentbird.krendel.core.postgres.model.PgColumn;
-import com.scentbird.krendel.core.postgres.model.PgUniqueConstraint;
+import com.tailrocks.sqldiff.core.postgres.model.PgColumn;
+import com.tailrocks.sqldiff.core.postgres.model.PgUniqueConstraint;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.stream.Collectors;

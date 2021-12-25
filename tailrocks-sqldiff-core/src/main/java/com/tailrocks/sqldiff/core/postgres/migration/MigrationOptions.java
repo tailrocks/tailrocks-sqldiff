@@ -1,4 +1,4 @@
-package com.scentbird.krendel.core.postgres.migration;
+package com.tailrocks.sqldiff.core.postgres.migration;
 
 public class MigrationOptions {
 

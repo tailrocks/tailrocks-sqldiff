@@ -1,6 +1,6 @@
 package com.scentbird.krendel.spring.boot.autoconfigure;
 
-import com.scentbird.krendel.core.postgres.SchemaReader;
+import com.tailrocks.sqldiff.core.postgres.SchemaReader;
 import org.hibernate.cfg.AvailableSettings;
 import org.hibernate.jpa.boot.spi.IntegratorProvider;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;

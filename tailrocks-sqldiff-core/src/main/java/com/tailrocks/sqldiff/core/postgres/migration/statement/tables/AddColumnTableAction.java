@@ -1,9 +1,9 @@
-package com.scentbird.krendel.core.postgres.migration.statement.alter.table;
+package com.tailrocks.sqldiff.core.postgres.migration.statement.tables;
 
-import com.scentbird.krendel.core.postgres.migration.MigrationOptions;
-import com.scentbird.krendel.core.postgres.model.PgColumn;
+import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
+import com.tailrocks.sqldiff.core.postgres.model.PgColumn;
 
-import static com.scentbird.krendel.core.postgres.migration.MigrationUtils.getColumnType;
+import static com.tailrocks.sqldiff.core.postgres.migration.MigrationUtils.getColumnType;
 
 /**
  * @author Efim Matytsin

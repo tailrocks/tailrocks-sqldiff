@@ -1,4 +1,4 @@
-package com.scentbird.krendel.core.postgres.diff;
+package com.tailrocks.sqldiff.core.postgres.diff;
 
 import com.scentbird.krendel.model.config.KrendelDiffConfig;
 import org.jetbrains.annotations.NotNull;

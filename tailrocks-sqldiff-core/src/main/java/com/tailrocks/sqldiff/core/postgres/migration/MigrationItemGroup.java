@@ -1,7 +1,7 @@
-package com.scentbird.krendel.core.postgres.migration;
+package com.tailrocks.sqldiff.core.postgres.migration;
 
 import com.tailrocks.sqldiff.core.postgres.Postgres12TableLockLevel;
-import com.scentbird.krendel.core.postgres.model.PgTable;
+import com.tailrocks.sqldiff.core.postgres.model.PgTable;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import java.util.ArrayList;

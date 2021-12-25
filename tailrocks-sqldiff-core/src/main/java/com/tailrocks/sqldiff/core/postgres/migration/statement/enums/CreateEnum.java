@@ -1,6 +1,7 @@
-package com.scentbird.krendel.core.postgres.migration.statement;
+package com.tailrocks.sqldiff.core.postgres.migration.statement.enums;
 
-import com.scentbird.krendel.core.postgres.model.PgEnum;
+import com.tailrocks.sqldiff.core.postgres.model.PgEnum;
+import com.tailrocks.sqldiff.core.postgres.migration.statement.Statement;
 
 import java.util.stream.Collectors;
 

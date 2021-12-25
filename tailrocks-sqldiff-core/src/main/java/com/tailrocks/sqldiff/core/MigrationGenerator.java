@@ -1,6 +1,6 @@
-package com.scentbird.krendel.core;
+package com.tailrocks.sqldiff.core;
 
-import com.scentbird.krendel.core.postgres.migration.MigrationReport;
+import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
 
 public interface MigrationGenerator {
 

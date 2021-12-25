@@ -1,32 +1,26 @@
-package com.scentbird.krendel.core.postgres;
+package com.tailrocks.sqldiff.core.postgres;
 
-import com.scentbird.krendel.core.SqlClient;
-import com.scentbird.krendel.core.postgres.model.PgColumn;
-import com.scentbird.krendel.core.postgres.model.PgColumnType;
-import com.scentbird.krendel.core.postgres.model.PgConstraintType;
-import com.scentbird.krendel.core.postgres.model.PgEnum;
-import com.scentbird.krendel.core.postgres.model.PgExtension;
-import com.scentbird.krendel.core.postgres.model.PgIndex;
-import com.scentbird.krendel.core.postgres.model.PgSchema;
-import com.scentbird.krendel.core.postgres.model.PgSequence;
-import com.scentbird.krendel.core.postgres.model.PgTable;
-import com.scentbird.krendel.core.postgres.model.PgView;
+import com.tailrocks.sqldiff.core.SqlClient;
+import com.tailrocks.sqldiff.core.postgres.model.PgColumn;
+import com.tailrocks.sqldiff.core.postgres.model.PgColumnType;
+import com.tailrocks.sqldiff.core.postgres.model.PgConstraintType;
+import com.tailrocks.sqldiff.core.postgres.model.PgEnum;
+import com.tailrocks.sqldiff.core.postgres.model.PgExtension;
+import com.tailrocks.sqldiff.core.postgres.model.PgIndex;
+import com.tailrocks.sqldiff.core.postgres.model.PgSchema;
+import com.tailrocks.sqldiff.core.postgres.model.PgSequence;
+import com.tailrocks.sqldiff.core.postgres.model.PgTable;
+import com.tailrocks.sqldiff.core.postgres.model.PgView;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.sql.ResultSet;
 import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
-import static com.scentbird.krendel.core.util.KrendelUtils.getQuery;
+import static com.tailrocks.sqldiff.core.util.KrendelUtils.getQuery;
 
 public class SchemaReader {
 

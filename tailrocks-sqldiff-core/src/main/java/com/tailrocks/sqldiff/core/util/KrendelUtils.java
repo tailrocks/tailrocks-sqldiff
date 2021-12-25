@@ -1,4 +1,4 @@
-package com.scentbird.krendel.core.util;
+package com.tailrocks.sqldiff.core.util;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

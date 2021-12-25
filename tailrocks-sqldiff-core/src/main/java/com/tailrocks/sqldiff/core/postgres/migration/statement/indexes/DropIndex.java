@@ -1,8 +1,8 @@
-package com.scentbird.krendel.core.postgres.migration.statement.index;
+package com.tailrocks.sqldiff.core.postgres.migration.statement.indexes;
 
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.statement.Statement;
-import com.scentbird.krendel.core.postgres.model.PgIndex;
+import com.tailrocks.sqldiff.core.postgres.model.PgIndex;
 
 /**
  * @author Efim Matytsin

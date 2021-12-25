@@ -1,6 +1,6 @@
-package com.scentbird.krendel.core.postgres.diff;
+package com.tailrocks.sqldiff.core.postgres.diff;
 
-import com.scentbird.krendel.core.postgres.model.PgSchema;
+import com.tailrocks.sqldiff.core.postgres.model.PgSchema;
 
 import java.util.ArrayList;
 import java.util.List;

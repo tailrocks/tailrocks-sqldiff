@@ -1,4 +1,4 @@
-package com.scentbird.krendel.core;
+package com.tailrocks.sqldiff.core;
 
 import org.postgresql.Driver;
 import org.slf4j.Logger;

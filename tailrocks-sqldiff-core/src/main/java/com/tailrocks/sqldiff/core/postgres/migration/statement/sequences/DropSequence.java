@@ -1,8 +1,8 @@
-package com.scentbird.krendel.core.postgres.migration.statement.sequence;
+package com.tailrocks.sqldiff.core.postgres.migration.statement.sequences;
 
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.statement.Statement;
-import com.scentbird.krendel.core.postgres.model.PgSequence;
+import com.tailrocks.sqldiff.core.postgres.model.PgSequence;
 
 /**
  * @author Efim Matytsin

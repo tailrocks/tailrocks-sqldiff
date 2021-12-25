@@ -1,14 +1,15 @@
 package com.scentbird.krendel.output;
 
-import com.scentbird.krendel.core.postgres.SchemaReader;
-import com.scentbird.krendel.core.postgres.diff.Diff;
-import com.scentbird.krendel.core.postgres.diff.DiffOptions;
-import com.scentbird.krendel.core.postgres.diff.SchemaDiff;
-import com.scentbird.krendel.core.postgres.migration.MigrationItem;
-import com.scentbird.krendel.core.postgres.migration.MigrationOptions;
-import com.scentbird.krendel.core.postgres.migration.MigrationReport;
-import com.scentbird.krendel.core.postgres.model.PgSchema;
+import com.tailrocks.sqldiff.core.postgres.SchemaReader;
+import com.tailrocks.sqldiff.core.postgres.diff.Diff;
+import com.tailrocks.sqldiff.core.postgres.diff.DiffOptions;
+import com.tailrocks.sqldiff.core.postgres.diff.SchemaDiff;
+import com.tailrocks.sqldiff.core.postgres.migration.MigrationItem;
+import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
+import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
+import com.tailrocks.sqldiff.core.postgres.model.PgSchema;
 import com.scentbird.krendel.model.config.KrendelDiffConfig;
+import com.tailrocks.sqldiff.core.postgres.migration.Migration;
 import org.apache.commons.lang3.StringUtils;
 import org.fusesource.jansi.AnsiConsole;
 import org.jetbrains.annotations.NotNull;
@@ -133,7 +134,7 @@ public final class KrendelOutput {
                 System.exit(0);
             }
 
-            com.scentbird.krendel.core.postgres.migration.Migration migration = new com.scentbird.krendel.core.postgres.migration.Migration(diff, migrationOptions);
+            Migration migration = new Migration(diff, migrationOptions);
 
             out.println();
             printStep("Generating migrations");

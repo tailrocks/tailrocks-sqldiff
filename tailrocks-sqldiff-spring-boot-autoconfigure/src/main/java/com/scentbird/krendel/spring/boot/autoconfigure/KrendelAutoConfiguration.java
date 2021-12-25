@@ -1,8 +1,8 @@
 package com.scentbird.krendel.spring.boot.autoconfigure;
 
 import com.opencsv.exceptions.CsvValidationException;
-import com.scentbird.krendel.core.MigrationGenerator;
-import com.scentbird.krendel.core.postgres.SchemaReader;
+import com.tailrocks.sqldiff.core.MigrationGenerator;
+import com.tailrocks.sqldiff.core.postgres.SchemaReader;
 import com.scentbird.krendel.output.DbVersionControl;
 import com.scentbird.krendel.output.FlywayMigrationGenerator;
 import org.flywaydb.core.Flyway;

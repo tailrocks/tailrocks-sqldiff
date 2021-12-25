@@ -1,4 +1,4 @@
-package com.scentbird.krendel.core.postgres.migration.statement.alter.type;
+package com.tailrocks.sqldiff.core.postgres.migration.statement.enums;
 
 /**
  * @author Efim Matytsin

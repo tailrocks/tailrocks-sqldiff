@@ -1,4 +1,4 @@
-package com.scentbird.krendel.core.postgres.migration.statement.alter.column;
+package com.tailrocks.sqldiff.core.postgres.migration.statement.columns;
 
 /**
  * @author Efim Matytsin

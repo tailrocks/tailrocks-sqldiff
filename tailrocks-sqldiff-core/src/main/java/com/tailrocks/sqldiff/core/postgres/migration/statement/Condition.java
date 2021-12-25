@@ -1,4 +1,4 @@
-package com.scentbird.krendel.core.postgres.migration.statement.condition;
+package com.tailrocks.sqldiff.core.postgres.migration.statement;
 
 import com.tailrocks.sqldiff.core.postgres.migration.statement.Statement;
 
