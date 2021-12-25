@@ -4,9 +4,6 @@ import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.statement.Statement;
 import com.tailrocks.sqldiff.core.postgres.model.PgSequence;
 
-/**
- * @author Efim Matytsin
- */
 public class DropSequence implements Statement {
     private final PgSequence pgSequence;
     private final MigrationOptions migrationOptions;

@@ -7,9 +7,6 @@ import com.tailrocks.sqldiff.core.postgres.model.PgTable;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-/**
- * @author Efim Matytsin
- */
 public class UpdateSet implements Statement {
     private final PgTable pgTable;
     private final Map<PgColumn, Statement> setList;

@@ -10,16 +10,13 @@ import java.util.Map;
 
 import static java.util.Objects.requireNonNull;
 
-/**
- * @author Efim Matytsin
- */
 public class MigrationItemGroup {
     protected final List<MigrationItem> migrations = new ArrayList<>();
     protected final List<ImmutablePair<PgTable, Postgres12TableLockLevel>> locks = new ArrayList<>();
 
     public void addMigration(MigrationItem item) {
         requireNonNull(item, "item` can not be null");
-        for (Map.Entry<PgTable, Postgres12TableLockLevel> e: item.getLocks().entrySet()) {
+        for (Map.Entry<PgTable, Postgres12TableLockLevel> e : item.getLocks().entrySet()) {
             locks.add(new ImmutablePair<>(e.getKey(), e.getValue()));
         }
         migrations.add(item);
@@ -39,7 +36,7 @@ public class MigrationItemGroup {
 
     public String getDescription() {
         StringBuilder description = new StringBuilder();
-        for (ImmutablePair<PgTable, Postgres12TableLockLevel> lock: locks) {
+        for (ImmutablePair<PgTable, Postgres12TableLockLevel> lock : locks) {
             description.append(lock.getLeft().getName());
             description.append(" with lock ");
             description.append(lock.getRight().name());

@@ -1,8 +1,5 @@
 package com.tailrocks.sqldiff.core.postgres.migration.statement.columns;
 
-/**
- * @author Efim Matytsin
- */
 public class DropNotNullColumnAction implements AlterColumnAction {
     @Override
     public String getQuery() {

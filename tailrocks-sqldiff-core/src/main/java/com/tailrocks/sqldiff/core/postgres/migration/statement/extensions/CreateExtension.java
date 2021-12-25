@@ -3,9 +3,6 @@ package com.tailrocks.sqldiff.core.postgres.migration.statement.extensions;
 import com.tailrocks.sqldiff.core.postgres.migration.statement.Statement;
 import com.tailrocks.sqldiff.core.postgres.model.PgExtension;
 
-/**
- * @author Efim Matytsin
- */
 public class CreateExtension implements Statement {
 
     private final PgExtension pgExtension;

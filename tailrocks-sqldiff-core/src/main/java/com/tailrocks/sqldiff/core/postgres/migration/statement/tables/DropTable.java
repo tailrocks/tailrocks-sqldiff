@@ -4,9 +4,6 @@ import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.statement.Statement;
 import com.tailrocks.sqldiff.core.postgres.model.PgTable;
 
-/**
- * @author Efim Matytsin
- */
 public class DropTable implements Statement {
     private final PgTable pgTable;
     private final MigrationOptions migrationOptions;

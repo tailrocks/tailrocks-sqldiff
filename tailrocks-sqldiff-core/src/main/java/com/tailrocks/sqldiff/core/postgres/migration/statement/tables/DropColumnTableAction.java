@@ -3,9 +3,6 @@ package com.tailrocks.sqldiff.core.postgres.migration.statement.tables;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
 import com.tailrocks.sqldiff.core.postgres.model.PgColumn;
 
-/**
- * @author Efim Matytsin
- */
 public class DropColumnTableAction implements AlterTableAction {
     private final PgColumn pgColumn;
     private final MigrationOptions migrationOptions;

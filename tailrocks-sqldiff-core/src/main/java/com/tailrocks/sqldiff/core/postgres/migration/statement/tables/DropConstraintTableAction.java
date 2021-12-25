@@ -1,8 +1,5 @@
 package com.tailrocks.sqldiff.core.postgres.migration.statement.tables;
 
-/**
- * @author Efim Matytsin
- */
 public class DropConstraintTableAction implements AlterTableAction {
     private final String key;
 
@@ -12,6 +9,6 @@ public class DropConstraintTableAction implements AlterTableAction {
 
     @Override
     public String getQuery() {
-        return  "DROP CONSTRAINT \"" + key + "\"";
+        return "DROP CONSTRAINT \"" + key + "\"";
     }
 }

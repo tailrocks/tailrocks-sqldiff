@@ -2,9 +2,6 @@ package com.tailrocks.sqldiff.core.postgres.migration.statement;
 
 import java.util.Set;
 
-/**
- * @author Efim Matytsin
- */
 public class Statements {
     private final Set<Statement> statements;
 
@@ -16,7 +13,7 @@ public class Statements {
         return statements;
     }
 
-    public String getQuery(){
+    public String getQuery() {
         return statements.stream()
                 .map(Statement::getQuery)
                 .reduce((s, s2) -> s + "/n" + s2)

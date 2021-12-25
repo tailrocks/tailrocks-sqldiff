@@ -5,9 +5,6 @@ import com.tailrocks.sqldiff.core.postgres.model.PgColumn;
 
 import static com.tailrocks.sqldiff.core.postgres.migration.MigrationUtils.getColumnType;
 
-/**
- * @author Efim Matytsin
- */
 public class AddColumnTableAction implements AlterTableAction {
     private final PgColumn pgColumn;
     private final MigrationOptions migrationOptions;

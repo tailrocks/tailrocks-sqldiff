@@ -3,9 +3,6 @@ package com.tailrocks.sqldiff.core.postgres.migration.statement.sequences;
 import com.tailrocks.sqldiff.core.postgres.migration.statement.Statement;
 import com.tailrocks.sqldiff.core.postgres.model.PgSequence;
 
-/**
- * @author Efim Matytsin
- */
 public class CreateSequence implements Statement {
 
     private final PgSequence pgSequence;
@@ -20,7 +17,7 @@ public class CreateSequence implements Statement {
 
     @Override
     public String getQuery() {
-        return  "CREATE SEQUENCE " + pgSequence.getName() + "\n" +
+        return "CREATE SEQUENCE " + pgSequence.getName() + "\n" +
                 "START WITH " + pgSequence.getStartValue() + "\n" +
                 "INCREMENT BY " + pgSequence.getIncrementBy() + "\n" +
                 sequenceMinValue.getQuery() + "\n" +

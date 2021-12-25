@@ -13,9 +13,6 @@ import java.util.stream.Collectors;
 
 import static com.tailrocks.sqldiff.core.postgres.migration.MigrationUtils.getColumnType;
 
-/**
- * @author Efim Matytsin
- */
 public class CreateTable implements Statement {
     private static final Logger log = LoggerFactory.getLogger(CreateTable.class.getSimpleName());
 

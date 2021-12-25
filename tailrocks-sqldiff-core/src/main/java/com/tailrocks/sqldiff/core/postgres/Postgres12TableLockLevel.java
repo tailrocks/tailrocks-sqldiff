@@ -7,8 +7,6 @@ import java.util.Set;
 
 /**
  * https://www.postgresql.org/docs/current/explicit-locking.html
- *
- * @author Efim Matytsin
  */
 public enum Postgres12TableLockLevel {
 

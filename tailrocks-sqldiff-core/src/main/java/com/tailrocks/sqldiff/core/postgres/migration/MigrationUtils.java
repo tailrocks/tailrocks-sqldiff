@@ -2,9 +2,6 @@ package com.tailrocks.sqldiff.core.postgres.migration;
 
 import com.tailrocks.sqldiff.core.postgres.model.PgColumn;
 
-/**
- * @author Efim Matytsin
- */
 public class MigrationUtils {
     public static String getColumnType(PgColumn column) {
         // column type

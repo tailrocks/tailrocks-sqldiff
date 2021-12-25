@@ -1,11 +1,8 @@
 package com.tailrocks.sqldiff.core.postgres.migration.statement.enums;
 
-import com.tailrocks.sqldiff.core.postgres.model.PgEnum;
 import com.tailrocks.sqldiff.core.postgres.migration.statement.Statement;
+import com.tailrocks.sqldiff.core.postgres.model.PgEnum;
 
-/**
- * @author Efim Matytsin
- */
 public class DropEnum implements Statement {
     private final PgEnum pgEnum;
 

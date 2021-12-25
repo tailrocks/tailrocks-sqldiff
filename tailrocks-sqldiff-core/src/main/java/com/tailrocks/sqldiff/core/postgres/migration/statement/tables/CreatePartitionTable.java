@@ -3,9 +3,6 @@ package com.tailrocks.sqldiff.core.postgres.migration.statement.tables;
 import com.tailrocks.sqldiff.core.postgres.migration.statement.Statement;
 import com.tailrocks.sqldiff.core.postgres.model.PgTable;
 
-/**
- * @author Efim Matytsin
- */
 public class CreatePartitionTable implements Statement {
     private final PgTable pgTable;
 

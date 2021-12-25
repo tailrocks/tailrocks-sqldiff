@@ -6,9 +6,6 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.stream.Collectors;
 
-/**
- * @author Efim Matytsin
- */
 public class UniqueConstraintTypeAction implements AddConstraintTypeAction {
     private final PgUniqueConstraint uniqueConstraint;
 

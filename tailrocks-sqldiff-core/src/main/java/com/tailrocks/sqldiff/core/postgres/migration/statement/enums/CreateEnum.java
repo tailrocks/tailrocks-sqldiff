@@ -1,13 +1,10 @@
 package com.tailrocks.sqldiff.core.postgres.migration.statement.enums;
 
-import com.tailrocks.sqldiff.core.postgres.model.PgEnum;
 import com.tailrocks.sqldiff.core.postgres.migration.statement.Statement;
+import com.tailrocks.sqldiff.core.postgres.model.PgEnum;
 
 import java.util.stream.Collectors;
 
-/**
- * @author Efim Matytsin
- */
 public class CreateEnum implements Statement {
     private final PgEnum pgEnum;
 

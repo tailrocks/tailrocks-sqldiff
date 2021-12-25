@@ -4,9 +4,6 @@ import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.statement.Statement;
 import com.tailrocks.sqldiff.core.postgres.model.PgIndex;
 
-/**
- * @author Efim Matytsin
- */
 public class CreateIndex implements Statement {
     private final PgIndex pgIndex;
     private final MigrationOptions migrationOptions;

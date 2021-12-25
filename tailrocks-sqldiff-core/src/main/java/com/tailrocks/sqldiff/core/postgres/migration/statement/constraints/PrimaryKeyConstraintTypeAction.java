@@ -5,9 +5,6 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.stream.Collectors;
 
-/**
- * @author Efim Matytsin
- */
 public class PrimaryKeyConstraintTypeAction implements AddConstraintTypeAction {
     private final PgPrimaryKey pgPrimaryKey;
 

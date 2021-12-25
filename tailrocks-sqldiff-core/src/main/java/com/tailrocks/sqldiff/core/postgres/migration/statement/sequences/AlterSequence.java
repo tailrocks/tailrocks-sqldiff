@@ -3,9 +3,6 @@ package com.tailrocks.sqldiff.core.postgres.migration.statement.sequences;
 import com.tailrocks.sqldiff.core.postgres.migration.statement.Statement;
 import com.tailrocks.sqldiff.core.postgres.model.PgSequence;
 
-/**
- * @author Efim Matytsin
- */
 public class AlterSequence implements Statement {
     private final PgSequence pgSequence;
     private final AlterSequenceAction alterSequenceAction;
@@ -17,6 +14,6 @@ public class AlterSequence implements Statement {
 
     @Override
     public String getQuery() {
-        return "ALTER SEQUENCE \"" + pgSequence.getName() + "\" "+ alterSequenceAction.getQuery() + ";";
+        return "ALTER SEQUENCE \"" + pgSequence.getName() + "\" " + alterSequenceAction.getQuery() + ";";
     }
 }

@@ -2,9 +2,6 @@ package com.tailrocks.sqldiff.core.postgres.migration.statement.tables;
 
 import com.tailrocks.sqldiff.core.postgres.migration.statement.constraints.AddConstraintTypeAction;
 
-/**
- * @author Efim Matytsin
- */
 public class AddConstraintTableAction implements AlterTableAction {
     private final String key;
     private AddConstraintTypeAction type;

@@ -1,8 +1,5 @@
 package com.tailrocks.sqldiff.core.postgres.migration.statement.tables;
 
-/**
- * @author Efim Matytsin
- */
 public class ValidateConstraintTableAction implements AlterTableAction {
     private final String key;
 
