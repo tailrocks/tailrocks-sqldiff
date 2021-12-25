@@ -34,7 +34,7 @@ public class SqlDiffFlywayVersionControl implements DbVersionControl {
         }
 
         if (Objects.equals(datasourceUrl, getUrl())) {
-            throw new RuntimeException("Krendel Flyway migrations DB can not be same with Spring DataSource");
+            throw new RuntimeException("tailrocks-sqldiff Flyway migrations DB can not be same with Spring DataSource");
         }
 
         // TODO compare testcontainers JDBC urls
@@ -46,7 +46,7 @@ public class SqlDiffFlywayVersionControl implements DbVersionControl {
             if (Objects.equals(datasourceJdbcProperties.getProperty("PGHOST"), targetJdbcProperties.getProperty("PGHOST")) &&
                     Objects.equals(datasourceJdbcProperties.getProperty("PGPORT"), targetJdbcProperties.getProperty("PGPORT")) &&
                     Objects.equals(datasourceJdbcProperties.getProperty("PGDBNAME"), targetJdbcProperties.getProperty("PGDBNAME"))) {
-                throw new RuntimeException("Krendel Flyway migrations DB can not be same with Spring DataSource");
+                throw new RuntimeException("tailrocks-sqldiff Flyway migrations DB can not be same with Spring DataSource");
             }
         }
 

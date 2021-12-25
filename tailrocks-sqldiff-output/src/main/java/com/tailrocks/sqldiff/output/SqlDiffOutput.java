@@ -85,7 +85,7 @@ public final class SqlDiffOutput {
         System.setProperty("jansi.force", "true");
         AnsiConsole.systemInstall();
 
-        System.out.println(ansi().bold().fgBrightMagenta().a("Krendel (by Scentbird)").reset());
+        System.out.println(ansi().bold().fgBrightMagenta().a("tailrocks sqldiff").reset());
 
         out.println();
     }

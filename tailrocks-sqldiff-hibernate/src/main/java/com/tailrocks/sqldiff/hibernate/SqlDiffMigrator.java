@@ -52,7 +52,7 @@ public class SqlDiffMigrator {
     }
 
     public void start(@NotNull Metadata metadata, @Nullable MigrationGenerator migrationGenerator) throws Exception {
-        log.info("Starting Krendel migrator");
+        log.info("Starting tailrocks-sqldiff migrator");
 
         Objects.requireNonNull(metadata, "Metadata can not be null");
 
@@ -67,7 +67,7 @@ public class SqlDiffMigrator {
 
         if (!(krendelConfiguration.getTarget().getUrl().startsWith("jdbc:postgresql:") ||
                 krendelConfiguration.getTarget().getUrl().startsWith("jdbc:tc:postgresql:"))) {
-            throw new RuntimeException("Krendel target url is not starts with jdbc:postgresql: or jdbc:postgresql:");
+            throw new RuntimeException("tailrocks-sqldiff target url is not starts with jdbc:postgresql: or jdbc:postgresql:");
         }
 
         File hibernateDdlDumpFile = krendelConfiguration.getHibernateDdlDumpFile() != null ?
@@ -90,7 +90,7 @@ public class SqlDiffMigrator {
                 ? dbVersionControl.getPassword() : dataSourceConfig.getPassword();
 
         if (Objects.equals(sourceJdbcUrl, krendelConfiguration.getTarget().getUrl())) {
-            throw new RuntimeException("Krendel target DB can not be same with Spring DataSource");
+            throw new RuntimeException("tailrocks-sqldiff target DB can not be same with Spring DataSource");
         }
 
         // TODO compare testcontainers JDBC urls
@@ -103,7 +103,7 @@ public class SqlDiffMigrator {
             if (Objects.equals(datasourceJdbcProperties.getProperty("PGHOST"), targetJdbcProperties.getProperty("PGHOST")) &&
                     Objects.equals(datasourceJdbcProperties.getProperty("PGPORT"), targetJdbcProperties.getProperty("PGPORT")) &&
                     Objects.equals(datasourceJdbcProperties.getProperty("PGDBNAME"), targetJdbcProperties.getProperty("PGDBNAME"))) {
-                throw new RuntimeException("Krendel target DB can not be same with Spring DataSource");
+                throw new RuntimeException("tailrocks-sqldiff target DB can not be same with Spring DataSource");
             }
         }
 

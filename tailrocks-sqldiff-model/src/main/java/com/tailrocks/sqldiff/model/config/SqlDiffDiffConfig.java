@@ -396,15 +396,15 @@ public abstract class SqlDiffDiffConfig {
         /**
          * Compare foreign keys by name. That means we will compare foreign key from source schema and target
          * schema use their naming, for example `orders` table in source schema have FK linked to `users` table,
-         * and target schema also have same foreign key but with different name, in this case Krendel will generate
-         * migration queries which contains two queries, one delete FK from source schema and one create FK based
-         * on naming from target schema. This is default value.
+         * and target schema also have same foreign key but with different name, in this case tailrocks-sqldiff will
+         * generate migration queries which contains two queries, one delete FK from source schema and one create FK
+         * based on naming from target schema. This is default value.
          */
         NAME,
 
         /**
          * Compare foreign keys by references. That means we will ignore naming, if source and target schema both
-         * have foreign keys with same linking and difference name, Krendel will not generate any migration
+         * have foreign keys with same linking and difference name, tailrocks-sqldiff will not generate any migration
          * queries, even if name of these FK links are different.
          */
         REFERENCES

@@ -2,7 +2,7 @@ plugins {
     `java-library`
 }
 
-description = "Krendel Micronaut"
+description = "tailrocks-sqldiff Micronaut"
 
 dependencies {
     // subprojects

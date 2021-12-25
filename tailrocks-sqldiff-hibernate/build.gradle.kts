@@ -2,7 +2,7 @@ plugins {
     `java-library`
 }
 
-description = "Krendel Embedded"
+description = "tailrocks-sqldiff Embedded"
 
 dependencies {
     api(project(":tailrocks-sqldiff-output"))

@@ -11,7 +11,7 @@ the<DependencyManagementExtension>().apply {
     }
 }
 
-description = "Krendel AutoConfigure"
+description = "tailrocks-sqldiff AutoConfigure"
 
 dependencies {
     api(project(":tailrocks-sqldiff-hibernate"))

@@ -32,7 +32,7 @@ import java.util.Objects;
 public class SqlDiffAutoConfiguration {
 
     /**
-     * @param krendelProperties    Krendel configuration
+     * @param sqlDiffProperties    tailrocks-sqldiff configuration
      * @param entityManagerFactory add dependency on {@link EntityManagerFactory}, it needs for
      *                             {@link HibernateMetadataExtractor} to extract {@link Metadata} instance
      */
@@ -40,7 +40,7 @@ public class SqlDiffAutoConfiguration {
     @ConditionalOnMissingBean
     public SqlDiffMigrationInitializer krendelInitializer(
             ConfigurableApplicationContext applicationContext,
-            SqlDiffProperties krendelProperties,
+            SqlDiffProperties sqlDiffProperties,
             DataSourceProperties dataSourceProperties,
             // can not delete this argument, we need entity manager initialized first to generate use Hibernate
             // SchemaExport
@@ -50,7 +50,7 @@ public class SqlDiffAutoConfiguration {
     ) {
         Objects.requireNonNull(entityManagerFactory);
         return new SqlDiffMigrationInitializer(
-                krendelProperties,
+                sqlDiffProperties,
                 dataSourceProperties,
                 dbVersionControl,
                 migrationGenerator

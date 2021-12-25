@@ -4,11 +4,10 @@ plugins {
 }
 
 version "0.1"
-group "com.scentbird.krendel.cli"
+group "com.tailrocks.sqldiff.cli"
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 dependencies {
@@ -32,7 +31,7 @@ dependencies {
     }
 }
 
-mainClassName = "com.scentbird.krendel.cli.command.KrendelCommand"
+mainClassName = "com.tailrocks.sqldiff.cli.command.SqlDiffCommand"
 
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"

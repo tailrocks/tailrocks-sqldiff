@@ -11,7 +11,7 @@ the<DependencyManagementExtension>().apply {
     }
 }
 
-description = "Starter for using Krendel"
+description = "Starter for using tailrocks-sqldiff"
 
 dependencies {
     api(project(":tailrocks-sqldiff-core"))

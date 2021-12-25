@@ -3,18 +3,18 @@ package com.tailrocks.sqldiff.model.config;
 public abstract class SqlDiffEmbeddedConfig {
 
     /**
-     * Whether to enable Krendel migrations. Enabled by default.
+     * Whether to enable tailrocks-sqldiff migrations. Enabled by default.
      */
     private boolean enabled = true;
 
     /**
-     * Whether to exit application after Krendel migrations was generated. Enabled by default.
+     * Whether to exit application after tailrocks-sqldiff migrations was generated. Enabled by default.
      */
     private boolean exitAfterFinish = true;
 
     /**
-     * Path where to dump Hibernate DDL schema during preparing diff by Krendel. By default is {@literal null} and
-     * represent a random temp file, which will be created for SchemaExport execution.
+     * Path where to dump Hibernate DDL schema during preparing diff by tailrocks-sqldiff. By default is {@literal null}
+     * and represent a random temp file, which will be created for SchemaExport execution.
      */
     private String hibernateDdlDumpFile;
 
