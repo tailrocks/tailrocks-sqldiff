@@ -23,19 +23,23 @@ dependencies {
     api("ch.qos.logback:logback-classic")
     api("org.postgresql:postgresql")
 
-    // Hurma
-    api("com.scentbird.hurma:hurma-hibernate:${Versions.scentbirdHurmaHibernate}")
-    api("com.scentbird.hurma:hurma-hibernate-jpa:${Versions.scentbirdHurmaHibernateJpa}")
+    // Hibernate Types
+    api(sqldiffLibs.hibernate.types)
+
+    // FIXME remove me pls
+    api(project(":jambalaya-hibernate"))
 }
 
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
-    options.compilerArgs.addAll(listOf(
+    options.compilerArgs.addAll(
+        listOf(
             "-parameters",
             // enables incremental compilation
             "-Amicronaut.processing.incremental=true",
             "-Amicronaut.processing.annotations=krendel.*,com.scentbird.krendel.*",
             "-Amicronaut.processing.group=${project.group}",
             "-Amicronaut.processing.module=${project.name}"
-    ))
+        )
+    )
 }

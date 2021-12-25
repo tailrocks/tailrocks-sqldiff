@@ -1,7 +1,5 @@
 package sqldiff.spring.boot.advanced.sample.data.domain;
 
-import com.scentbird.hurma.spring.data.jpa.MutableEntity;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;

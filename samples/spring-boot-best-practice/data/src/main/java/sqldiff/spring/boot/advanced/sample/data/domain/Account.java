@@ -3,7 +3,6 @@ package sqldiff.spring.boot.advanced.sample.data.domain;
 import com.scentbird.hurma.hibernate.annotation.Comment;
 import com.vladmihalcea.hibernate.type.array.EnumArrayType;
 import com.vladmihalcea.hibernate.type.array.internal.AbstractArrayType;
-import sqldiff.spring.boot.advanced.sample.data.model.Authority;
 import org.hibernate.annotations.Parameter;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
@@ -11,6 +10,7 @@ import org.hibernate.annotations.TypeDefs;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import sqldiff.spring.boot.advanced.sample.data.model.Authority;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

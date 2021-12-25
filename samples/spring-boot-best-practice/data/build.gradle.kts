@@ -13,9 +13,11 @@ dependencies {
     // PostgreSQL
     api("org.postgresql:postgresql")
 
-    // Hurma
-    api("com.scentbird.hurma:hurma-hibernate:${Versions.scentbirdHurmaHibernate}")
-    api("com.scentbird.hurma:hurma-spring-data-jpa:${Versions.scentbirdHurmaSpringDataJpa}")
+    // Hibernate Types
+    api(sqldiffLibs.hibernate.types)
+
+    // FIXME remove me pls
+    api(project(":jambalaya-hibernate"))
 }
 
 tasks.getByName<Jar>("jar") {

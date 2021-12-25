@@ -31,4 +31,7 @@ include(
     ":samples:spring-boot-best-practice:data-sqldiff",
     ":samples:spring-boot-best-practice:web-app",
     ":samples:spring-boot-simple",
+
+    // FIXME remove me from here
+    ":jambalaya-hibernate",
 )

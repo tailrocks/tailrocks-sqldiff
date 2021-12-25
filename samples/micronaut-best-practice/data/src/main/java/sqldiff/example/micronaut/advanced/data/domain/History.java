@@ -1,7 +1,5 @@
 package sqldiff.example.micronaut.advanced.data.domain;
 
-import com.scentbird.hurma.hibernate.jpa.MutableEntity;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
