@@ -7,7 +7,7 @@ import com.tailrocks.sqldiff.core.SqlClient;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationItem;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationItemGroup;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
-import com.scentbird.krendel.model.config.KrendelMigrationMetadataConfig;
+import com.tailrocks.sqldiff.model.config.KrendelMigrationMetadataConfig;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.parser.CCJSqlParserManager;
 import net.sf.jsqlparser.schema.Column;

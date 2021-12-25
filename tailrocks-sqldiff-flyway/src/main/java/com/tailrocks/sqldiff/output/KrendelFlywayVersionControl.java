@@ -1,6 +1,6 @@
 package com.tailrocks.sqldiff.output;
 
-import com.scentbird.krendel.model.config.KrendelEmbeddedConfig;
+import com.tailrocks.sqldiff.model.config.KrendelEmbeddedConfig;
 import org.apache.commons.lang3.StringUtils;
 import org.flywaydb.core.Flyway;
 import org.flywaydb.core.api.configuration.Configuration;

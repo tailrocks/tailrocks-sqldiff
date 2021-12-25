@@ -1,4 +1,4 @@
-package com.scentbird.krendel.model.config;
+package com.tailrocks.sqldiff.model.config;
 
 public abstract class KrendelEmbeddedConfig {
 

@@ -1,11 +1,11 @@
 package com.scentbird.krendel.spring.boot.autoconfigure;
 
-import com.scentbird.krendel.model.config.KrendelDiffConfig;
-import com.scentbird.krendel.model.config.KrendelEmbeddedConfig;
-import com.scentbird.krendel.model.config.KrendelFlywayConfig;
-import com.scentbird.krendel.model.config.KrendelMigrationConfig;
-import com.scentbird.krendel.model.config.KrendelMigrationMetadataConfig;
-import com.scentbird.krendel.model.config.KrendelTargetConfig;
+import com.tailrocks.sqldiff.model.config.KrendelDiffConfig;
+import com.tailrocks.sqldiff.model.config.KrendelEmbeddedConfig;
+import com.tailrocks.sqldiff.model.config.KrendelFlywayConfig;
+import com.tailrocks.sqldiff.model.config.KrendelMigrationConfig;
+import com.tailrocks.sqldiff.model.config.KrendelMigrationMetadataConfig;
+import com.tailrocks.sqldiff.model.config.KrendelTargetConfig;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
 

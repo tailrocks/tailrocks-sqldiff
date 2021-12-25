@@ -8,7 +8,7 @@ import com.tailrocks.sqldiff.core.postgres.migration.MigrationItem;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions;
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationReport;
 import com.tailrocks.sqldiff.core.postgres.model.PgSchema;
-import com.scentbird.krendel.model.config.KrendelDiffConfig;
+import com.tailrocks.sqldiff.model.config.KrendelDiffConfig;
 import com.tailrocks.sqldiff.core.postgres.migration.Migration;
 import org.apache.commons.lang3.StringUtils;
 import org.fusesource.jansi.AnsiConsole;

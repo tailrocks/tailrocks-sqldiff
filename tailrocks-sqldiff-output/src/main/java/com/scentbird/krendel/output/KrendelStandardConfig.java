@@ -1,6 +1,6 @@
 package com.scentbird.krendel.output;
 
-import com.scentbird.krendel.model.config.KrendelDiffConfig;
+import com.tailrocks.sqldiff.model.config.KrendelDiffConfig;
 
 public class KrendelStandardConfig {
 

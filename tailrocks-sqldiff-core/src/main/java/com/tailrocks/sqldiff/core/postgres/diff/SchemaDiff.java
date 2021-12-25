@@ -12,7 +12,7 @@ import com.tailrocks.sqldiff.core.postgres.model.PgSequence;
 import com.tailrocks.sqldiff.core.postgres.model.PgTable;
 import com.tailrocks.sqldiff.core.postgres.model.PgUniqueConstraint;
 import com.tailrocks.sqldiff.core.postgres.model.PgView;
-import com.scentbird.krendel.model.config.KrendelDiffConfig.ForeignKeyCompareMethod;
+import com.tailrocks.sqldiff.model.config.KrendelDiffConfig.ForeignKeyCompareMethod;
 import org.apache.commons.collections4.CollectionUtils;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;

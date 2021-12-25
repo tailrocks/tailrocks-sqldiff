@@ -1,4 +1,4 @@
-package com.scentbird.krendel.model.config;
+package com.tailrocks.sqldiff.model.config;
 
 import java.util.ArrayList;
 import java.util.HashMap;
