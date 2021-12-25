@@ -1,4 +1,4 @@
-package com.scentbird.krendel.cli.command;
+package com.tailrocks.sqldiff.cli.command;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;

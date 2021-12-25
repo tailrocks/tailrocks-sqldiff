@@ -1,4 +1,4 @@
-package com.scentbird.krendel.cli.command;
+package com.tailrocks.sqldiff.cli.command;
 
 import com.opencsv.CSVWriter;
 import com.scentbird.krendel.core.SqlClient;
