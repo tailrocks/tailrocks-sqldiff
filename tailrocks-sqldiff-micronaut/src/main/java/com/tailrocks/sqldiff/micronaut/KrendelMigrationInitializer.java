@@ -1,4 +1,4 @@
-package com.scentbird.krendel.micronaut;
+package com.tailrocks.sqldiff.micronaut;
 
 import com.tailrocks.sqldiff.core.MigrationGenerator;
 import com.tailrocks.sqldiff.hibernate.DataSourceConfig;

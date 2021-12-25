@@ -1,4 +1,4 @@
-package com.scentbird.krendel.micronaut;
+package com.tailrocks.sqldiff.micronaut;
 
 import io.micronaut.configuration.hibernate.jpa.JpaConfiguration;
 import io.micronaut.context.event.BeanCreatedEvent;

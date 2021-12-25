@@ -1,4 +1,4 @@
-package com.scentbird.krendel.micronaut;
+package com.tailrocks.sqldiff.micronaut;
 
 import com.tailrocks.sqldiff.output.KrendelFlywayVersionControl;
 import io.micronaut.configuration.jdbc.hikari.DatasourceConfiguration;

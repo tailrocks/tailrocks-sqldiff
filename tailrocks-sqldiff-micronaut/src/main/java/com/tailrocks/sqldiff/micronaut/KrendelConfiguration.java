@@ -1,4 +1,4 @@
-package com.scentbird.krendel.micronaut;
+package com.tailrocks.sqldiff.micronaut;
 
 import com.scentbird.krendel.model.config.KrendelDiffConfig;
 import com.scentbird.krendel.model.config.KrendelEmbeddedConfig;
