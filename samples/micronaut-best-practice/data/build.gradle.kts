@@ -37,7 +37,7 @@ tasks.withType<JavaCompile> {
             "-parameters",
             // enables incremental compilation
             "-Amicronaut.processing.incremental=true",
-            "-Amicronaut.processing.annotations=krendel.*,com.scentbird.krendel.*",
+            "-Amicronaut.processing.annotations=sqldiff.*,com.tailrocks.sqldiff.*",
             "-Amicronaut.processing.group=${project.group}",
             "-Amicronaut.processing.module=${project.name}"
         )

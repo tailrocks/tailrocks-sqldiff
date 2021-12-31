@@ -20,8 +20,8 @@ dependencies {
 
 
 application {
-    mainClassName = "krendel.example.micronaut.advanced.web.WebApplication"
-    mainClass.set("krendel.example.micronaut.advanced.web.WebApplication")
+    mainClassName = "sqldiff.example.micronaut.advanced.web.WebApplication"
+    mainClass.set("sqldiff.example.micronaut.advanced.web.WebApplication")
 }
 
 tasks.withType<ShadowJar> {
@@ -34,7 +34,7 @@ tasks.withType<JavaCompile> {
             "-parameters",
             // enables incremental compilation
             "-Amicronaut.processing.incremental=true",
-            "-Amicronaut.processing.annotations=krendel.*,com.scentbird.krendel.*",
+            "-Amicronaut.processing.annotations=sqldiff.*,com.tailrocks.sqldiff.*",
             "-Amicronaut.processing.group=${project.group}",
             "-Amicronaut.processing.module=${project.name}"
     ))
