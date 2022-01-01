@@ -1,13 +1,5 @@
 object Versions {
 
-    // Gradle plugins
-
-    // https://plugins.gradle.org/plugin/com.adarshr.test-logger
-    const val gradleTestLoggerPlugin = "2.1.0"
-
-    // https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow
-    const val gradleShadowPlugin = "6.1.0"
-
     // Libraries
 
     const val micronaut = "2.2.3"

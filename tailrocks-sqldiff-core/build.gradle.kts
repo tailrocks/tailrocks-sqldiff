@@ -11,12 +11,13 @@ dependencies {
     testImplementation(kotlin("stdlib-jdk8"))
     testImplementation(kotlin("test-junit5"))
 
-    api("org.jetbrains:annotations:${Versions.jetBrainsAnnotations}")
-    api("org.postgresql:postgresql:${Versions.postgresql}")
-    implementation("org.apache.commons:commons-collections4:${Versions.commonsCollections}")
-    api("org.apache.commons:commons-lang3:${Versions.commonsLang}")
+    api(sqldiffLibs.jetbrains.annotations)
+    api(sqldiffLibs.postgresql)
+    api(sqldiffLibs.commons.collections)
+    api(sqldiffLibs.commons.lang)
 
-    // Testing
-    testImplementation("org.testcontainers:postgresql:${Versions.testcontainers}")
-    testImplementation("org.testcontainers:junit-jupiter:${Versions.testcontainers}")
+    // Testcontainers
+    testImplementation(platform(sqldiffLibs.boms.testcontainers))
+    testImplementation("org.testcontainers:postgresql")
+    testImplementation("org.testcontainers:junit-jupiter")
 }

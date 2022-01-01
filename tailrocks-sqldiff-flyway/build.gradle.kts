@@ -7,7 +7,7 @@ dependencies {
     api(project(":tailrocks-sqldiff-output"))
 
     // Flyway
-    compileOnly("org.flywaydb:flyway-core:${Versions.flyway}")
+    compileOnly(sqldiffLibs.flyway.core)
 
     implementation("com.github.jsqlparser:jsqlparser:3.1")
 

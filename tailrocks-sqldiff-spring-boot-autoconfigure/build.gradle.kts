@@ -19,5 +19,5 @@ dependencies {
 
     compileOnly("org.flywaydb:flyway-core")
 
-    implementation("org.slf4j:slf4j-api:${Versions.slf4j}")
+    implementation(sqldiffLibs.slf4j.api)
 }

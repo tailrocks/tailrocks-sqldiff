@@ -9,9 +9,9 @@ dependencies {
     api(project(":tailrocks-sqldiff-hibernate"))
 
     // Micronaut
-    annotationProcessor(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))
+    annotationProcessor(platform(sqldiffLibs.boms.micronaut))
     annotationProcessor("io.micronaut:micronaut-inject-java")
-    implementation(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))
+    implementation(platform(sqldiffLibs.boms.micronaut))
     implementation("io.micronaut:micronaut-inject")
     implementation("io.micronaut:micronaut-runtime")
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
