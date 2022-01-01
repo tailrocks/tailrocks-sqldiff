@@ -1,16 +1,16 @@
 pluginManagement {
     repositories {
         mavenLocal()
-        // FIXME
-        maven { url = uri("https://artifactory.scentbird.com/artifactory/maven-public") }
+        mavenCentral()
+        gradlePluginPortal()
     }
 }
 
 dependencyResolutionManagement {
     repositories {
         mavenLocal()
-        // FIXME
-        maven { url = uri("https://artifactory.scentbird.com/artifactory/maven-public") }
+        mavenCentral()
+        gradlePluginPortal()
         // uncomment if you need to use snapshot versions
         //maven("https://oss.sonatype.org/content/repositories/snapshots")
         //maven("https://s01.oss.sonatype.org/content/repositories/snapshots")

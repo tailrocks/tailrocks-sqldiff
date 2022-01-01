@@ -2,8 +2,6 @@ plugins {
     id("maven-publish-conventions")
 }
 
-// FIXME remove hurma
-
 version = "0.1.0"
 
 java {
