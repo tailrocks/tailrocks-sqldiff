@@ -4,7 +4,6 @@ object Versions {
 
     const val micronaut = "2.2.3"
 
-    const val jetBrainsAnnotations = "19.0.0"
     const val slf4j = "1.7.30"
     const val logback = "1.2.3"
 
@@ -12,11 +11,7 @@ object Versions {
     const val postgresql = "42.2.9"
     const val testcontainers = "1.15.1"
     const val picocli = "4.4.0"
-    const val commonsCollections = "4.4"
-    const val commonsLang = "3.11"
-    const val flyway = "7.5.0"
     const val junit = "5.7.0"
-    const val hibernate = "5.4.17.Final"
 
     // Project
 
