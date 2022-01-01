@@ -1,7 +1,7 @@
-package com.scentbird.krendel.core.postgres
+package com.tailrocks.sqldiff.core.postgres
 
-import com.scentbird.krendel.AbstractContainerBaseTest
-import com.scentbird.krendel.TestCase
+import com.tailrocks.sqldiff.AbstractContainerBaseTest
+import com.tailrocks.sqldiff.TestCase
 import com.tailrocks.sqldiff.core.postgres.diff.DiffOperation
 import com.tailrocks.sqldiff.core.postgres.diff.DiffOptions
 import com.tailrocks.sqldiff.core.postgres.model.PgTable
@@ -94,7 +94,8 @@ class TablesMigrationTests : AbstractContainerBaseTest() {
     @Test
     fun `table - create new ignore column`() {
         // given
-        val testCase = TestCase("table_create_ignore_column", POSTGRES_CONTAINER)
+        val testCase =
+            TestCase("table_create_ignore_column", POSTGRES_CONTAINER)
         testCase.readSchema()
 
         val options = DiffOptions().apply {
@@ -215,7 +216,8 @@ class TablesMigrationTests : AbstractContainerBaseTest() {
     @Test
     fun `table - create with comments`() {
         // given
-        val testCase = TestCase("table_create_with_comments", POSTGRES_CONTAINER)
+        val testCase =
+            TestCase("table_create_with_comments", POSTGRES_CONTAINER)
         testCase.readSchema()
 
         // when
@@ -286,7 +288,8 @@ class TablesMigrationTests : AbstractContainerBaseTest() {
     @Test
     fun `table - create with identity`() {
         // given
-        val testCase = TestCase("table_create_with_identity", POSTGRES_CONTAINER)
+        val testCase =
+            TestCase("table_create_with_identity", POSTGRES_CONTAINER)
         testCase.readSchema()
 
         // when

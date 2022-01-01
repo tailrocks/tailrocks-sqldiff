@@ -1,4 +1,4 @@
-package com.scentbird.krendel;
+package com.tailrocks.sqldiff;
 
 import org.testcontainers.containers.PostgreSQLContainer;
 

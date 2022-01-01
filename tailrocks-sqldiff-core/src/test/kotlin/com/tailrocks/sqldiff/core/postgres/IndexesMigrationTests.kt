@@ -1,7 +1,7 @@
-package com.scentbird.krendel.core.postgres
+package com.tailrocks.sqldiff.core.postgres
 
-import com.scentbird.krendel.AbstractContainerBaseTest
-import com.scentbird.krendel.TestCase
+import com.tailrocks.sqldiff.AbstractContainerBaseTest
+import com.tailrocks.sqldiff.TestCase
 import com.tailrocks.sqldiff.core.postgres.diff.DiffOperation
 import com.tailrocks.sqldiff.core.postgres.diff.DiffOptions
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions

@@ -1,7 +1,7 @@
-package com.scentbird.krendel.core.postgres
+package com.tailrocks.sqldiff.core.postgres
 
-import com.scentbird.krendel.AbstractContainerBaseTest
-import com.scentbird.krendel.TestCase
+import com.tailrocks.sqldiff.AbstractContainerBaseTest
+import com.tailrocks.sqldiff.TestCase
 import com.tailrocks.sqldiff.core.postgres.diff.DiffOperation
 import com.tailrocks.sqldiff.core.postgres.diff.DiffOptions
 import com.tailrocks.sqldiff.core.postgres.migration.MigrationOptions
@@ -13,7 +13,6 @@ import com.tailrocks.sqldiff.core.postgres.model.PgTable
 import com.tailrocks.sqldiff.core.postgres.model.PgUniqueConstraint
 import com.tailrocks.sqldiff.core.postgres.model.PgView
 import com.tailrocks.sqldiff.model.config.SqlDiffDiffConfig
-import com.tailrocks.sqldiff.core.postgres.Postgres12TableLockLevel
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
@@ -108,7 +107,8 @@ class SchemaExtractorTest : AbstractContainerBaseTest() {
     @Test
     fun `table - add new column with comment`() {
         // given
-        val testCase = TestCase("table_new_column_with_comment", POSTGRES_CONTAINER)
+        val testCase =
+            TestCase("table_new_column_with_comment", POSTGRES_CONTAINER)
         testCase.readSchema()
 
         // when
@@ -247,7 +247,8 @@ class SchemaExtractorTest : AbstractContainerBaseTest() {
     @Test
     fun `table - add default sequence`() {
         // given
-        val testCase = TestCase("table_add_default_sequence", POSTGRES_CONTAINER)
+        val testCase =
+            TestCase("table_add_default_sequence", POSTGRES_CONTAINER)
         testCase.readSchema()
 
         // when
@@ -568,7 +569,8 @@ class SchemaExtractorTest : AbstractContainerBaseTest() {
     @Test
     fun `table - convert sequence to identity`() {
         // given
-        val testCase = TestCase("table_sequence_to_identity", POSTGRES_CONTAINER)
+        val testCase =
+            TestCase("table_sequence_to_identity", POSTGRES_CONTAINER)
         testCase.readSchema()
 
         // when
@@ -684,7 +686,10 @@ class SchemaExtractorTest : AbstractContainerBaseTest() {
     @Test
     fun `table - convert sequence without owner to identity`() {
         // given
-        val testCase = TestCase("table_sequence_without_owner_to_identity", POSTGRES_CONTAINER)
+        val testCase = TestCase(
+            "table_sequence_without_owner_to_identity",
+            POSTGRES_CONTAINER
+        )
         testCase.readSchema()
 
         // when
@@ -1740,7 +1745,8 @@ class SchemaExtractorTest : AbstractContainerBaseTest() {
     @Test
     fun `table - compare foreign keys by references`() {
         // given
-        val testCase = TestCase("table_smart_foreign_keys_check", POSTGRES_CONTAINER)
+        val testCase =
+            TestCase("table_smart_foreign_keys_check", POSTGRES_CONTAINER)
         testCase.readSchema()
 
         // when
