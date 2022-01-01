@@ -26,10 +26,6 @@ object Versions {
     const val junit = "5.7.0"
     const val hibernate = "5.4.17.Final"
 
-    const val scentbirdHurmaHibernate = "0.11.0"
-    const val scentbirdHurmaHibernateJpa = "0.9.0"
-    const val scentbirdHurmaSpringDataJpa = "0.19.0"
-
     // Project
 
     const val project = "0.6.0"
