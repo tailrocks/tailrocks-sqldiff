@@ -4,7 +4,6 @@ spring:
     url: jdbc:postgresql://127.0.0.1:5432/sqldiff_spring_boot_best_practice
     username: postgres
     password: root
-    platform: postgresql
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQL10Dialect
     hibernate:
