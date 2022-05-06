@@ -2,7 +2,7 @@ plugins {
     java
     idea
     `maven-publish`
-    id("com.adarshr.test-logger") version "2.1.0" apply false
+    id("com.adarshr.test-logger") version "2.1.1" apply false
     id("com.github.johnrengelman.shadow") version "6.1.0" apply false
 }
 
