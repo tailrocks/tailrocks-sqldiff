@@ -20,7 +20,7 @@ dependencies {
     implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
 
     // TODO remove me later
-    implementation("io.micronaut.sql:micronaut-hibernate-jpa:3.4.0")
+    implementation("io.micronaut.sql:micronaut-hibernate-jpa:4.3.0")
 
     // Logback
     runtimeOnly("ch.qos.logback:logback-classic")
