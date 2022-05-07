@@ -17,7 +17,7 @@ dependencies {
     implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
 
     // TODO remove me later, after this PR will be merged: https://github.com/micronaut-projects/micronaut-sql/pull/279
-    api("io.micronaut.sql:micronaut-hibernate-jpa:3.0.1.BUILD-SNAPSHOT")
+    api("io.micronaut.sql:micronaut-hibernate-jpa:3.4.0")
 
     api("javax.annotation:javax.annotation-api")
     api("ch.qos.logback:logback-classic")

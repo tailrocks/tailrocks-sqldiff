@@ -25,7 +25,7 @@ dependencies {
     implementation("io.micronaut.flyway:micronaut-flyway")
 
     // TODO remove me later, after this PR will be merged: https://github.com/micronaut-projects/micronaut-sql/pull/279
-    implementation("io.micronaut.sql:micronaut-hibernate-jpa:3.0.1.BUILD-SNAPSHOT")
+    implementation("io.micronaut.sql:micronaut-hibernate-jpa:3.4.0")
 
     testAnnotationProcessor(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))
     testAnnotationProcessor("io.micronaut:micronaut-inject-java")
