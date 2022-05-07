@@ -1,4 +1,4 @@
-FROM openjdk:14-jdk-slim-buster
+FROM openjdk:19-jdk-slim-buster
 
 ADD docker/krendel.sh /krendel.sh
 
