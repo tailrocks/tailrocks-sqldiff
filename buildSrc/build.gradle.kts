@@ -10,5 +10,5 @@ dependencies {
     // https://plugins.gradle.org/plugin/org.springframework.boot
     implementation("org.springframework.boot:spring-boot-gradle-plugin:2.6.7")
     // https://plugins.gradle.org/plugin/org.jetbrains.kotlin.jvm
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.32")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21")
 }
