@@ -9,7 +9,7 @@ dependencies {
     // Flyway
     compileOnly(sqldiffLibs.flyway.core)
 
-    implementation("com.github.jsqlparser:jsqlparser:3.2")
+    implementation("com.github.jsqlparser:jsqlparser:4.4")
 
     // TODO replace with https://github.com/apache/commons-csv
     api("com.opencsv:opencsv:5.6")
