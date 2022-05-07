@@ -3,7 +3,7 @@
 hibernate = "5.4.32.Final"
 commons-lang = "3.12.0"
 classgraph = "4.8.138"
-hibernate-types = "2.14.0"
+hibernate-types = "2.16.2"
 commons-collections = "4.4"
 flyway = "7.15.0"
 jetbrains-annotations = "19.0.0"
