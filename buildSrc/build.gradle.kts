@@ -8,7 +8,7 @@ dependencies {
     // https://plugins.gradle.org/plugin/io.spring.dependency-management
     implementation("io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE")
     // https://plugins.gradle.org/plugin/org.springframework.boot
-    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.6.7")
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.7.0")
     // https://plugins.gradle.org/plugin/org.jetbrains.kotlin.jvm
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21")
 }
