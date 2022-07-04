@@ -2,7 +2,7 @@
 # Libraries
 hibernate = "5.6.9.Final"
 commons-lang = "3.12.0"
-classgraph = "4.8.147"
+classgraph = "4.8.148"
 hibernate-types = "2.16.3"
 commons-collections = "4.4"
 flyway = "8.5.13"
