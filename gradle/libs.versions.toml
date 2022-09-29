@@ -10,7 +10,7 @@ jetbrains-annotations = "23.0.0"
 micronaut = "3.7.1"
 postgresql = "42.5.0"
 slf4j = "1.7.36"
-testcontainers = "1.17.3"
+testcontainers = "1.17.4"
 
 
 [libraries]
