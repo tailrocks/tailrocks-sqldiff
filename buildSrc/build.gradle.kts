@@ -4,7 +4,7 @@ plugins {
 
 dependencies {
     // https://plugins.gradle.org/plugin/com.github.ben-manes.versions
-    implementation("com.github.ben-manes:gradle-versions-plugin:0.42.0")
+    implementation("com.github.ben-manes:gradle-versions-plugin:0.43.0")
     // https://plugins.gradle.org/plugin/io.spring.dependency-management
     implementation("io.spring.gradle:dependency-management-plugin:1.1.0")
     // https://plugins.gradle.org/plugin/org.springframework.boot
