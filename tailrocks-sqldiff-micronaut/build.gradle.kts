@@ -19,7 +19,7 @@ dependencies {
     implementation("io.micronaut.flyway:micronaut-flyway")
 
     // TODO remove me later, after this PR will be merged: https://github.com/micronaut-projects/micronaut-sql/pull/279
-    implementation("io.micronaut.sql:micronaut-hibernate-jpa:4.6.1")
+    implementation("io.micronaut.sql:micronaut-hibernate-jpa:4.8.1")
 
     // libraries
     implementation("javax.annotation:javax.annotation-api")
