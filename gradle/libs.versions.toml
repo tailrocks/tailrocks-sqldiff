@@ -9,7 +9,7 @@ flyway = "8.5.13"
 jetbrains-annotations = "23.0.0"
 micronaut = "3.7.3"
 postgresql = "42.5.0"
-slf4j = "1.7.36"
+slf4j = "2.0.9"
 testcontainers = "1.17.5"
 
 
