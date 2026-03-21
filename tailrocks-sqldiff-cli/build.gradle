@@ -1,26 +1,20 @@
 plugins {
-    id "com.github.johnrengelman.shadow"
+    id "com.gradleup.shadow"
     id "application"
 }
 
 version "0.1"
 group "com.tailrocks.sqldiff.cli"
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     // subprojects
     implementation(project(":tailrocks-sqldiff-output"))
     implementation(project(":tailrocks-sqldiff-flyway"))
 
-    annotationProcessor(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))
-    annotationProcessor("io.micronaut:micronaut-graal")
+    annotationProcessor(platform(sqldiffLibs.boms.micronaut))
+    annotationProcessor("io.micronaut:micronaut-inject-java")
     annotationProcessor("info.picocli:picocli-codegen:${Versions.picocli}")
-    compileOnly(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))
-    compileOnly("org.graalvm.nativeimage:svm")
-    implementation(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))
+    implementation(platform(sqldiffLibs.boms.micronaut))
     implementation("info.picocli:picocli")
     implementation("io.micronaut.picocli:micronaut-picocli")
     runtimeOnly("ch.qos.logback:logback-classic")
@@ -31,7 +25,9 @@ dependencies {
     }
 }
 
-mainClassName = "com.tailrocks.sqldiff.cli.command.SqlDiffCommand"
+application {
+    mainClass.set("com.tailrocks.sqldiff.cli.command.SqlDiffCommand")
+}
 
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"

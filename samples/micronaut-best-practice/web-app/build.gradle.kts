@@ -2,25 +2,22 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
     application
-    id("com.github.johnrengelman.shadow")
+    id("com.gradleup.shadow")
 }
 
 dependencies {
     implementation(project(":samples:micronaut-best-practice:data"))
 
-    // Micronaut
-    annotationProcessor(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))
+    annotationProcessor(platform(sqldiffLibs.boms.micronaut))
     annotationProcessor("io.micronaut:micronaut-inject-java")
-    annotationProcessor("io.micronaut:micronaut-validation")
+    annotationProcessor("io.micronaut.validation:micronaut-validation-processor")
     annotationProcessor("io.micronaut.data:micronaut-data-processor")
-    implementation(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))
+    implementation(platform(sqldiffLibs.boms.micronaut))
     implementation("io.micronaut:micronaut-http-server-netty")
     implementation("io.micronaut:micronaut-http-client")
 }
 
-
 application {
-    mainClassName = "sqldiff.example.micronaut.advanced.web.WebApplication"
     mainClass.set("sqldiff.example.micronaut.advanced.web.WebApplication")
 }
 
@@ -32,7 +29,6 @@ tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
     options.compilerArgs.addAll(listOf(
             "-parameters",
-            // enables incremental compilation
             "-Amicronaut.processing.incremental=true",
             "-Amicronaut.processing.annotations=sqldiff.*,com.tailrocks.sqldiff.*",
             "-Amicronaut.processing.group=${project.group}",

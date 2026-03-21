@@ -4,11 +4,11 @@ plugins {
 
 dependencies {
     // https://plugins.gradle.org/plugin/com.github.ben-manes.versions
-    implementation("com.github.ben-manes:gradle-versions-plugin:0.43.0")
+    implementation("com.github.ben-manes:gradle-versions-plugin:0.52.0")
     // https://plugins.gradle.org/plugin/io.spring.dependency-management
-    implementation("io.spring.gradle:dependency-management-plugin:1.1.0")
+    implementation("io.spring.gradle:dependency-management-plugin:1.1.7")
     // https://plugins.gradle.org/plugin/org.springframework.boot
-    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.7.4")
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:3.4.3")
     // https://plugins.gradle.org/plugin/org.jetbrains.kotlin.jvm
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.10")
 }

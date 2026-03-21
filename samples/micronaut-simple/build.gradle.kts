@@ -2,32 +2,25 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
     application
-    id("com.github.johnrengelman.shadow")
+    id("com.gradleup.shadow")
 }
 
 dependencies {
-    // subprojects
     implementation(project(":tailrocks-sqldiff-micronaut"))
 
-    // Micronaut
-    annotationProcessor(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))
+    annotationProcessor(platform(sqldiffLibs.boms.micronaut))
     annotationProcessor("io.micronaut:micronaut-inject-java")
     annotationProcessor("io.micronaut.data:micronaut-data-processor")
-    implementation(platform("io.micronaut:micronaut-bom:${Versions.micronaut}"))
+    implementation(platform(sqldiffLibs.boms.micronaut))
     implementation("io.micronaut:micronaut-inject")
     implementation("io.micronaut:micronaut-runtime")
     implementation("io.micronaut:micronaut-http-server-netty")
     implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
 
-    // TODO remove me later
-    implementation("io.micronaut.sql:micronaut-hibernate-jpa:4.6.1")
-
-    // Logback
     runtimeOnly("ch.qos.logback:logback-classic")
 }
 
 application {
-    mainClassName = "sqldiff.micronaut.simple.sample.SimpleApplication"
     mainClass.set("sqldiff.micronaut.simple.sample.SimpleApplication")
 }
 
@@ -39,7 +32,6 @@ tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
     options.compilerArgs.addAll(listOf(
             "-parameters",
-            // enables incremental compilation
             "-Amicronaut.processing.incremental=true",
             "-Amicronaut.processing.annotations=sqldiff.*,com.tailrocks.sqldiff.*",
             "-Amicronaut.processing.group=${project.group}",
