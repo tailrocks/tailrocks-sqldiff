@@ -1,8 +1,8 @@
 package sqldiff.spring.boot.advanced.sample.data.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.validation.constraints.NotNull;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.validation.constraints.NotNull;
 import java.time.YearMonth;
 
 @Entity

@@ -1,17 +1,13 @@
-import org.gradle.api.JavaVersion
-
 plugins {
     java
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
-tasks.withType<JavaCompile> {
-    // FIX:
-    // For queries with named parameters you need to use provide names for method parameters.
-    // Use @Param for query method parameters, or when on Java 8+ use the javac flag -parameters.
+tasks.withType<JavaCompile>().configureEach {
+    options.release.set(17)
     options.compilerArgs.add("-parameters")
 }

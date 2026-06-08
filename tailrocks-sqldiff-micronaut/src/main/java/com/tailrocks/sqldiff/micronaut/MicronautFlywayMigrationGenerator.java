@@ -7,7 +7,7 @@ import io.micronaut.configuration.jdbc.hikari.DatasourceConfiguration;
 import io.micronaut.context.annotation.Requires;
 import org.flywaydb.core.Flyway;
 
-import javax.inject.Singleton;
+import jakarta.inject.Singleton;
 import java.util.Collections;
 
 @Singleton

@@ -5,8 +5,8 @@ plugins {
 dependencies {
     api(project(":tailrocks-sqldiff-core"))
     api(project(":tailrocks-sqldiff-model"))
-    api("io.projectreactor:reactor-core:3.4.23")
-    api("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.16.0")
+    api(sqldiffLibs.reactor.core)
+    api(sqldiffLibs.jackson.dataformat.yaml)
 
-    api("org.fusesource.jansi:jansi:2.4.0")
+    api(sqldiffLibs.jansi)
 }
