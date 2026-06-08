@@ -10,8 +10,8 @@ import com.tailrocks.sqldiff.model.config.SqlDiffEmbeddedConfig;
 import com.tailrocks.sqldiff.output.DbVersionControl;
 import com.tailrocks.sqldiff.output.SqlDiffOutput;
 import org.hibernate.boot.Metadata;
-import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.hibernate.tool.schema.TargetType;
+import org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.postgresql.Driver;
@@ -171,15 +171,49 @@ public class SqlDiffMigrator {
     private void runHibernateSchemaExport(Metadata metadata, File outputFile) throws IOException {
         String outputPath = outputFile.getCanonicalPath();
 
-        SchemaExport schemaExport = new SchemaExport();
-        schemaExport.setDelimiter(";");
-        schemaExport.setFormat(false);
-        schemaExport.setOutputFile(outputPath);
+        var metadataImplementor = (org.hibernate.boot.spi.MetadataImplementor) metadata;
+        var serviceRegistry = metadataImplementor.getMetadataBuildingOptions().getServiceRegistry();
+        var tool = serviceRegistry.getService(org.hibernate.tool.schema.spi.SchemaManagementTool.class);
+        var schemaCreator = tool.getSchemaCreator(java.util.Collections.emptyMap());
 
-        schemaExport.execute(
-                EnumSet.of(TargetType.SCRIPT),
-                SchemaExport.Action.CREATE,
-                metadata
+        var executionOptions = SchemaManagementToolCoordinator.buildExecutionOptions(
+                java.util.Map.of(
+                        "jakarta.persistence.schema-generation.scripts.action", "create",
+                        "jakarta.persistence.schema-generation.scripts.create-target", outputPath
+                ),
+                action -> {}
+        );
+
+        var sourceDescriptor = new org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl();
+        var scriptTargetOutput = new org.hibernate.tool.schema.internal.exec.ScriptTargetOutputToFile(outputFile, "UTF-8");
+        var targetDescriptor = new org.hibernate.tool.schema.spi.TargetDescriptor() {
+            @Override
+            public EnumSet<TargetType> getTargetTypes() {
+                return EnumSet.of(TargetType.SCRIPT);
+            }
+
+            @Override
+            public org.hibernate.tool.schema.spi.ScriptTargetOutput getScriptTargetOutput() {
+                return scriptTargetOutput;
+            }
+        };
+
+        schemaCreator.doCreation(
+                metadataImplementor,
+                executionOptions,
+                org.hibernate.tool.schema.spi.ContributableMatcher.ALL,
+                new org.hibernate.tool.schema.spi.SourceDescriptor() {
+                    @Override
+                    public org.hibernate.tool.schema.SourceType getSourceType() {
+                        return org.hibernate.tool.schema.SourceType.METADATA;
+                    }
+
+                    @Override
+                    public org.hibernate.tool.schema.spi.ScriptSourceInput getScriptSourceInput() {
+                        return sourceDescriptor;
+                    }
+                },
+                targetDescriptor
         );
 
         log.info("Hibernate schema exported to file: {}", outputPath);
