@@ -15,7 +15,7 @@ dependencies {
     implementation("org.springframework:spring-jdbc")
     implementation("org.springframework:spring-orm")
     implementation("jakarta.persistence:jakarta.persistence-api")
-    implementation("org.hibernate:hibernate-core")
+    implementation(sqldiffLibs.hibernate.core)
 
     compileOnly("org.flywaydb:flyway-core")
 

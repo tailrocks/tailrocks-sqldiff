@@ -6,7 +6,7 @@ import io.github.classgraph.ResourceList;
 import io.github.classgraph.ScanResult;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.boot.model.relational.AbstractAuxiliaryDatabaseObject;
-import org.hibernate.dialect.Dialect;
+import org.hibernate.boot.model.relational.SqlStringGenerationContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,7 +40,7 @@ public class ExtraDatabaseObject extends AbstractAuxiliaryDatabaseObject {
     }
 
     @Override
-    public String[] sqlCreateStrings(Dialect dialect) {
+    public String[] sqlCreateStrings(SqlStringGenerationContext context) {
         log.debug("Init extra queries {}", this.beforeTablesOnCreation() ? "before tables" : "after tables");
 
         List<String> lines = new ArrayList<>();
@@ -79,7 +79,7 @@ public class ExtraDatabaseObject extends AbstractAuxiliaryDatabaseObject {
     }
 
     @Override
-    public String[] sqlDropStrings(Dialect dialect) {
+    public String[] sqlDropStrings(SqlStringGenerationContext context) {
         return new String[0];
     }
 
