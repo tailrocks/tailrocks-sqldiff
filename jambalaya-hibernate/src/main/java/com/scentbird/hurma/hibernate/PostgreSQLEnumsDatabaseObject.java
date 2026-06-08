@@ -4,7 +4,7 @@ import io.github.classgraph.ClassGraph;
 import io.github.classgraph.ClassInfo;
 import io.github.classgraph.ScanResult;
 import org.hibernate.boot.model.relational.AbstractAuxiliaryDatabaseObject;
-import org.hibernate.dialect.Dialect;
+import org.hibernate.boot.model.relational.SqlStringGenerationContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,7 +33,7 @@ public class PostgreSQLEnumsDatabaseObject extends AbstractAuxiliaryDatabaseObje
     }
 
     @Override
-    public String[] sqlCreateStrings(Dialect dialect) {
+    public String[] sqlCreateStrings(SqlStringGenerationContext context) {
         List<String> result = new ArrayList<>();
 
         Map<String, String> usedTypes = new HashMap<>();
@@ -54,7 +54,7 @@ public class PostgreSQLEnumsDatabaseObject extends AbstractAuxiliaryDatabaseObje
     }
 
     @Override
-    public String[] sqlDropStrings(Dialect dialect) {
+    public String[] sqlDropStrings(SqlStringGenerationContext context) {
         List<String> result = new ArrayList<>();
 
         for (String className : findImplementations()) {

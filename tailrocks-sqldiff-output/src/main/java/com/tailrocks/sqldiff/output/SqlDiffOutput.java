@@ -258,7 +258,7 @@ public final class SqlDiffOutput {
             dumperOptions.setDefaultScalarStyle(DumperOptions.ScalarStyle.PLAIN);
             dumperOptions.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK);
 
-            Representer representer = new Representer() {
+            Representer representer = new Representer(dumperOptions) {
                 @Override
                 protected NodeTuple representJavaBeanProperty(Object javaBean, Property property, Object propertyValue,
                                                               Tag customTag) {
