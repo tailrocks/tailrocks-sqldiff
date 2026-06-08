@@ -1,26 +1,23 @@
 package sqldiff.example.micronaut.advanced.data.domain;
 
 import com.scentbird.hurma.hibernate.annotation.Comment;
-import com.vladmihalcea.hibernate.type.array.EnumArrayType;
-import com.vladmihalcea.hibernate.type.array.internal.AbstractArrayType;
+import io.hypersistence.utils.hibernate.type.array.EnumArrayType;
 import sqldiff.example.micronaut.advanced.data.model.Authority;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Parameter;
 import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
-import org.hibernate.annotations.TypeDefs;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Index;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
-import javax.persistence.Version;
-import javax.validation.constraints.NotNull;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Index;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
+import jakarta.persistence.Version;
+import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 import static sqldiff.example.micronaut.advanced.data.model.Authority.ROLE_USER;
@@ -40,19 +37,6 @@ import static sqldiff.example.micronaut.advanced.data.model.Authority.ROLE_USER;
                 )
         }
 )
-@TypeDefs({
-        @TypeDef(
-                name = "authorities",
-                typeClass = EnumArrayType.class,
-                defaultForType = Authority[].class,
-                parameters = {
-                        @Parameter(
-                                name = AbstractArrayType.SQL_ARRAY_TYPE,
-                                value = Authority.COLUMN_DEFINITION
-                        )
-                }
-        )
-})
 public class Account {
 
     @Id
@@ -85,7 +69,7 @@ public class Account {
 
     private String email;
 
-    @Type(type = "authorities")
+    @Type(value = EnumArrayType.class, parameters = @Parameter(name = "sql_array_type", value = "authority"))
     @Column(columnDefinition = Authority.COLUMN_DEFINITION + "[]")
     @NotNull
     private Authority[] roles = new Authority[]{ROLE_USER};

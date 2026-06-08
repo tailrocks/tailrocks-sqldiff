@@ -6,11 +6,10 @@ dependencies {
     api(project(":tailrocks-sqldiff-core"))
     api(project(":tailrocks-sqldiff-output"))
 
-    // Flyway
     compileOnly(sqldiffLibs.flyway.core)
 
-    implementation("com.github.jsqlparser:jsqlparser:4.5")
+    implementation(sqldiffLibs.jsqlparser)
 
     // TODO replace with https://github.com/apache/commons-csv
-    api("com.opencsv:opencsv:5.9")
+    api(sqldiffLibs.opencsv)
 }
