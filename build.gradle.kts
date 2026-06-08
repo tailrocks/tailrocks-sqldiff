@@ -2,8 +2,8 @@ plugins {
     java
     idea
     `maven-publish`
-    id("com.adarshr.test-logger") version "3.2.0" apply false
-    id("com.github.johnrengelman.shadow") version "7.1.2" apply false
+    id("com.adarshr.test-logger") version "4.0.0" apply false
+    id("com.gradleup.shadow") version "8.3.6" apply false
 }
 
 allprojects {
