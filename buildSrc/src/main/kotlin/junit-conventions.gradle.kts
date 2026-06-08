@@ -1,5 +1,5 @@
 val isFailFast = System.getenv("GRADLE_FAIL_FAST") == null ||
-        System.getenv("GRADLE_FAIL_FAST").toLowerCase() == "true"
+        System.getenv("GRADLE_FAIL_FAST").lowercase() == "true"
 
 val isParallel = System.getenv("GRADLE_JUNIT_PARALLEL") == "true"
 

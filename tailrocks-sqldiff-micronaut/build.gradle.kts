@@ -5,10 +5,8 @@ plugins {
 description = "tailrocks-sqldiff Micronaut"
 
 dependencies {
-    // subprojects
     api(project(":tailrocks-sqldiff-hibernate"))
 
-    // Micronaut
     annotationProcessor(platform(sqldiffLibs.boms.micronaut))
     annotationProcessor("io.micronaut:micronaut-inject-java")
     implementation(platform(sqldiffLibs.boms.micronaut))
@@ -18,11 +16,7 @@ dependencies {
     implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
     implementation("io.micronaut.flyway:micronaut-flyway")
 
-    // TODO remove me later, after this PR will be merged: https://github.com/micronaut-projects/micronaut-sql/pull/279
-    implementation("io.micronaut.sql:micronaut-hibernate-jpa:4.6.1")
-
-    // libraries
-    implementation("javax.annotation:javax.annotation-api")
+    implementation(sqldiffLibs.jakarta.annotation)
 }
 
 tasks.withType<JavaCompile> {
@@ -30,7 +24,6 @@ tasks.withType<JavaCompile> {
     options.compilerArgs.addAll(
         listOf(
             "-parameters",
-            // enables incremental compilation
             "-Amicronaut.processing.incremental=true",
             "-Amicronaut.processing.annotations=com.tailrocks.sqldiff.*",
             "-Amicronaut.processing.group=${project.group}",
