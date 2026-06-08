@@ -4,7 +4,7 @@ import com.scentbird.hurma.hibernate.annotation.Comment;
 import org.apache.commons.lang3.reflect.FieldUtils;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.model.relational.AbstractAuxiliaryDatabaseObject;
-import org.hibernate.dialect.Dialect;
+import org.hibernate.boot.model.relational.SqlStringGenerationContext;
 import org.hibernate.mapping.PersistentClass;
 import org.hibernate.mapping.Property;
 import org.hibernate.mapping.Value;
@@ -65,12 +65,12 @@ public class PostgreSQLCommentsDatabaseObject extends AbstractAuxiliaryDatabaseO
     }
 
     @Override
-    public String[] sqlCreateStrings(Dialect dialect) {
+    public String[] sqlCreateStrings(SqlStringGenerationContext context) {
         throw new RuntimeException("This method is not supported, use `sqlCreateStrings(Metadata metadata)` instead");
     }
 
     @Override
-    public String[] sqlDropStrings(Dialect dialect) {
+    public String[] sqlDropStrings(SqlStringGenerationContext context) {
         return new String[0];
     }
 
@@ -92,7 +92,7 @@ public class PostgreSQLCommentsDatabaseObject extends AbstractAuxiliaryDatabaseO
             throw new RuntimeException("Columns more than one: " + value.getColumnSpan() + ", " + source);
         }
 
-        return value.getColumnIterator().next().getText();
+        return value.getColumns().get(0).getText();
     }
 
 }
