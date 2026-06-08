@@ -2,6 +2,7 @@ package com.scentbird.hurma.hibernate;
 
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.model.relational.AuxiliaryDatabaseObject;
+import org.hibernate.boot.model.relational.SqlStringGenerationContext;
 import org.hibernate.dialect.Dialect;
 import org.hibernate.tool.schema.internal.StandardAuxiliaryDatabaseObjectExporter;
 
@@ -16,11 +17,11 @@ public class HurmaAuxiliaryDatabaseObjectExporter extends StandardAuxiliaryDatab
     }
 
     @Override
-    public String[] getSqlCreateStrings(AuxiliaryDatabaseObject object, Metadata metadata) {
+    public String[] getSqlCreateStrings(AuxiliaryDatabaseObject object, Metadata metadata, SqlStringGenerationContext context) {
         if (object instanceof PostgreSQLCommentsDatabaseObject) {
             return ((PostgreSQLCommentsDatabaseObject) object).sqlCreateStrings(metadata);
         }
-        return super.getSqlCreateStrings(object, metadata);
+        return super.getSqlCreateStrings(object, metadata, context);
     }
 
 }

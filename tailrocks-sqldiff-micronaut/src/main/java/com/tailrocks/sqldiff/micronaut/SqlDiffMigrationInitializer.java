@@ -11,7 +11,7 @@ import io.micronaut.runtime.event.annotation.EventListener;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 
-import javax.inject.Singleton;
+import jakarta.inject.Singleton;
 import java.util.Optional;
 
 @Singleton
